@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUMMIT | Экстремальные туры</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "summit-dark": "#0F172A",
+              "summit-slate": "#1E293B",
+              "summit-orange": "#F97316",
+              "summit-white": "#F8FAFC",
+            },
+            fontFamily: {
+              sans: ["Roboto", "sans-serif"],
+              display: ["Oswald", "sans-serif"],
+            },
+            backgroundImage: {
+              "hero-pattern":
+                "linear-gradient(to bottom, rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 1))",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #f97316;
+      }
+
+      .text-stroke {
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-summit-dark text-summit-white font-sans antialiased overflow-x-hidden"
+    x-data="{ mobileMenuOpen: false }"
+  >
+    <nav
+      class="fixed w-full z-50 border-b border-white/10 bg-summit-dark/80 backdrop-blur-lg"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          href="#"
+          class="text-3xl font-display font-bold tracking-wider italic"
+        >
+          SUMMIT<span class="text-summit-orange">.</span>
+        </a>
+
+        <div
+          class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium text-gray-400"
+        >
+          <a href="#destinations" class="hover:text-white transition-colors"
+            >Туры</a
+          >
+          <a href="#about" class="hover:text-white transition-colors">О нас</a>
+          <a href="#program" class="hover:text-white transition-colors"
+            >Программа</a
+          >
+          <a href="#reviews" class="hover:text-white transition-colors"
+            >Отзывы</a
+          >
+        </div>
+
+        <a
+          href="#book"
+          class="hidden md:inline-block bg-summit-orange text-white px-6 py-2 rounded font-bold uppercase text-xs tracking-wider hover:bg-orange-600 transition-colors"
+        >
+          Подобрать тур
+        </a>
+
+        <button
+          @click="mobileMenuOpen = !mobileMenuOpen"
+          class="md:hidden text-white focus:outline-none"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <div
+        x-show="mobileMenuOpen"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 -translate-y-4"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        class="md:hidden bg-summit-slate border-b border-white/10 absolute w-full p-6 space-y-4 text-center"
+      >
+        <a
+          href="#destinations"
+          class="block text-lg font-display uppercase"
+          @click="mobileMenuOpen = false"
+          >Туры</a
+        >
+        <a
+          href="#about"
+          class="block text-lg font-display uppercase"
+          @click="mobileMenuOpen = false"
+          >О нас</a
+        >
+        <a
+          href="#program"
+          class="block text-lg font-display uppercase"
+          @click="mobileMenuOpen = false"
+          >Программа</a
+        >
+        <a
+          href="#book"
+          class="block text-summit-orange font-bold uppercase"
+          @click="mobileMenuOpen = false"
+          >Забронировать</a
+        >
+      </div>
+    </nav>
+
+    <header
+      class="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <div class="w-full h-full relative">
+          <img
+            src="Hero-NEED-LICENSE-hiking3.jpg.adapt.nineteen-hundred.jpg"
+            alt="Альпинист на вершине"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-hero-pattern"></div>
+        </div>
+      </div>
+
+      <div
+        class="relative z-10 container mx-auto px-6 text-center md:text-left pt-20"
+      >
+        <div
+          class="inline-block border border-summit-orange text-summit-orange px-4 py-1 rounded-full text-xs font-bold uppercase tracking-[0.2em] mb-6 animate-pulse"
+        >
+          Сезон 2025 открыт
+        </div>
+        <h1
+          class="text-6xl md:text-8xl font-display font-bold uppercase leading-none mb-6"
+        >
+          Покори <br />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500"
+            >Вершину</span
+          >
+        </h1>
+        <p class="text-gray-400 max-w-lg text-lg mb-10 leading-relaxed md:ml-2">
+          Экспедиции в самые дикие уголки планеты. Профессиональные гиды,
+          премиальное снаряжение и эмоции, которые изменят тебя навсегда.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-4 md:items-center">
+          <a
+            href="#destinations"
+            class="bg-summit-orange text-white px-10 py-4 rounded font-display font-bold uppercase tracking-wider hover:bg-orange-600 transition-all hover:translate-x-2"
+          >
+            Выбрать маршрут
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-gray-500"
+      >
+        ↓
+      </div>
+    </header>
+
+    <section id="about" class="py-24 bg-summit-dark relative">
+      <div class="container mx-auto px-6">
+        <div class="flex justify-between items-end mb-16">
+          <h2 class="text-4xl md:text-6xl font-display font-bold uppercase">
+            Почему <span class="text-summit-orange">Мы?</span>
+          </h2>
+          <p class="hidden md:block max-w-xs text-right text-gray-500 text-sm">
+            Мы создаем условия, в которых вы можете испытать себя, оставаясь в
+            безопасности.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px]"
+        >
+          <div
+            class="md:col-span-2 md:row-span-2 rounded-2xl overflow-hidden relative group bg-summit-slate min-h-[300px]"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1516939884455-1445c8652f83?q=80&w=2560&auto=format&fit=crop"
+              alt="Группа туристов"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+
+            <div
+              class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent"
+            >
+              <h3 class="text-2xl font-display font-bold uppercase mb-2">
+                Опытные Гиды
+              </h3>
+              <p class="text-sm text-gray-300">
+                Каждый наш инструктор имеет сертификат международного образца и
+                более 10 восхождений.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="md:col-span-1 md:row-span-1 bg-summit-slate rounded-2xl p-6 flex flex-col justify-between hover:bg-white/5 transition-colors border border-white/5"
+          >
+            <div class="text-summit-orange text-4xl mb-4">🛡️</div>
+            <div>
+              <span class="text-4xl font-display font-bold block">0%</span>
+              <span class="text-xs text-gray-400 uppercase tracking-wider"
+                >Несчастных случаев</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="md:col-span-1 md:row-span-1 bg-summit-orange text-white rounded-2xl p-6 flex flex-col justify-center"
+          >
+            <h3
+              class="text-xl font-display font-bold uppercase mb-2 leading-tight"
+            >
+              Лучшее Снаряжение
+            </h3>
+            <p class="text-xs opacity-80">
+              Мы предоставляем экипировку брендов North Face и Patagonia
+              бесплатно.
+            </p>
+          </div>
+
+          <div
+            class="md:col-span-2 md:row-span-1 bg-summit-slate rounded-2xl p-6 flex items-center justify-between border border-white/5 relative overflow-hidden"
+          >
+            <div class="relative z-10">
+              <h3 class="text-xl font-display font-bold uppercase mb-1">
+                Комьюнити
+              </h3>
+              <p class="text-sm text-gray-400 max-w-[200px]">
+                Вступай в закрытый клуб путешественников после первого тура.
+              </p>
+            </div>
+            <div
+              class="text-8xl absolute right-[-20px] bottom-[-20px] text-white/5 rotate-12 font-display font-bold"
+            >
+              CLUB
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="destinations"
+      class="py-24 bg-summit-slate border-y border-white/5"
+    >
+      <div
+        class="container mx-auto px-6 mb-12 flex items-center justify-between"
+      >
+        <h2 class="text-4xl font-display font-bold uppercase">Направления</h2>
+        <div class="flex gap-4">
+          <button
+            class="swiper-prev w-12 h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-summit-orange hover:border-summit-orange transition-all"
+          >
+            ←
+          </button>
+          <button
+            class="swiper-next w-12 h-12 border border-white/20 rounded-full flex items-center justify-center hover:bg-summit-orange hover:border-summit-orange transition-all"
+          >
+            →
+          </button>
+        </div>
+      </div>
+
+      <div class="pl-6 md:pl-[max(1.5rem,calc((100vw-1280px)/2+1.5rem))]">
+
+        <div class="swiper tourSwiper overflow-visible">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide max-w-sm">
+              <div
+                class="group relative h-[500px] rounded-xl overflow-hidden cursor-pointer"
+              >
+                <img
+                  src="Эльбрус.jpg"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt="Эльбрус"
+                />
+                <div
+                  class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"
+                ></div>
+
+                <div
+                  class="absolute top-6 left-6 bg-white/10 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-wider"
+                >
+                  7 дней
+                </div>
+
+                <div class="absolute bottom-0 left-0 w-full p-8">
+                  <h3 class="text-3xl font-display font-bold uppercase mb-2">
+                    Эльбрус
+                  </h3>
+                  <p
+                    class="text-gray-300 text-sm mb-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                  >
+                    Восхождение на высшую точку Европы с юга. Комфорт + Экстрим.
+                  </p>
+                  <div
+                    class="flex justify-between items-center border-t border-white/20 pt-4"
+                  >
+                    <span class="text-summit-orange font-bold text-lg"
+                      >от 45 000 ₽</span
+                    >
+                    <span
+                      class="text-xs uppercase border-b border-transparent group-hover:border-white transition-all"
+                      >Подробнее</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide max-w-sm">
+              <div
+                class="group relative h-[500px] rounded-xl overflow-hidden cursor-pointer"
+              >
+                <img
+                  src="Киллиманджаро.jpg"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt="Килиманджаро"
+                />
+                <div
+                  class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"
+                ></div>
+
+                <div
+                  class="absolute top-6 left-6 bg-white/10 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-wider"
+                >
+                  12 дней
+                </div>
+
+                <div class="absolute bottom-0 left-0 w-full p-8">
+                  <h3 class="text-3xl font-display font-bold uppercase mb-2">
+                    Килиманджаро
+                  </h3>
+                  <p
+                    class="text-gray-300 text-sm mb-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                  >
+                    Крыша Африки. Сафари после восхождения включено.
+                  </p>
+                  <div
+                    class="flex justify-between items-center border-t border-white/20 pt-4"
+                  >
+                    <span class="text-summit-orange font-bold text-lg"
+                      >$ 1 800</span
+                    >
+                    <span
+                      class="text-xs uppercase border-b border-transparent group-hover:border-white transition-all"
+                      >Подробнее</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide max-w-sm">
+              <div
+                class="group relative h-[500px] rounded-xl overflow-hidden cursor-pointer"
+              >
+                <img
+                  src="Алтай.jpg"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt="Алтай"
+                />
+                <div
+                  class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"
+                ></div>
+
+                <div
+                  class="absolute top-6 left-6 bg-white/10 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-wider"
+                >
+                  5 дней
+                </div>
+
+                <div class="absolute bottom-0 left-0 w-full p-8">
+                  <h3 class="text-3xl font-display font-bold uppercase mb-2">
+                    Алтай
+                  </h3>
+                  <p
+                    class="text-gray-300 text-sm mb-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                  >
+                    Треккинг к подножию Белухи. Озера и места силы.
+                  </p>
+                  <div
+                    class="flex justify-between items-center border-t border-white/20 pt-4"
+                  >
+                    <span class="text-summit-orange font-bold text-lg"
+                      >от 35 000 ₽</span
+                    >
+                    <span
+                      class="text-xs uppercase border-b border-transparent group-hover:border-white transition-all"
+                      >Подробнее</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide max-w-sm">
+              <div
+                class="group relative h-[500px] rounded-xl overflow-hidden cursor-pointer"
+              >
+                <img
+                  src="Непал.jpg"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt="Непал"
+                />
+                <div
+                  class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"
+                ></div>
+
+                <div
+                  class="absolute top-6 left-6 bg-white/10 backdrop-blur px-3 py-1 rounded text-xs font-bold uppercase tracking-wider"
+                >
+                  14 дней
+                </div>
+
+                <div class="absolute bottom-0 left-0 w-full p-8">
+                  <h3 class="text-3xl font-display font-bold uppercase mb-2">
+                    Непал
+                  </h3>
+                  <p
+                    class="text-gray-300 text-sm mb-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                  >
+                    Базовый лагерь Эвереста. Путь легенд и буддийских храмов.
+                  </p>
+                  <div
+                    class="flex justify-between items-center border-t border-white/20 pt-4"
+                  >
+                    <span class="text-summit-orange font-bold text-lg"
+                      >$ 1 200</span
+                    >
+                    <span
+                      class="text-xs uppercase border-b border-transparent group-hover:border-white transition-all"
+                      >Подробнее</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="program" class="py-24 bg-summit-dark">
+      <div class="container mx-auto px-6 flex flex-col lg:flex-row gap-16">
+        <div class="lg:w-1/3">
+          <span
+            class="text-summit-orange font-bold uppercase tracking-widest text-xs mb-2 block"
+            >План путешествия</span
+          >
+          <h2 class="text-5xl font-display font-bold uppercase mb-6">
+            Как это <br />
+            будет
+          </h2>
+          <p class="text-gray-400 mb-8">
+            Типичная программа восхождения на примере тура на Эльбрус. Мы
+            заботимся о каждой детали, от трансфера до питания.
+          </p>
+          <div
+            class="w-full h-64 bg-gray-800 rounded-xl relative overflow-hidden group"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1450&auto=format&fit=crop"
+              class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 transition-all duration-500"
+              alt="Карта"
+            />
+
+            <div class="absolute inset-0 flex items-center justify-center">
+              <button
+                class="bg-summit-orange/90 hover:bg-summit-orange text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur transition-colors"
+              >
+                Открыть карту
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:w-2/3 space-y-4">
+          <div
+            x-data="{ open: true }"
+            class="border border-white/10 rounded-xl bg-summit-slate overflow-hidden"
+          >
+            <button
+              @click="open = !open"
+              class="w-full px-8 py-6 flex justify-between items-center text-left hover:bg-white/5 transition-colors"
+            >
+              <span class="font-display font-bold text-xl uppercase"
+                ><span class="text-summit-orange mr-4">01</span> Встреча
+                группы</span
+              >
+              <span class="text-2xl" x-text="open ? '−' : '+'"></span>
+            </button>
+            <div
+              x-show="open"
+              class="px-8 pb-8 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4"
+            >
+              Прилет в Минеральные Воды. Трансфер в отель. Проверка снаряжения
+              гидами. Вечерний брифинг и ужин-знакомство.
+            </div>
+          </div>
+
+          <div
+            x-data="{ open: false }"
+            class="border border-white/10 rounded-xl bg-summit-slate overflow-hidden"
+          >
+            <button
+              @click="open = !open"
+              class="w-full px-8 py-6 flex justify-between items-center text-left hover:bg-white/5 transition-colors"
+            >
+              <span class="font-display font-bold text-xl uppercase"
+                ><span class="text-summit-orange mr-4">02</span>
+                Акклиматизация</span
+              >
+              <span class="text-2xl" x-text="open ? '−' : '+'"></span>
+            </button>
+            <div
+              x-show="open"
+              class="px-8 pb-8 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4"
+            >
+              Подъем на высоту 3000м. Легкий треккинг к водопаду Девичьи Косы.
+              Отработка навыков хождения в кошках.
+            </div>
+          </div>
+
+          <div
+            x-data="{ open: false }"
+            class="border border-white/10 rounded-xl bg-summit-slate overflow-hidden"
+          >
+            <button
+              @click="open = !open"
+              class="w-full px-8 py-6 flex justify-between items-center text-left hover:bg-white/5 transition-colors"
+            >
+              <span class="font-display font-bold text-xl uppercase"
+                ><span class="text-summit-orange mr-4">03</span> Заброска в
+                приют</span
+              >
+              <span class="text-2xl" x-text="open ? '−' : '+'"></span>
+            </button>
+            <div
+              x-show="open"
+              class="px-8 pb-8 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4"
+            >
+              Переезд в высокогорный приют на 3800м. Ледовые занятия. Ночевка в
+              "бочках".
+            </div>
+          </div>
+          <div
+            x-data="{ open: false }"
+            class="border border-white/10 rounded-xl bg-summit-slate overflow-hidden"
+          >
+            <button
+              @click="open = !open"
+              class="w-full px-8 py-6 flex justify-between items-center text-left hover:bg-white/5 transition-colors"
+            >
+              <span class="font-display font-bold text-xl uppercase"
+                ><span class="text-summit-orange mr-4">04</span> Штурм
+                Вершины</span
+              >
+              <span class="text-2xl" x-text="open ? '−' : '+'"></span>
+            </button>
+            <div
+              x-show="open"
+              class="px-8 pb-8 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4"
+            >
+              Выход в 2:00 ночи. Встреча рассвета на седловине. 10:00 - Вершина
+              5642м. Спуск вниз.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-summit-slate border-t border-white/5">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-display font-bold uppercase mb-12">Команда</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="group">
+            <div class="h-80 mb-4 overflow-hidden relative rounded-lg">
+              <img
+                src="Федоренко.webp"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                alt="Гид"
+              />
+            </div>
+            <h3 class="text-xl font-display font-bold uppercase">
+              Федоренко Алексей
+            </h3>
+            <p
+              class="text-summit-orange text-xs uppercase tracking-widest mb-2"
+            >
+              Старший Гид
+            </p>
+            <p class="text-gray-500 text-sm">
+              КМС по альпинизму, «Снежный барс».
+            </p>
+          </div>
+          <div class="group">
+            <div class="h-80 mb-4 overflow-hidden relative rounded-lg">
+              <img
+                src="Мария.webp"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                alt="Врач"
+              />
+            </div>
+            <h3 class="text-xl font-display font-bold uppercase">
+              Кадникова Марина
+            </h3>
+            <p
+              class="text-summit-orange text-xs uppercase tracking-widest mb-2"
+            >
+              Врач экспедиции
+            </p>
+            <p class="text-gray-500 text-sm">
+              Специалист по высокогорной медицине.
+            </p>
+          </div>
+          <div class="group">
+            <div class="h-80 mb-4 overflow-hidden relative rounded-lg">
+              <img
+                src="Алексей.webp"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                alt="Фотограф"
+              />
+            </div>
+            <h3 class="text-xl font-display font-bold uppercase">
+              Александр Хиневич
+            </h3>
+            <p
+              class="text-summit-orange text-xs uppercase tracking-widest mb-2"
+            >
+              Фотограф
+            </p>
+            <p class="text-gray-500 text-sm">
+              Снимает лучшие кадры для вашего Instagram.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="py-24 relative overflow-hidden">
+      <div class="absolute inset-0 bg-summit-dark">
+        <div
+          class="absolute right-0 top-0 w-1/2 h-full bg-summit-orange/10 skew-x-12 blur-3xl"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <div
+          class="bg-white/5 border border-white/10 backdrop-blur-xl p-8 md:p-16 rounded-3xl max-w-4xl mx-auto"
+        >
+          <div class="text-center mb-10">
+            <h2
+              class="text-4xl md:text-5xl font-display font-bold uppercase mb-4"
+            >
+              Готов к приключению?
+            </h2>
+            <p class="text-gray-400">
+              Оставь заявку, и мы вышлем подробную презентацию туров и список
+              снаряжения.
+            </p>
+          </div>
+
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label
+                  class="text-xs uppercase font-bold text-gray-500 tracking-wider"
+                  >Ваше имя</label
+                >
+                <input
+                  type="text"
+                  class="w-full bg-summit-dark border border-white/10 rounded px-4 py-3 text-white focus:border-summit-orange focus:outline-none transition-colors"
+                  placeholder="Иван Иванов"
+                />
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-xs uppercase font-bold text-gray-500 tracking-wider"
+                  >Телефон</label
+                >
+                <input
+                  type="tel"
+                  class="w-full bg-summit-dark border border-white/10 rounded px-4 py-3 text-white focus:border-summit-orange focus:outline-none transition-colors"
+                  placeholder="+7 (999) ..."
+                />
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label
+                class="text-xs uppercase font-bold text-gray-500 tracking-wider"
+                >Куда хотите поехать?</label
+              >
+              <select
+                class="w-full bg-summit-dark border border-white/10 rounded px-4 py-3 text-white focus:border-summit-orange focus:outline-none transition-colors appearance-none"
+              >
+                <option>Эльбрус (Юг)</option>
+                <option>Непал (Треккинг)</option>
+                <option>Килиманджаро</option>
+                <option>Пока не решил</option>
+              </select>
+            </div>
+
+            <button
+              class="w-full bg-summit-orange text-white font-display font-bold uppercase text-lg py-4 rounded hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20"
+            >
+              Отправить заявку
+            </button>
+            <p class="text-center text-gray-600 text-xs">
+              Нажимая кнопку, вы соглашаетесь с политикой обработки данных.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="bg-black py-16 text-gray-500 text-sm border-t border-white/10"
+    >
+      <div
+        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12"
+      >
+        <div>
+          <a
+            href="#"
+            class="text-2xl font-display font-bold text-white uppercase italic block mb-4"
+            >SUMMIT.</a
+          >
+          <p>
+            Мы организуем экстремальные туры с 2015 года. Безопасность — наш
+            приоритет.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white uppercase font-bold mb-4">Навигация</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-summit-orange transition-colors"
+                >Главная</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-summit-orange transition-colors"
+                >Туры</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-summit-orange transition-colors"
+                >Блог</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-summit-orange transition-colors"
+                >Контакты</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white uppercase font-bold mb-4">Контакты</h4>
+          <ul class="space-y-2">
+            <li>+7 (800) 000-00-00</li>
+            <li>hello@summit.travel</li>
+            <li>Москва, ул. Вертикальная, 88</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white uppercase font-bold mb-4">Соцсети</h4>
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="w-10 h-10 bg-white/10 flex items-center justify-center rounded-full hover:bg-summit-orange hover:text-white transition-colors"
+              >IN</a
+            >
+            <a
+              href="#"
+              class="w-10 h-10 bg-white/10 flex items-center justify-center rounded-full hover:bg-summit-orange hover:text-white transition-colors"
+              >TG</a
+            >
+            <a
+              href="#"
+              class="w-10 h-10 bg-white/10 flex items-center justify-center rounded-full hover:bg-summit-orange hover:text-white transition-colors"
+              >VK</a
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="container mx-auto px-6 mt-12 pt-8 border-t border-white/10 text-center text-xs"
+      >
+        &copy; 2025 Summit Travel. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".tourSwiper", {
+        slidesPerView: 1.2, 
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".swiper-next",
+          prevEl: ".swiper-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2.2,
+          },
+          1024: {
+            slidesPerView: 3.5, 
+            spaceBetween: 30,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

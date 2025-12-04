@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELOCITY | Creative Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-black': '#050505',
+                        'brand-dark': '#111111',
+                        'brand-lime': '#CCFF00', 
+                        'brand-gray': '#333333',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 12s linear infinite',
+                        'marquee': 'marquee 30s linear infinite',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #050505; color: #ffffff; }
+        .outline-text {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+            color: transparent;
+        }
+        .outline-text:hover { color: #CCFF00; -webkit-text-stroke: 0px; }
+        
+        .corner-plus {
+            position: absolute; width: 10px; height: 10px;
+            border-right: 1px solid #333; border-bottom: 1px solid #333;
+        }
+        .corner-plus::before {
+            content: '+'; color: #333; position: absolute;
+            top: -6px; left: -4px; font-family: monospace;
+        }
+
+        .no-scroll { overflow: hidden; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-lime selection:text-black overflow-x-hidden" x-data="{ menuOpen: false, archiveOpen: false }">
+
+    <div x-show="menuOpen" 
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 -translate-y-full"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition ease-in duration-300"
+         x-transition:leave-start="opacity-100 translate-y-0"
+         x-transition:leave-end="opacity-0 -translate-y-full"
+         class="fixed inset-0 bg-brand-black z-[100] flex flex-col justify-center items-center"
+         style="display: none;"> 
+        
+        <button @click="menuOpen = false" class="absolute top-8 right-8 text-white hover:text-brand-lime transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <ul class="text-center space-y-6">
+            <li class="overflow-hidden">
+                <a href="#work" @click="menuOpen = false" class="block text-6xl md:text-8xl font-display font-bold uppercase hover:text-brand-lime hover:italic transition-all duration-300">Work</a>
+            </li>
+            <li class="overflow-hidden">
+                <a href="#services" @click="menuOpen = false" class="block text-6xl md:text-8xl font-display font-bold uppercase hover:text-brand-lime hover:italic transition-all duration-300">Services</a>
+            </li>
+            <li class="overflow-hidden">
+                <a href="#about" @click="menuOpen = false" class="block text-6xl md:text-8xl font-display font-bold uppercase hover:text-brand-lime hover:italic transition-all duration-300">Agency</a>
+            </li>
+            <li class="overflow-hidden">
+                <a href="#contact" @click="menuOpen = false" class="block text-6xl md:text-8xl font-display font-bold uppercase hover:text-brand-lime hover:italic transition-all duration-300">Contact</a>
+            </li>
+        </ul>
+
+        <div class="absolute bottom-10 left-0 w-full text-center">
+            <p class="text-gray-500 font-mono text-sm">hello@velocity.agency</p>
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-50 px-6 py-6 mix-blend-difference">
+        <div class="flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold tracking-tighter hover:text-brand-lime transition-colors relative z-50">
+                VELOCITY<span class="text-brand-lime">.</span>
+            </a>
+            
+            <button @click="menuOpen = true" class="hidden md:flex items-center gap-2 group cursor-pointer relative z-50">
+                <span class="text-xs font-bold uppercase tracking-widest group-hover:text-brand-lime transition-colors">Menu</span>
+                <div class="flex flex-col gap-1.5">
+                    <span class="w-8 h-[2px] bg-white group-hover:bg-brand-lime transition-colors"></span>
+                    <span class="w-8 h-[2px] bg-white group-hover:w-4 group-hover:bg-brand-lime transition-all ml-auto"></span>
+                </div>
+            </button>
+            
+            <button @click="menuOpen = true" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- === HERO === -->
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-lime opacity-20 blur-[150px] animate-pulse rounded-full pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 border border-white/20 rounded-full px-4 py-1.5 mb-8 backdrop-blur-md">
+                <span class="w-2 h-2 bg-brand-lime rounded-full animate-pulse"></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Available for projects</span>
+            </div>
+            
+            <h1 class="text-6xl md:text-9xl font-display font-extrabold leading-[0.9] tracking-tight mb-8">
+                WE CRAFT <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-600">DIGITAL</span> <br>
+                <span class="outline-text transition-all duration-500 cursor-default">CHAOS</span>
+            </h1>
+
+            <p class="text-gray-400 max-w-xl mx-auto text-lg md:text-xl leading-relaxed mb-12">
+                Агентство полного цикла для брендов, которые не боятся нарушать правила. Дизайн, который продает, и код, который работает.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="#work" class="bg-brand-lime text-black px-10 py-5 rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform">
+                    Наши кейсы
+                </a>
+                <a href="#contact" class="border border-white/20 px-10 py-5 rounded-full font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-colors">
+                    Обсудить проект
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- === SERVICES === -->
+    <section id="services" class="py-24 container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20">
+            <h2 class="text-5xl md:text-7xl font-display font-bold uppercase leading-none">
+                Our <br> Expertise
+            </h2>
+            <p class="text-gray-500 max-w-sm text-right mt-8 md:mt-0">
+                Мы создаем экосистемы, а не просто сайты. Полное погружение в бизнес-процессы клиента.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 border-t border-white/10">
+            <div class="border-b md:border-b-0 md:border-r border-white/10 p-10 hover:bg-white/5 transition-colors group relative h-full">
+                <span class="corner-plus top-0 left-0"></span>
+                <span class="text-brand-lime font-mono text-sm mb-6 block">01</span>
+                <h3 class="text-3xl font-display font-bold mb-4">Branding</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">
+                    Айдентика, логотипы, брендбуки. Мы находим визуальный язык, который говорит громче слов.
+                </p>
+                <ul class="text-xs text-gray-400 space-y-2 font-mono mt-auto">
+                    <li>+ Visual Strategy</li>
+                    <li>+ Logo Design</li>
+                    <li>+ Guidelines</li>
+                </ul>
+            </div>
+            <div class="border-b md:border-b-0 md:border-r border-white/10 p-10 hover:bg-white/5 transition-colors group relative h-full">
+                 <span class="corner-plus top-0 left-0"></span>
+                <span class="text-brand-lime font-mono text-sm mb-6 block">02</span>
+                <h3 class="text-3xl font-display font-bold mb-4">Web Dev</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">
+                    Сложные интерфейсы, e-commerce, корпоративные порталы. Стек: React, Vue, WebGL.
+                </p>
+                <ul class="text-xs text-gray-400 space-y-2 font-mono mt-auto">
+                    <li>+ Frontend</li>
+                    <li>+ Backend</li>
+                    <li>+ CMS Integration</li>
+                </ul>
+            </div>
+            <div class="p-10 hover:bg-white/5 transition-colors group relative h-full">
+                 <span class="corner-plus top-0 left-0"></span>
+                <span class="text-brand-lime font-mono text-sm mb-6 block">03</span>
+                <h3 class="text-3xl font-display font-bold mb-4">Marketing</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8">
+                    SEO, контекст, таргет. Мы приводим трафик, который конвертируется в продажи.
+                </p>
+                <ul class="text-xs text-gray-400 space-y-2 font-mono mt-auto">
+                    <li>+ SEO Audit</li>
+                    <li>+ PPC</li>
+                    <li>+ Social Media</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- === STATS / IMPACT === -->
+<section class="py-24 border-b border-white/10 bg-brand-dark">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left">
+            <div class="group">
+                <div class="text-6xl md:text-8xl font-display font-bold text-transparent text-stroke hover:text-brand-lime transition-colors duration-500 mb-2">
+                    50+
+                </div>
+                <div class="h-px w-12 bg-gray-600 mb-4 md:mx-0 mx-auto group-hover:w-full group-hover:bg-brand-lime transition-all duration-500"></div>
+                <p class="text-gray-400 font-mono text-sm uppercase tracking-widest">Projects Launched</p>
+            </div>
+            
+            <div class="group">
+                <div class="text-6xl md:text-8xl font-display font-bold text-transparent text-stroke hover:text-brand-lime transition-colors duration-500 mb-2">
+                    $10M
+                </div>
+                <div class="h-px w-12 bg-gray-600 mb-4 md:mx-0 mx-auto group-hover:w-full group-hover:bg-brand-lime transition-all duration-500"></div>
+                <p class="text-gray-400 font-mono text-sm uppercase tracking-widest">Client Revenue</p>
+            </div>
+
+            <div class="group">
+                <div class="text-6xl md:text-8xl font-display font-bold text-transparent text-stroke hover:text-brand-lime transition-colors duration-500 mb-2">
+                    12
+                </div>
+                <div class="h-px w-12 bg-gray-600 mb-4 md:mx-0 mx-auto group-hover:w-full group-hover:bg-brand-lime transition-all duration-500"></div>
+                <p class="text-gray-400 font-mono text-sm uppercase tracking-widest">Intl. Awards</p>
+            </div>
+
+            <div class="group">
+                <div class="text-6xl md:text-8xl font-display font-bold text-transparent text-stroke hover:text-brand-lime transition-colors duration-500 mb-2">
+                    24/7
+                </div>
+                <div class="h-px w-12 bg-gray-600 mb-4 md:mx-0 mx-auto group-hover:w-full group-hover:bg-brand-lime transition-all duration-500"></div>
+                <p class="text-gray-400 font-mono text-sm uppercase tracking-widest">Support</p>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+            color: transparent;
+        }
+        .text-stroke:hover {
+            -webkit-text-stroke: 0px;
+            color: #CCFF00; 
+        }
+    </style>
+</section>
+
+    <!-- === SELECTED WORK === -->
+    <section id="work" class="py-24 bg-brand-dark border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-brand-lime mb-12">/// Selected Works</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+                
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden aspect-[4/3] mb-6 bg-gray-800 border border-white/10">
+                        <img src="img1.png" alt="Neon Future Project" 
+                             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <div class="absolute inset-0 bg-brand-lime/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+                            <span class="text-black font-display font-bold text-2xl uppercase">View Case</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-3xl font-display font-bold">Neon Future</h3>
+                            <p class="text-gray-500 text-sm">Fintech App</p>
+                        </div>
+                        <span class="border border-white/20 rounded-full px-3 py-1 text-xs font-mono">2024</span>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer md:mt-32">
+                    <div class="relative overflow-hidden aspect-[4/5] mb-6 bg-gray-800 border border-white/10">
+                         <img src="img2.png" alt="Cyber Fashion Project" 
+                              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                         
+                         <div class="absolute inset-0 bg-brand-lime/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+                            <span class="text-black font-display font-bold text-2xl uppercase">View Case</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-3xl font-display font-bold">Cyber Fashion</h3>
+                            <p class="text-gray-500 text-sm">E-commerce</p>
+                        </div>
+                        <span class="border border-white/20 rounded-full px-3 py-1 text-xs font-mono">2023</span>
+                    </div>
+                </div>
+                
+                 <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden aspect-[4/3] mb-6 bg-gray-800 border border-white/10">
+                         <img src="img3.png" alt="Arch Studio Project" 
+                              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                         
+                         <div class="absolute inset-0 bg-brand-lime/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+                            <span class="text-black font-display font-bold text-2xl uppercase">View Case</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-3xl font-display font-bold">Arch Studio</h3>
+                            <p class="text-gray-500 text-sm">Corporate Website</p>
+                        </div>
+                        <span class="border border-white/20 rounded-full px-3 py-1 text-xs font-mono">2023</span>
+                    </div>
+                </div>
+
+                 <div class="group cursor-pointer md:mt-32">
+                    <div class="relative overflow-hidden aspect-[4/5] mb-6 bg-gray-800 border border-white/10">
+                         <img src="img4.png" alt="Mono Coffee Project" 
+                              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                         
+                         <div class="absolute inset-0 bg-brand-lime/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+                            <span class="text-black font-display font-bold text-2xl uppercase">View Case</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-3xl font-display font-bold">Mono Coffee</h3>
+                            <p class="text-gray-500 text-sm">Rebranding</p>
+                        </div>
+                        <span class="border border-white/20 rounded-full px-3 py-1 text-xs font-mono">2022</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- EXPANDED PROJECT LIST (ARCHIVE) -->
+            <div class="mt-24">
+                <div class="flex justify-center mb-12">
+                     <button @click="archiveOpen = !archiveOpen" 
+                             class="group flex items-center gap-2 text-brand-lime font-bold uppercase tracking-widest transition-colors">
+                        <span x-text="archiveOpen ? 'Hide Archive' : 'View Project Archive'"></span>
+                        <span class="transform transition-transform duration-300" :class="archiveOpen ? 'rotate-180' : 'rotate-0'">↓</span>
+                    </button>
+                </div>
+
+                <div x-show="archiveOpen" x-collapse class="border-t border-white/10">
+                    <div class="hidden md:grid grid-cols-12 gap-4 py-4 text-xs font-mono text-gray-500 uppercase tracking-wider border-b border-white/10">
+                        <div class="col-span-4">Project Name</div>
+                        <div class="col-span-4">Category</div>
+                        <div class="col-span-2">Year</div>
+                        <div class="col-span-2 text-right">Link</div>
+                    </div>
+
+                    <div class="group grid grid-cols-1 md:grid-cols-12 gap-4 py-6 border-b border-white/10 items-center hover:bg-white/5 transition-colors cursor-pointer">
+                        <div class="col-span-4 text-xl font-bold font-display group-hover:translate-x-2 transition-transform">Alpha Banking</div>
+                        <div class="col-span-4 text-gray-400">Fintech / Mobile App</div>
+                        <div class="col-span-2 text-gray-500 font-mono">2023</div>
+                        <div class="col-span-2 text-right text-brand-lime opacity-0 group-hover:opacity-100 transition-opacity">↗</div>
+                    </div>
+
+                     <div class="group grid grid-cols-1 md:grid-cols-12 gap-4 py-6 border-b border-white/10 items-center hover:bg-white/5 transition-colors cursor-pointer">
+                        <div class="col-span-4 text-xl font-bold font-display group-hover:translate-x-2 transition-transform">Kinetika</div>
+                        <div class="col-span-4 text-gray-400">Fitness / Web Platform</div>
+                        <div class="col-span-2 text-gray-500 font-mono">2022</div>
+                        <div class="col-span-2 text-right text-brand-lime opacity-0 group-hover:opacity-100 transition-opacity">↗</div>
+                    </div>
+
+                     <div class="group grid grid-cols-1 md:grid-cols-12 gap-4 py-6 border-b border-white/10 items-center hover:bg-white/5 transition-colors cursor-pointer">
+                        <div class="col-span-4 text-xl font-bold font-display group-hover:translate-x-2 transition-transform">Lumina Art</div>
+                        <div class="col-span-4 text-gray-400">Gallery / Branding</div>
+                        <div class="col-span-2 text-gray-500 font-mono">2022</div>
+                        <div class="col-span-2 text-right text-brand-lime opacity-0 group-hover:opacity-100 transition-opacity">↗</div>
+                    </div>
+
+                     <div class="group grid grid-cols-1 md:grid-cols-12 gap-4 py-6 border-b border-white/10 items-center hover:bg-white/5 transition-colors cursor-pointer">
+                        <div class="col-span-4 text-xl font-bold font-display group-hover:translate-x-2 transition-transform">Orbital Tech</div>
+                        <div class="col-span-4 text-gray-400">Space / 3D Website</div>
+                        <div class="col-span-2 text-gray-500 font-mono">2021</div>
+                        <div class="col-span-2 text-right text-brand-lime opacity-0 group-hover:opacity-100 transition-opacity">↗</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === REVIEWS / TICKETS === -->
+<section class="py-24 container mx-auto px-6">
+    <h2 class="text-4xl font-display font-bold uppercase mb-16 text-center">Client Feedback <span class="text-brand-lime">///</span></h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-brand-black border border-white/20 p-8 relative hover:border-brand-lime transition-colors group">
+            <div class="absolute top-0 left-0 w-2 h-2 border-l border-t border-brand-lime"></div>
+            <div class="absolute top-0 right-0 w-2 h-2 border-r border-t border-brand-lime"></div>
+            <div class="absolute bottom-0 left-0 w-2 h-2 border-l border-b border-brand-lime"></div>
+            <div class="absolute bottom-0 right-0 w-2 h-2 border-r border-b border-brand-lime"></div>
+            
+            <div class="flex justify-between items-start mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gray-700 rounded-full overflow-hidden">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" alt="Avatar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Alex Morgan</h4>
+                        <p class="text-xs text-gray-500 uppercase">CEO, FinTech Co.</p>
+                    </div>
+                </div>
+                <span class="text-brand-lime text-xl">★★★★★</span>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed">
+                "Velocity полностью перевернули наше представление о дизайне. Это не просто сайт, это инструмент продаж. Результат превзошел ожидания на 200%."
+            </p>
+            <div class="mt-6 pt-4 border-t border-dashed border-white/10 flex justify-between text-xs font-mono text-gray-500">
+                <span>PROJECT: APP</span>
+                <span>ID: #8492</span>
+            </div>
+        </div>
+
+        <div class="bg-brand-black border border-white/20 p-8 relative hover:border-brand-lime transition-colors group">
+            <div class="absolute top-0 left-0 w-2 h-2 border-l border-t border-brand-lime"></div>
+            <div class="absolute top-0 right-0 w-2 h-2 border-r border-t border-brand-lime"></div>
+            <div class="absolute bottom-0 left-0 w-2 h-2 border-l border-b border-brand-lime"></div>
+            <div class="absolute bottom-0 right-0 w-2 h-2 border-r border-b border-brand-lime"></div>
+            
+            <div class="flex justify-between items-start mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gray-700 rounded-full overflow-hidden">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="Avatar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Sarah Connor</h4>
+                        <p class="text-xs text-gray-500 uppercase">CMO, CyberDyne</p>
+                    </div>
+                </div>
+                <span class="text-brand-lime text-xl">★★★★★</span>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed">
+                "Скорость работы поражает. За 2 недели мы получили готовый MVP, который выглядит лучше, чем продукты конкурентов, которые делались годами."
+            </p>
+            <div class="mt-6 pt-4 border-t border-dashed border-white/10 flex justify-between text-xs font-mono text-gray-500">
+                <span>PROJECT: WEB</span>
+                <span>ID: #2210</span>
+            </div>
+        </div>
+
+        <div class="bg-brand-black border border-white/20 p-8 relative hover:border-brand-lime transition-colors group">
+            <div class="absolute top-0 left-0 w-2 h-2 border-l border-t border-brand-lime"></div>
+            <div class="absolute top-0 right-0 w-2 h-2 border-r border-t border-brand-lime"></div>
+            <div class="absolute bottom-0 left-0 w-2 h-2 border-l border-b border-brand-lime"></div>
+            <div class="absolute bottom-0 right-0 w-2 h-2 border-r border-b border-brand-lime"></div>
+            
+            <div class="flex justify-between items-start mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gray-700 rounded-full overflow-hidden">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Mike" alt="Avatar" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Mike Ross</h4>
+                        <p class="text-xs text-gray-500 uppercase">Founder, Specter</p>
+                    </div>
+                </div>
+                <span class="text-brand-lime text-xl">★★★★★</span>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed">
+                "Брутальный стиль — это то, что мы искали. Ребята не боятся смелых решений. Трафик вырос на 40% сразу после релиза нового дизайна."
+            </p>
+            <div class="mt-6 pt-4 border-t border-dashed border-white/10 flex justify-between text-xs font-mono text-gray-500">
+                <span>PROJECT: BRAND</span>
+                <span>ID: #9931</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- === PROCESS === -->
+    <section class="py-24 container mx-auto px-6">
+        <h2 class="text-4xl font-display font-bold uppercase mb-16 text-center">How we work</h2>
+        <div class="relative">
+            <div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-white/10 -z-10"></div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-brand-black border border-white/10 p-8 pt-12 relative group hover:-translate-y-4 transition-transform duration-300">
+                    <div class="absolute -top-6 left-8 w-12 h-12 bg-brand-lime text-black flex items-center justify-center font-bold font-mono text-xl border-4 border-brand-black">01</div>
+                    <h3 class="text-xl font-bold mb-4">Discovery</h3>
+                    <p class="text-gray-500 text-sm">Анализ конкурентов, интервью, формирование ТЗ.</p>
+                </div>
+                <div class="bg-brand-black border border-white/10 p-8 pt-12 relative group hover:-translate-y-4 transition-transform duration-300 md:mt-12">
+                     <div class="absolute -top-6 left-8 w-12 h-12 bg-white text-black flex items-center justify-center font-bold font-mono text-xl border-4 border-brand-black">02</div>
+                    <h3 class="text-xl font-bold mb-4">Design</h3>
+                    <p class="text-gray-500 text-sm">Прототипирование, UI/UX, анимации.</p>
+                </div>
+                <div class="bg-brand-black border border-white/10 p-8 pt-12 relative group hover:-translate-y-4 transition-transform duration-300">
+                     <div class="absolute -top-6 left-8 w-12 h-12 bg-white text-black flex items-center justify-center font-bold font-mono text-xl border-4 border-brand-black">03</div>
+                    <h3 class="text-xl font-bold mb-4">Develop</h3>
+                    <p class="text-gray-500 text-sm">Чистый код, оптимизация скорости, интеграции.</p>
+                </div>
+                <div class="bg-brand-black border border-white/10 p-8 pt-12 relative group hover:-translate-y-4 transition-transform duration-300 md:mt-12">
+                     <div class="absolute -top-6 left-8 w-12 h-12 bg-brand-lime text-black flex items-center justify-center font-bold font-mono text-xl border-4 border-brand-black">04</div>
+                    <h3 class="text-xl font-bold mb-4">Launch</h3>
+                    <p class="text-gray-500 text-sm">Тестирование, релиз, обучение команды.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === FAQ === -->
+    <section class="py-24 bg-brand-dark border-t border-white/10" id="faq">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-4">
+                <h2 class="text-4xl font-display font-bold uppercase mb-4 text-brand-lime">FAQ</h2>
+                <p class="text-gray-400">Ответы на частые вопросы перед стартом работ.</p>
+            </div>
+            
+            <div class="md:col-span-8 space-y-4" x-data="{ active: null }">
+                <div class="border border-white/10 bg-brand-black p-6 cursor-pointer hover:border-brand-lime/50 transition-colors" @click="active === 1 ? active = null : active = 1">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-bold">Сколько времени занимает разработка сайта?</h3>
+                        <span class="text-2xl font-mono" x-text="active === 1 ? '-' : '+'"></span>
+                    </div>
+                    <div x-show="active === 1" x-collapse class="mt-4 text-gray-400 text-sm leading-relaxed">
+                        В среднем лендинг занимает от 2 до 4 недель. Корпоративный сайт — от 1.5 месяцев. Интернет-магазин или сложный сервис — от 3 месяцев. Сроки зависят от скорости согласования и наличия контента.
+                    </div>
+                </div>
+                <div class="border border-white/10 bg-brand-black p-6 cursor-pointer hover:border-brand-lime/50 transition-colors" @click="active === 2 ? active = null : active = 2">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-bold">Вы работаете по договору?</h3>
+                        <span class="text-2xl font-mono" x-text="active === 2 ? '-' : '+'"></span>
+                    </div>
+                    <div x-show="active === 2" x-collapse class="mt-4 text-gray-400 text-sm leading-relaxed">
+                        Да, мы работаем официально (ИП/ООО). Процесс делится на этапы с предоплатой. Права на дизайн и код передаются вам после полной оплаты.
+                    </div>
+                </div>
+                <div class="border border-white/10 bg-brand-black p-6 cursor-pointer hover:border-brand-lime/50 transition-colors" @click="active === 3 ? active = null : active = 3">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-bold">Что входит в поддержку после запуска?</h3>
+                        <span class="text-2xl font-mono" x-text="active === 3 ? '-' : '+'"></span>
+                    </div>
+                    <div x-show="active === 3" x-collapse class="mt-4 text-gray-400 text-sm leading-relaxed">
+                        Мы предоставляем 2 недели бесплатной гарантийной поддержки (исправление багов). Далее вы можете заключить договор на техническое сопровождение (Retainer) или обращаться по часам.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === TEAM / CULTURE === -->
+<section class="border-t border-white/10 bg-[#080808] py-24 overflow-hidden">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row gap-12 items-center">
+        
+        <div class="md:w-1/2">
+            <span class="text-brand-lime font-mono text-sm mb-4 block">/// THE SQUAD</span>
+            <h2 class="text-5xl font-display font-bold uppercase mb-6 leading-tight">
+                Built by <br> Renegades
+            </h2>
+            <p class="text-gray-400 mb-8 max-w-md">
+                Мы — команда дизайнеров, разработчиков и стратегов, объединенных одной целью: уничтожить скучный веб. Мы не нанимаем сотрудников, мы ищем единомышленников.
+            </p>
+            <a href="#" class="inline-flex items-center gap-2 border-b border-brand-lime pb-1 text-brand-lime hover:text-white transition-colors uppercase font-bold text-sm tracking-widest">
+                Join the team ↗
+            </a>
+        </div>
+
+        <div class="md:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="aspect-square bg-gray-800 relative group overflow-hidden border border-white/5">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-luminosity group-hover:mix-blend-normal">
+                <div class="absolute inset-0 bg-brand-lime/80 translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex flex-col justify-center items-center text-center p-2">
+                    <span class="text-black font-bold font-display text-lg">Anna K.</span>
+                    <span class="text-black/70 text-xs font-mono">Art Director</span>
+                </div>
+            </div>
+            <div class="aspect-square bg-gray-800 relative group overflow-hidden border border-white/5 md:mt-8">
+                 <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-luminosity group-hover:mix-blend-normal">
+                <div class="absolute inset-0 bg-brand-lime/80 translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex flex-col justify-center items-center text-center p-2">
+                    <span class="text-black font-bold font-display text-lg">Max D.</span>
+                    <span class="text-black/70 text-xs font-mono">Lead Dev</span>
+                </div>
+            </div>
+             <div class="aspect-square bg-gray-800 relative group overflow-hidden border border-white/5">
+                 <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-luminosity group-hover:mix-blend-normal">
+                <div class="absolute inset-0 bg-brand-lime/80 translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex flex-col justify-center items-center text-center p-2">
+                    <span class="text-black font-bold font-display text-lg">Elena S.</span>
+                    <span class="text-black/70 text-xs font-mono">UX Lead</span>
+                </div>
+            </div>
+             <div class="aspect-square bg-gray-800 relative group overflow-hidden border border-white/5 md:mt-8">
+                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-luminosity group-hover:mix-blend-normal">
+                <div class="absolute inset-0 bg-brand-lime/80 translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex flex-col justify-center items-center text-center p-2">
+                    <span class="text-black font-bold font-display text-lg">John B.</span>
+                    <span class="text-black/70 text-xs font-mono">Strategy</span>
+                </div>
+            </div>
+             
+        </div>
+    </div>
+</section>
+
+    <!-- === PRICING === -->
+    <section class="py-24 border-y border-white/10" x-data="{ annual: false }">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <h2 class="text-4xl font-display font-bold uppercase">Investment</h2>
+                <div class="flex items-center gap-4 mt-6 md:mt-0">
+                    <span class="text-sm font-bold" :class="!annual ? 'text-brand-lime' : 'text-gray-500'">One-time</span>
+                    <button @click="annual = !annual" class="w-14 h-8 bg-gray-800 rounded-full relative transition-colors border border-white/20">
+                        <span class="absolute top-1 left-1 bg-white w-6 h-6 rounded-full transition-transform duration-300" :class="annual ? 'translate-x-6' : 'translate-x-0'"></span>
+                    </button>
+                    <span class="text-sm font-bold" :class="annual ? 'text-brand-lime' : 'text-gray-500'">Retainer</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="border border-white/10 p-8 hover:border-brand-lime transition-colors duration-300 flex flex-col">
+                    <h3 class="text-2xl font-display font-bold mb-2">Startup</h3>
+                    <p class="text-gray-500 text-sm mb-6">Идеально для MVP и лендингов.</p>
+                    <div class="text-4xl font-bold font-mono mb-8">
+                        <span x-text="annual ? '$2,000' : '$3,500'"></span>
+                        <span class="text-sm text-gray-500 font-sans font-normal" x-text="annual ? '/mo' : ''"></span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-gray-300 flex-grow">
+                        <li class="flex items-center gap-2"><span class="text-brand-lime">✓</span> Landing Page</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-lime">✓</span> Basic Identity</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-lime">✓</span> 2 Weeks Support</li>
+                    </ul>
+                    <button class="w-full py-4 border border-white/20 font-bold uppercase hover:bg-white hover:text-black transition-colors">Select</button>
+                </div>
+                <div class="border border-brand-lime bg-white/5 p-8 relative flex flex-col scale-105 shadow-[0_0_30px_rgba(204,255,0,0.1)]">
+                    <div class="absolute top-0 right-0 bg-brand-lime text-black text-xs font-bold px-3 py-1 uppercase">Best Value</div>
+                    <h3 class="text-2xl font-display font-bold mb-2">Business</h3>
+                    <p class="text-gray-400 text-sm mb-6">Полноценный корпоративный сайт.</p>
+                    <div class="text-4xl font-bold font-mono mb-8 text-brand-lime">
+                        <span x-text="annual ? '$5,000' : '$8,000'"></span>
+                        <span class="text-sm text-gray-500 font-sans font-normal" x-text="annual ? '/mo' : ''"></span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-gray-300 flex-grow">
+                        <li class="flex items-center gap-2"><span class="text-brand-lime">✓</span> Multi-page Website</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-lime">✓</span> Full Branding</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-lime">✓</span> CMS Integration</li>
+                    </ul>
+                    <button class="w-full py-4 bg-brand-lime text-black font-bold uppercase hover:opacity-90 transition-opacity">Select</button>
+                </div>
+                <div class="border border-white/10 p-8 hover:border-brand-lime transition-colors duration-300 flex flex-col">
+                    <h3 class="text-2xl font-display font-bold mb-2">Enterprise</h3>
+                    <p class="text-gray-500 text-sm mb-6">Сложные сервисы и экосистемы.</p>
+                    <div class="text-4xl font-bold font-mono mb-8">
+                        <span x-text="annual ? 'Custom' : 'Custom'"></span>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-sm text-gray-300 flex-grow">
+                        <li class="flex items-center gap-2"><span class="text-brand-lime">✓</span> Custom Development</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-lime">✓</span> Mobile App</li>
+                        <li class="flex items-center gap-2"><span class="text-brand-lime">✓</span> Dedicated Team</li>
+                    </ul>
+                    <button class="w-full py-4 border border-white/20 font-bold uppercase hover:bg-white hover:text-black transition-colors">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === FOOTER === -->
+    <footer id="contact" class="min-h-screen flex flex-col justify-between pt-24 pb-12 px-6">
+        <div>
+            <span class="text-brand-lime font-mono text-sm mb-4 block animate-pulse">● ONLINE</span>
+            <a href="mailto:hello@velocity.agency" class="text-[12vw] leading-none font-display font-bold uppercase hover:text-brand-lime transition-colors break-words">
+                Let's<br>Talk
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/20 pt-12">
+            <div>
+                <h4 class="text-gray-500 text-xs uppercase tracking-widest mb-4">Location</h4>
+                <p class="text-xl font-display">Berlin,<br>Alexanderplatz 12</p>
+            </div>
+            <div>
+                <h4 class="text-gray-500 text-xs uppercase tracking-widest mb-4">Socials</h4>
+                <div class="flex flex-col gap-2">
+                    <a href="#" class="hover:text-brand-lime transition-colors">Instagram ↗</a>
+                    <a href="#" class="hover:text-brand-lime transition-colors">Behance ↗</a>
+                    <a href="#" class="hover:text-brand-lime transition-colors">LinkedIn ↗</a>
+                </div>
+            </div>
+            <div class="md:text-right">
+                <p class="text-gray-600 text-sm">&copy; 2025 VELOCITY Agency.</p>
+                <p class="text-gray-600 text-sm">All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

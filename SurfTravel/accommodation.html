@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodation Details - Surf & Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">Surf & Travel</a>
+            <ul class="nav-links">
+                <li><a href="vacation-type.html">Vacation Types</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="#">Accommodations</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button class="btn-primary" id="openModalBtn">Book Now</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/hero-img4.png" alt="Resort Aerial View" class="hero-bg-img">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Accommodations</h1>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-item">
+                <input type="text" placeholder="Location (Active Field)">
+            </div>
+            <div class="search-item">
+                <input type="text" placeholder="Dates">
+            </div>
+            <div class="search-item">
+                <input type="text" placeholder="Guests (Default)">
+            </div>
+            <a href="search.html" class="search-btn">Search</a>
+        </div>
+    </section>
+
+    <!-- DETAILS SECTION -->
+    <section class="content-section">
+        <div class="container">
+            
+            <div class="accommodation-layout">
+                
+                <!-- LEFT COLUMN: Text Info -->
+                <div class="accommodation-info">
+                    <span class="location-tag">Madagascar, Tulear</span>
+                    <h2 class="acco-title">Madagascar Surf Resort</h2>
+                    
+                    <div class="acco-description">
+                        <p>
+                            Surf Resort on a private beach, with waves for all levels just a 5-minute boat ride away. 
+                            Every bungalow has a sea view and the beach is just a few steps away. 
+                            A private terrace for relaxation with an en-suite bathroom.
+                        </p>
+                        <p>
+                            A common restaurant with a fantastic 360° view offers incredible panoramas 
+                            of the beach and forest, as well as countless lineups of the spots in front...
+                        </p>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Services Card -->
+                <div class="services-sidebar">
+                    <div class="services-card">
+                        <div class="services-header">
+                            <h3>All Services:</h3>
+                        </div>
+                        <div class="services-body">
+                            <ul class="services-list">
+                                <li>Available all year</li>
+                                <li>Air conditioning</li>
+                                <li>Breakfast included</li>
+                                <li>Info on local surf spots</li>
+                                <li>Free Wifi</li>
+                                <li>Unlimited surfaris based on level</li>
+                            </ul>
+                            
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button class="btn-primary" onclick="document.getElementById('openModalBtn').click()">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-wrapper">
+                <img src="images/accomodation-img.png" alt="Video Preview">
+                
+                <div class="play-button">
+                    <div class="play-icon"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCOMMODATION TYPES LIST -->
+    <section class="content-section">
+        <div class="container">
+            
+            <!-- Header -->
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div class="icon-title-wrapper">
+                    <img src="images/house-icon.svg" alt="Icon" style="width: 28px; height: 28px;">
+                    <h2 class="section-title" style="margin: 0;">Accommodations</h2>
+                </div>
+                <p class="section-subtitle">
+                    Choose the type of surf vacation that suits you. <br>
+                    You can leave at any time.
+                </p>
+            </div>
+
+            <!-- List Wrapper -->
+            <div class="rooms-list">
+
+                <!-- Item 1: Common Spaces -->
+                <div class="room-item">
+                    <div class="room-info">
+                        <h3>Common Spaces</h3>
+                        <p>
+                            Restaurant and chill out area for perfect post-session relaxation. 
+                            Recommended for adults and children.
+                        </p>
+                        
+                        <!-- Icons Row -->
+                        <div class="room-icons">
+                            <img src="images/accomodation-icon1.svg" alt="TV">
+                            <img src="images/accomodation-icon2.svg" alt="Wardrobe">
+                            <img src="images/accomodation-icon3.svg" alt="Door">
+                            <img src="images/accomodation-icon4.svg" alt="Shower">
+                            <img src="images/accomodation-icon5.svg" alt="Lamp">
+                            <img src="images/accomodation-icon6.svg" alt="Bed">
+                            <img src="images/accomodation-icon7.svg" alt="Wifi">
+                        </div>
+                    </div>
+                    <div class="room-image">
+                        <img src="images/accomodation-img1.png" alt="Common Space">
+                    </div>
+                </div>
+
+                <!-- Item 2: Double Room -->
+                <div class="room-item">
+                    <div class="room-info">
+                        <h3>Double Room</h3>
+                        <p>
+                            Restaurant and chill out area for perfect post-session relaxation. 
+                            Recommended for adults and children.
+                        </p>
+                        
+                        <div class="room-icons">
+                            <img src="images/accomodation-icon1.svg" alt="TV">
+                            <img src="images/accomodation-icon2.svg" alt="Wardrobe">
+                            <img src="images/accomodation-icon3.svg" alt="Door">
+                            <img src="images/accomodation-icon4.svg" alt="Shower">
+                            <img src="images/accomodation-icon5.svg" alt="Lamp">
+                            <img src="images/accomodation-icon6.svg" alt="Bed">
+                            <img src="images/accomodation-icon7.svg" alt="Wifi">
+                        </div>
+                    </div>
+                    <div class="room-image">
+                        <img src="images/accomodation-img2.png" alt="Double Room">
+                    </div>
+                </div>
+
+                <!-- Item 3: Bungalow -->
+                <div class="room-item">
+                    <div class="room-info">
+                        <h3>Bungalow</h3>
+                        <p>
+                            Restaurant and chill out area for perfect post-session relaxation. 
+                            Recommended for adults and children.
+                        </p>
+                        
+                        <div class="room-icons">
+                            <img src="images/accomodation-icon1.svg" alt="TV">
+                            <img src="images/accomodation-icon2.svg" alt="Wardrobe">
+                            <img src="images/accomodation-icon3.svg" alt="Door">
+                            <img src="images/accomodation-icon4.svg" alt="Shower">
+                            <img src="images/accomodation-icon5.svg" alt="Lamp">
+                            <img src="images/accomodation-icon6.svg" alt="Bed">
+                            <img src="images/accomodation-icon7.svg" alt="Wifi">
+                        </div>
+                    </div>
+                    <div class="room-image">
+                        <img src="images/accomodation-img3.png" alt="Bungalow">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            
+            <!-- Main Header -->
+            <div style="text-align: center; margin-bottom: 50px;">
+                <div class="icon-title-wrapper">
+                    <img src="images/star-icon.svg" alt="Star" style="width: 28px; height: 28px;">
+                    <h2 class="section-title" style="margin: 0;">Surf & Extra Surf <span>Activities</span></h2>
+                </div>
+                <p class="section-subtitle">
+                    Choose the type of surf vacation that suits you. <br>
+                    You can leave at any time.
+                </p>
+            </div>
+
+            <!-- 1. SURF ACTIVITIES SLIDER (Large Cards) -->
+            <div class="slider-group">
+                <h3 class="slider-label">Surf activities in this location:</h3>
+                
+                <!-- Swiper Container -->
+                <div class="swiper surf-swiper">
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide activity-slide-large">
+                            <img src="images/swiper-img1.png" alt="Surf">
+                            <div class="slide-overlay">
+                                <h4>Surf in Grand Canaria</h4>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide activity-slide-large">
+                            <img src="images/swiper-img2.png" alt="School">
+                            <div class="slide-overlay">
+                                <h4>Surf School Las Palmas</h4>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide activity-slide-large">
+                            <img src="images/swiper-img1.png" alt="Advanced">
+                            <div class="slide-overlay">
+                                <h4>Advanced Surf Course</h4>
+                            </div>
+                        </div>
+
+                    </div>
+ 
+                </div>
+            </div>
+
+            <!-- 2. EXTRA ACTIVITIES SLIDER (Small Cards) -->
+            <div class="slider-group" style="margin-top: 50px;">
+                <h3 class="slider-label">Extra Surf activities in this location:</h3>
+                
+                <!-- Swiper Container -->
+                <div class="swiper extra-swiper">
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide activity-slide-small">
+                            <img src="images/swiper-img3.png" alt="Yoga">
+                            <div class="slide-overlay">
+                                <h4>Yoga</h4>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide activity-slide-small">
+                            <img src="images/swiper-img4.png" alt="Trekking">
+                            <div class="slide-overlay">
+                                <h4>Trekking</h4>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide activity-slide-small">
+                            <img src="images/swiper-img5.png" alt="SUP">
+                            <div class="slide-overlay">
+                                <h4>SUP in Las Palmas</h4>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide activity-slide-small">
+                            <img src="images/swiper-img6.png" alt="Dunes">
+                            <div class="slide-overlay">
+                                <h4>Dunes Excursion</h4>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide activity-slide-small">
+                            <img src="images/swiper-img3.png" alt="Dunes">
+                            <div class="slide-overlay">
+                                <h4>Dunes Excursion</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div style="text-align: center; margin-top: 80px; margin-bottom: 40px;">
+                <h2 class="section-title">You might also like:</h2>
+                <p class="section-subtitle">
+                    Choose the type of surf vacation that suits you. You can leave at any time.
+                </p>
+            </div>
+
+            <!-- 2. SUGGESTIONS SWIPER -->
+            <div class="slider-group">
+                <div class="swiper suggestions-swiper">
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Slide 1 (Reusing package-card styles) -->
+                        <div class="swiper-slide">
+                            <div class="package-card">
+                                <div class="package-img-wrapper">
+                                    <span class="package-tag">Surf Camp</span>
+                                    <img src="images/vacation-slider4.png" alt="Package">
+                                </div>
+                                <div class="package-content">
+                                    <span class="package-location">Africa, Morocco</span>
+                                    <h3 class="package-title">Jeffrey's Bay Surf Camp in Hotel</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="package-card">
+                                <div class="package-img-wrapper">
+                                    <span class="package-tag">Surf Camp</span>
+                                    <img src="images/vacation-slider5.png" alt="Package">
+                                </div>
+                                <div class="package-content">
+                                    <span class="package-location">Africa, Morocco</span>
+                                    <h3 class="package-title">Jeffrey's Bay Surf Camp in Hotel</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="package-card">
+                                <div class="package-img-wrapper">
+                                    <span class="package-tag">Surf Camp</span>
+                                    <img src="images/vacation-slider6.png" alt="Package">
+                                </div>
+                                <div class="package-content">
+                                    <span class="package-location">Africa, Morocco</span>
+                                    <h3 class="package-title">Jeffrey's Bay Surf Camp in Hotel</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="package-card">
+                                <div class="package-img-wrapper">
+                                    <span class="package-tag">Surf Camp</span>
+                                    <img src="images/vacation-slider4.png" alt="Package">
+                                </div>
+                                <div class="package-content">
+                                    <span class="package-location">Africa, Morocco</span>
+                                    <h3 class="package-title">Jeffrey's Bay Surf Camp in Hotel</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="package-card">
+                                <div class="package-img-wrapper">
+                                    <span class="package-tag">Surf Camp</span>
+                                    <img src="images/vacation-slider5.png" alt="Package">
+                                </div>
+                                <div class="package-content">
+                                    <span class="package-location">Africa, Morocco</span>
+                                    <h3 class="package-title">Jeffrey's Bay Surf Camp in Hotel</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <img src="images/footer.png" alt="Sea Background" class="newsletter-bg-img">
+        <div class="newsletter-overlay"></div>
+
+        <div class="container newsletter-content">
+            <h2 class="section-title white-text">Subscribe to the <span>Newsletter</span></h2>
+            
+            <form class="newsletter-form">
+                <input type="text" placeholder="Name and Surname">
+                <input type="email" placeholder="Email address">
+                <button type="submit" class="btn-primary">I want to subscribe!</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <!-- Col 1: Brand -->
+                <div class="footer-col">
+                    <a href="#" class="logo footer-logo">Surf & Travel</a>
+                    <span class="footer-sublogo">Surf & Travel Agency</span>
+                    <p class="footer-desc">
+                        All selected destinations for your next Surf vacation and more.
+                    </p>
+                </div>
+
+                <!-- Col 2: Menu -->
+                <div class="footer-col center-col">
+                    <h3 class="footer-title">Menu</h3>
+                    <ul class="footer-links">
+                        <li><img src="images/footer-img1.png" alt="icon"> <a href="#">Surf Vacations</a></li>
+                        <li><img src="images/footer-img2.png" alt="icon"> <a href="#">Destinations</a></li>
+                        <li><img src="images/footer-img3.png" alt="icon"> <a href="#">Accommodations</a></li>
+                        <li><img src="images/footer-img4.png" alt="icon"> <a href="#">About</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contacts -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <div class="footer-icons-row">
+                        <a href="#"><img src="images/footer-img5.png" alt="Email"></a>
+                        <a href="#"><img src="images/footer-img6.png" alt="Phone"></a>
+                        <a href="#"><img src="images/footer-img7.png" alt="WhatsApp"></a>
+                    </div>
+
+                    <h3 class="footer-title" style="margin-top: 20px;">Follow us on social</h3>
+                    <div class="footer-icons-row">
+                        <a href="#"><img src="images/footer-img8.png" alt="Facebook"></a>
+                        <a href="#"><img src="images/footer-img9.png" alt="Instagram"></a>
+                        <a href="#"><img src="images/footer-img10.png" alt="YouTube"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Window -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModalBtn">&times;</span>
+            <h2>Book Your Trip</h2>
+            <p>Fill out the form below to start your adventure.</p>
+            <br>
+            <form class="booking-form">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <button type="button" class="btn-primary" id="submitFormBtn">Send Request</button>
+            </form>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>

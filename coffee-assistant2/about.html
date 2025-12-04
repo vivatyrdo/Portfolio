@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сервисный центр по ремонту кофемашин</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header-up">
+            <div class="dropdown">
+                <button id="dropdownButton" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Ваш Город
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="changeCity(this)">Ростов-на-Дону</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="changeCity(this)">Москва</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="changeCity(this)">Санкт-Петербург</a></li>
+                </ul>
+            </div>
+            <div class="header-up-links">
+                <a href="index.html" class="header-button">Главная</a>
+                <a href="about.html" class="header-button" style="background-color: #972d07;">О компании</a>
+                <a href="repair.html" class="header-button">Ремонтируем</a>
+                <a href="guarantees.html" class="header-button">Гарантии</a>
+                <a href="contacts.html" class="header-button">Контакты</a>
+                <a href="price.html" class="header-button">Цены</a>
+            </div>
+            <div class="header-up-media">
+                <a href="https://vk.com/rnd_smile_service" class="media-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 50 50" fill="white">
+                        <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M37.72,33l-3.73-0.01 c0,0-0.08,0.01-0.21,0.01c-0.3,0-0.92-0.08-1.65-0.58c-1.31-0.91-2.56-3.17-3.55-3.17c-0.07,0-0.13,0.01-0.19,0.03 c-0.86,0.27-1.12,1.13-1.12,2.18c0,0.37-0.26,0.54-0.96,0.54h-1.93c-2.16,0-4.25-0.05-6.6-2.62c-3.46-3.79-6.7-10.53-6.7-10.53 s-0.18-0.39,0.01-0.62c0.18-0.21,0.6-0.23,0.76-0.23c0.04,0,0.06,0,0.06,0h4c0,0,0.37,0.07,0.64,0.27c0.23,0.17,0.35,0.48,0.35,0.48 s0.68,1.32,1.53,2.81c1.43,2.46,2.2,3.28,2.75,3.28c0.09,0,0.18-0.02,0.27-0.07c0.82-0.45,0.58-4.09,0.58-4.09s0.01-1.32-0.42-1.9 c-0.33-0.46-0.96-0.59-1.24-0.63c-0.22-0.03,0.14-0.55,0.62-0.79c0.62-0.3,1.65-0.36,2.89-0.36h0.6c1.17,0.02,1.2,0.14,1.66,0.25 c1.38,0.33,0.91,1.62,0.91,4.71c0,0.99-0.18,2.38,0.53,2.85c0.05,0.03,0.12,0.05,0.21,0.05c0.46,0,1.45-0.59,3.03-3.26 c0.88-1.52,1.56-3.03,1.56-3.03s0.15-0.27,0.38-0.41c0.22-0.13,0.22-0.13,0.51-0.13h0.03c0.32,0,3.5-0.03,4.2-0.03h0.08 c0.67,0,1.28,0.01,1.39,0.42c0.16,0.62-0.49,1.73-2.2,4.03c-2.82,3.77-3.14,3.49-0.8,5.67c2.24,2.08,2.7,3.09,2.78,3.22 C39.68,32.88,37.72,33,37.72,33z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/smile_service_group/" class="media-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 50 50" fill="white">
+                        <path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"></path>
+                    </svg>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=79996918532" class="media-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 50 50" fill="white">
+                        <path d="M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 29.079097 3.1186875 32.88588 4.984375 36.208984 L 2.0371094 46.730469 A 1.0001 1.0001 0 0 0 3.2402344 47.970703 L 14.210938 45.251953 C 17.434629 46.972929 21.092591 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 21.278025 46 17.792121 45.029635 14.761719 43.333984 A 1.0001 1.0001 0 0 0 14.033203 43.236328 L 4.4257812 45.617188 L 7.0019531 36.425781 A 1.0001 1.0001 0 0 0 6.9023438 35.646484 C 5.0606869 32.523592 4 28.890107 4 25 C 4 13.390466 13.390466 4 25 4 z M 16.642578 13 C 16.001539 13 15.086045 13.23849 14.333984 14.048828 C 13.882268 14.535548 12 16.369511 12 19.59375 C 12 22.955271 14.331391 25.855848 14.613281 26.228516 L 14.615234 26.228516 L 14.615234 26.230469 C 14.588494 26.195329 14.973031 26.752191 15.486328 27.419922 C 15.999626 28.087653 16.717405 28.96464 17.619141 29.914062 C 19.422612 31.812909 21.958282 34.007419 25.105469 35.349609 C 26.554789 35.966779 27.698179 36.339417 28.564453 36.611328 C 30.169845 37.115426 31.632073 37.038799 32.730469 36.876953 C 33.55263 36.755876 34.456878 36.361114 35.351562 35.794922 C 36.246248 35.22873 37.12309 34.524722 37.509766 33.455078 C 37.786772 32.688244 37.927591 31.979598 37.978516 31.396484 C 38.003976 31.104927 38.007211 30.847602 37.988281 30.609375 C 37.969311 30.371148 37.989581 30.188664 37.767578 29.824219 C 37.302009 29.059804 36.774753 29.039853 36.224609 28.767578 C 35.918939 28.616297 35.048661 28.191329 34.175781 27.775391 C 33.303883 27.35992 32.54892 26.991953 32.083984 26.826172 C 31.790239 26.720488 31.431556 26.568352 30.914062 26.626953 C 30.396569 26.685553 29.88546 27.058933 29.587891 27.5 C 29.305837 27.918069 28.170387 29.258349 27.824219 29.652344 C 27.819619 29.649544 27.849659 29.663383 27.712891 29.595703 C 27.284761 29.383815 26.761157 29.203652 25.986328 28.794922 C 25.2115 28.386192 24.242255 27.782635 23.181641 26.847656 L 23.181641 26.845703 C 21.603029 25.455949 20.497272 23.711106 20.148438 23.125 C 20.171937 23.09704 20.145643 23.130901 20.195312 23.082031 L 20.197266 23.080078 C 20.553781 22.728924 20.869739 22.309521 21.136719 22.001953 C 21.515257 21.565866 21.68231 21.181437 21.863281 20.822266 C 22.223954 20.10644 22.02313 19.318742 21.814453 18.904297 L 21.814453 18.902344 C 21.828863 18.931014 21.701572 18.650157 21.564453 18.326172 C 21.426943 18.001263 21.251663 17.580039 21.064453 17.130859 C 20.690033 16.232501 20.272027 15.224912 20.023438 14.634766 L 20.023438 14.632812 C 19.730591 13.937684 19.334395 13.436908 18.816406 13.195312 C 18.298417 12.953717 17.840778 13.022402 17.822266 13.021484 L 17.820312 13.021484 C 17.450668 13.004432 17.045038 13 16.642578 13 z M 16.642578 15 C 17.028118 15 17.408214 15.004701 17.726562 15.019531 C 18.054056 15.035851 18.033687 15.037192 17.970703 15.007812 C 17.906713 14.977972 17.993533 14.968282 18.179688 15.410156 C 18.423098 15.98801 18.84317 16.999249 19.21875 17.900391 C 19.40654 18.350961 19.582292 18.773816 19.722656 19.105469 C 19.863021 19.437122 19.939077 19.622295 20.027344 19.798828 L 20.027344 19.800781 L 20.029297 19.802734 C 20.115837 19.973483 20.108185 19.864164 20.078125 19.923828 C 19.867096 20.342656 19.838461 20.445493 19.625 20.691406 C 19.29998 21.065838 18.968453 21.483404 18.792969 21.65625 C 18.639439 21.80707 18.36242 22.042032 18.189453 22.501953 C 18.016221 22.962578 18.097073 23.59457 18.375 24.066406 C 18.745032 24.6946 19.964406 26.679307 21.859375 28.347656 C 23.05276 29.399678 24.164563 30.095933 25.052734 30.564453 C 25.940906 31.032973 26.664301 31.306607 26.826172 31.386719 C 27.210549 31.576953 27.630655 31.72467 28.119141 31.666016 C 28.607627 31.607366 29.02878 31.310979 29.296875 31.007812 L 29.298828 31.005859 C 29.655629 30.601347 30.715848 29.390728 31.224609 28.644531 C 31.246169 28.652131 31.239109 28.646231 31.408203 28.707031 L 31.408203 28.708984 L 31.410156 28.708984 C 31.487356 28.736474 32.454286 29.169267 33.316406 29.580078 C 34.178526 29.990889 35.053561 30.417875 35.337891 30.558594 C 35.748225 30.761674 35.942113 30.893881 35.992188 30.894531 C 35.995572 30.982516 35.998992 31.07786 35.986328 31.222656 C 35.951258 31.624292 35.8439 32.180225 35.628906 32.775391 C 35.523582 33.066746 34.975018 33.667661 34.283203 34.105469 C 33.591388 34.543277 32.749338 34.852514 32.4375 34.898438 C 31.499896 35.036591 30.386672 35.087027 29.164062 34.703125 C 28.316336 34.437036 27.259305 34.092596 25.890625 33.509766 C 23.114812 32.325956 20.755591 30.311513 19.070312 28.537109 C 18.227674 27.649908 17.552562 26.824019 17.072266 26.199219 C 16.592866 25.575584 16.383528 25.251054 16.208984 25.021484 L 16.207031 25.019531 C 15.897202 24.609805 14 21.970851 14 19.59375 C 14 17.077989 15.168497 16.091436 15.800781 15.410156 C 16.132721 15.052495 16.495617 15 16.642578 15 z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="header-down">
+            <div class="header-down-item">
+                <div class="col-down-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                    </svg>
+                </div>
+                <p class="col-down-address">г.Ростов-на-Дону, просп. М. Нагибина, 23</p>
+            </div>
+            <div class="header-down-item">
+                <div class="col-down-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                    </svg>
+                </div>
+                <p class="col-down-address">г.Ростов-на-Дону, ул. Вересаева, 102г ст1</p>
+            </div>
+            <div class="header-down-item">
+                <div class="col-down-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                    </svg>
+                </div>
+                <p class="col-down-address">г.Ростов-на-Дону, просп. ул. Зорге, 17</p>
+            </div>
+            <div class="header-down-item">
+                <div class="col-down-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                    </svg>
+                </div>
+                <a href="tel:+71234567890" class="col-down-phone">+7(863) 320-08-32</a>
+            </div>
+            <div class="header-down-item">
+                <div class="col-down-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                    </svg>
+                </div>
+                <a href="tel:+71234567890" class="col-down-phone">+7(991) 779-11-49</a>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="main">
+    <div class="welcome">
+        <div class="container">
+            <div class="welcome-wrapper">
+                <h1 class="welcome-title">Самый быстрый сервис</h1>
+                <p class="welcome-text">Ремонт кофемашины обычно<br>
+                    занимает не более 24 часов.<br>
+                    <span class="welcome-span">Работает система доставки.</span></p>
+                <div class="row row-box">
+                    <div class="col col-box">
+                        <div class="col-box-inner">
+                            <div class="welcome-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-shield-shaded" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 14.933a1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/>
+                                </svg>
+                            </div>
+                            <p class="welcome-svg-text">Гарантия до 1 года</p>
+                        </div>
+                        <div class="col-box-inner">
+                            <div class="welcome-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-archive-fill" viewBox="0 0 16 16">
+                                    <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8z"/>
+                                </svg>
+                            </div>
+                            <p class="welcome-svg-text">Свой склад запчастей</p>
+                        </div>
+                    </div>
+                    <div class="col col-box">
+                        <div class="col-box-inner">
+                            <div class="welcome-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-car-front-fill" viewBox="0 0 16 16">
+                                    <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679q.05.242.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17s3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z"/>
+                                </svg>
+                            </div>
+                            <p class="welcome-svg-text">Срочный ремонт</p>
+                        </div>
+                        <div class="col-box-inner">
+                            <div class="welcome-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-tags-fill" viewBox="0 0 16 16">
+                                    <path d="M2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586zm3.5 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                                    <path d="M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043z"/>
+                                </svg>
+                            </div>
+                            <p class="welcome-svg-text">Система скидок</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="welcome-button">Заказать ремонт</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    <div class="operation">
+
+        <div class="about-box">
+            <p class="about-box-text">
+                Компания предлагает ассортимент сервисных услуг по доступной стоимости и минимальным срокам. Все работы выполняют профессиональные инженеры с многолетним опытом работы, которые отлично знакомы с большинством видов неисправностей кофейных машин и методами их эффективного устранения.
+            </p>
+            <p class="about-box-text">
+                Чтобы сэкономить время, мы содержим склад с запчастями к большинству брендов и моделей кофемашин, заранее закупая их у официальных поставщиков. На детали и услуги выдаем гарантийный талон, срок которого может быть от нескольких месяцев до одного года. Мы ценим время клиентов, поэтому соблюдаем оговоренные сроки выполнения ремонта.
+            </p>
+            <p class="about-box-text">
+                Сотрудники нашей компании на всех этапах ремонта поддерживают связь с владельцем устройства и своевременно сообщают обо всем. Мы готовы не только восстановить кофемашину, но и подробно рассказать о профилактике неисправностей.
+            </p>
+            <p class="about-box-text">
+                Мы нацелены на долгосрочное сотрудничество, поэтому для постоянных клиентов действуют специальные условия. Все цены фиксированы, мы объективно рассчитываем стоимость ремонта и не взымаем дополнительных комиссий. С прайсом можно ознакомиться на страницах соответствующей техники.
+            </p>
+            <p class="about-box-text">
+                Главные цели нашего сервисного центра – обеспечение комфорта для клиента и быстрое устранение поломок. Если остались вопросы, позвоните нам и получите подробную консультацию.
+            </p>
+            <p class="about-box-text">
+                Преимущества сотрудничества с нашим центром:
+            </p>
+            <ul class="about-list">
+                <li class="about-list-item">быстрое выполнение заказа;</li>
+                <li class="about-list-item">предоставляется бесплатная консультация по различным вопросам;</li>
+                <li class="about-list-item">используем оригинальные комплектующие;</li>
+                <li class="about-list-item">предоставляется длительная гарантия;</li>
+                <li class="about-list-item">высокое качество выполненных работ;</li>
+                <li class="about-list-item">вежливый и отзывчивый персонал;</li>
+                <li class="about-list-item">выезд в вечернее время и праздничные дни;</li>
+                <li class="about-list-item">скидки постоянным клиентам, инвалидам и пенсионерам;</li>
+                <li class="about-list-item">контроль качества;</li>
+                <li class="about-list-item">возможность срочного выезда (в течении 60 минут);</li>
+            </ul>
+            <p class="about-title">
+                Обратившись к нам вы получите
+            </p>
+            <div class="row about-services">
+                <div class="col-4 about-services-item d-flex justify-content-center align-items-center flex-direction-column">
+                    <img src="images/about-images/about1.png" alt="" class="about-services-img">
+                    <p class="about-img-text">Бесплатная диагностика</p>
+                </div>
+                <div class="col-4 about-services-item d-flex justify-content-center align-items-center flex-direction-column">
+                    <img src="images/about-images/about2.png" alt="" class="about-services-img">
+                    <p class="about-img-text">Работаем без выходных и перерывов</p>
+                </div>
+                <div class="col-4 about-services-item d-flex justify-content-center align-items-center flex-direction-column">
+                    <img src="images/about-images/about3.png" alt="" class="about-services-img">
+                    <p class="about-img-text">Гарантия до 1 года</p>
+                </div>
+                <div class="col-4 about-services-item d-flex justify-content-center align-items-center flex-direction-column">
+                    <img src="images/about-images/about4.png" alt="" class="about-services-img">
+                    <p class="about-img-text">Гибкая система скидок</p>
+                </div>
+                <div class="col-4 about-services-item d-flex justify-content-center align-items-center flex-direction-column">
+                    <img src="images/about-images/about5.png" alt="" class="about-services-img">
+                    <p class="about-img-text">Собственный склад запчастей</p>
+                </div>
+                <div class="col-4 about-services-item d-flex justify-content-center align-items-center flex-direction-column">
+                    <img src="images/about-images/about6.png" alt="" class="about-services-img">
+                    <p class="about-img-text">Быстрый сервис</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="operation-title">Схема работы</p>
+        <div class="row row-operation-block">
+            <div class="col col-operation-item">
+                <div class="operation-line" id="line1">
+                    <div class="operation-circle" id="circle1">1</div>
+                </div>
+                <div class="operation-item-title">
+                    <img src="images/smartphone.svg" alt="Смартфон" class="operation-img">
+                    <p class="operation-head">Заявка на ремонт</p>
+                </div>
+                <p class="operation-text">Дежурный оператор принимает вашу заявку по телефону, указанному на сайте.</p>
+            </div>
+            <div class="col col-operation-item">
+                <div class="operation-line" id="line2">
+                    <div class="operation-circle" id="circle2">2</div>
+                </div>
+                <div class="operation-item-title">
+                    <img src="images/transparency.svg" alt="Лупа" class="operation-img">
+                    <p class="operation-head">Диагностика</p>
+                </div>
+                <p class="operation-text">Клиент самостоятельно или с помощью курьера доставляет неисправный гаджет к нам, после чего проводится полная проверка устройства и называется точная цена услуги.</p>
+            </div>
+            <div class="col col-operation-item">
+                <div class="operation-line" id="line3">
+                    <div class="operation-circle" id="circle3">3</div>
+                </div>
+                <div class="operation-item-title">
+                    <img src="images/tools.svg" alt="инстурменты" class="operation-img">
+                    <p class="operation-head">Ремонт</p>
+                </div>
+                <p class="operation-text">После согласования цены и сроков с клиентом, мастер приступает к работе в ближайшее время.</p>
+            </div>
+            <div class="col col-operation-item">
+                <div class="operation-line" id="line4">
+                    <div class="operation-circle" id="circle4">4</div>
+                </div>
+                <div class="operation-item-title">
+                    <img src="images/smartphone2.svg" alt="телефон" class="operation-img">
+                    <p class="operation-head">Итог</p>
+                </div>
+                <p class="operation-text">После окончания ремонта оператор связывается с вами, чтобы договориться о времени передачи исправной техники владельцу.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="contacts">
+        <div class="container">
+            <div class="row contact-form">
+                <div class="col contact-form-col">
+                    <p class="form-text">Хотели насладиться потрясающим вкусом и ароматом свежесваренного натурального кофе, а машинка подвела? Поручите ремонт кофемашин профессионалам и уже завтра сможете побаловать себя любимым напитком!</p>
+                </div>
+                <div class="col contact-form-col col-left">
+                    <p class="form-title">У вас остались вопросы?</p>
+                    <p class="form-subtitle">Задайте их в форме и мы ответим вам через 5 минут!</p>
+                    <div class="input-up">
+                        <input type="text" class="form-input" placeholder="Ваше имя">
+                        <input type="text" class="form-input" placeholder="Ваш номер телефона">
+                    </div>
+                    <div class="input-down">
+                        <input type="text" class="form-input" placeholder="Текст сообщения..." id="input1">
+                    </div>
+                    <button class="brands-button">Отправить сообщения</button>
+                </div>
+            </div>
+        </div>
+        <div class="about-us">
+            <p class="about-title">Почему выбирают нас?</p>
+            <p class="about-text"> После обращения в наш сервисный центр клиенты рекомендуют своим друзьям и знакомым, оставляют положительные отзывы. Среди множества мастеров и компаний, оказывающих аналогичные услуги, наш сервисный центр имеет определённые преимущества: </p>
+            <p class="about-text"> <span class="about-span">Удобно. </span>Офис находится в транспортной доступности, работает без выходных, обеденных перерывов. При желании клиента мы можем выслать курьера, который доставит неисправное устройство в сервисный центр. Некоторые приборы мы можем починить на дому.</p>
+            <p class="about-text"> <span class="about-span">Оперативно. </span>Собственный склад запчастей, надёжные связи с поставщиками позволяют выполнять заказы максимально быстро.</p>
+            <p class="about-text"> <span class="about-span">Надёжно. </span>Мы производим профессиональную диагностику и ремонт в сервисном центре с использованием современного оборудования, на выполненные работы предоставляем гарантию до 1-го года.</p>
+            <p class="about-text"> <span class="about-span">Честно. </span>По результатам диагностики озвучивается выявленная неисправность, стоимость работы, сроки устранения проблемы. Если заказчика всё устраивает, мастер приступает к ремонту. Диагностика – бесплатна.</p>
+            <p class="about-text"> <span class="about-span">Выгодно. </span>Наши цены доступны и конкурентоспособны. Действует система скидок.</p>
+        </div>
+    </div>
+
+    <div class="second-swiper">
+        <div class="container-sm">
+            <p class="brands-title" id="title2">Нашими услугами пользуются</p>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/auchan.jpg" alt="bosch" class="swiper-img">
+                        <img src="images/bank_moskvi.jpg" alt="saeco" class="swiper-img">
+                        <img src="images/beeline.jpg" alt="krups" class="swiper-img">
+                        <img src="images/gazprom.jpg" alt="bork" class="swiper-img">
+                        <img src="images/kfc.jpg" alt="siemens" class="swiper-img">
+                        <img src="images/lukoil.jpg" alt="philips" class="swiper-img">
+                        <img src="images/macdonalds.jpg" alt="gaggia" class="swiper-img">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/mega.jpg" alt="melitta" class="swiper-img">
+                        <img src="images/megafon.jpg" alt="delongi" class="swiper-img">
+                        <img src="images/mts.jpg" alt="jura" class="swiper-img">
+                        <img src="images/rjd.jpg" alt="neff" class="swiper-img">
+                        <img src="images/sberbank.jpg" alt="wmf" class="swiper-img">
+                        <img src="images/tele2.jpg" alt="miele" class="swiper-img">
+                        <img src="images/vtb24.jpg" alt="aeg" class="swiper-img">
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <div id="map"></div>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="row footer-row">
+            <div class="col footer-info">
+                <div class="footer-box">
+                    <ul class="footer-address">
+                        <li class="footer-address-item" id="footer1">
+                            <p class="footer-address-text">г.Ростов на Дону:</p>
+                        </li>
+                        <li class="footer-address-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#959595" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                            </svg>
+                            <p class="footer-address-text">просп. М. Нагибина, 23</p>
+                        </li>
+                        <li class="footer-address-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#959595" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                            </svg>
+                            <p class="footer-address-text">ул. Вересаева, 102г ст1</p>
+                        </li>
+                        <li class="footer-address-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#959595" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                            </svg>
+                            <p class="footer-address-text">ул. Зорге, 17</p>
+                        </li>
+                    </ul>
+                    <ul class="footer-phone">
+                        <li class="footer-phone-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#959595" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                            </svg>
+                            <a href="tel:+71234567890" class="footer-phone-link">+7(863) 320-08-32</a>
+                        </li>
+                        <li class="footer-phone-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#959595" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                            </svg>
+                            <a href="tel:+71234567890" class="footer-phone-link">+7(991) 779-11-49</a>
+                        </li>
+                    </ul>
+                    <div class="footer-ur">
+                        <p class="footer-inn">ИНН: 616412223</p>
+                        <p class="footer-ogrn">ОГРН: 1186196025883</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 footer-form">
+                <div class="footer-box">
+                    <p class="footer-form-title">Обращайтесь к профессионалам</p>
+                    <p class="footer-form-text">Оставьте онлайн заявку сейчас <br>Все остальное сделаем мы сами!</p>
+                    <input type="text" class="footer-input" placeholder="Ваш номер телефона">
+                    <button class="footer-button">Заказать ремонт</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "bullets",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+
+<script src="script.js" defer></script>
+<script>
+    function changeCity(element) {
+        document.getElementById("dropdownButton").textContent = element.textContent;
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&v=weekly" defer
+></script>
+
+</body>
+</html>

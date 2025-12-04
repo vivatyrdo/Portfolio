@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiftGPT - AI Tool</title>
+    <!-- Подключаем стили Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header (без изменений) -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="path/to/logo.png" alt="Chad AI Logo" class="logo-img">
+                <span>Chad AI</span>
+            </div>
+            <nav class="nav">
+                <a href="#">Продукт</a>
+                <a href="#">Тарифы</a>
+                <a href="#">FAQ</a>
+                <a href="#">Блог</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-primary">Создать аккаунт</button>
+                <button class="btn btn-outline">Войти</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (без изменений) -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>LIFTGPT - <br><span>уникальный комплексный инструмент</span></h1>
+                <p>Включающий все нейросети для вашего роста.</p>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="path/to/main-robot.png" alt="Robot Mascot" class="main-robot">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ИЗМЕНЕНИЯ ЗДЕСЬ: СЕКЦИЯ СВАЙПЕРА -->
+    <section class="cards-section">
+        <!-- Swiper Container -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <h3>LiftGPT Base</h3>
+                        <p class="subtitle">ИИ для ежедневных задач</p>
+                        <p class="description">Базовый инструмент для генерации простых текстов и идей.</p>
+                        <a href="#" class="link-arrow">Подробнее &rarr;</a>
+                        <button class="btn btn-card">Попробовать</button>
+                    </div>
+                </div>
+
+                <!-- Slide 2 (PRO) -->
+                <div class="swiper-slide">
+                    <div class="card pro-card">
+                        <div class="badge">LiftGPT PRO</div>
+                        <h3>Профессиональный</h3>
+                        <p class="subtitle">Мастер универсальных решений</p>
+                        <p class="description">Идеальный баланс. Глубокий анализ, без ошибок, максимальная точность.</p>
+                        <a href="#" class="link-arrow">Подробнее &rarr;</a>
+                        <div class="input-group">
+                            <input type="text" placeholder="Email...">
+                            <button class="btn btn-card-featured">Попробовать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <h3>ИИ Multi</h3>
+                        <p class="subtitle">Доступ ко всем топовым ИИ</p>
+                        <p class="description">Доступ ко всем топовым моделям в одном окне без ограничений.</p>
+                        <a href="#" class="link-arrow">Подробнее &rarr;</a>
+                        <button class="btn btn-card">Попробовать</button>
+                    </div>
+                </div>
+
+                 
+
+            </div>
+            <!-- Пагинация (точки внизу) -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Features Detail Section (без изменений) -->
+    <section class="features-section">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-btn" onclick="openTab('base')">LiftGPT Base</button>
+                <button class="tab-btn active" onclick="openTab('pro')">LiftGPT PRO</button>
+                <button class="tab-btn" onclick="openTab('multi')">LiftGPT Multi</button>
+            </div>
+            <div class="feature-box">
+                <div class="feature-left">
+                    <h2>Что умеет <span class="text-purple">LiftGPT PRO</span></h2>
+                    <p>Робот поможет создать структуру, написать тексты и решить сложные задачи.</p>
+                    <ul>
+                        <li>Анализ целевой аудитории</li>
+                        <li>Создание контент-плана</li>
+                        <li>Генерация изображений</li>
+                    </ul>
+                    <img src="path/to/small-robot.png" alt="Small Robot" class="feature-robot-img">
+                </div>
+                <div class="feature-right">
+                    <div class="info-card">
+                        <h4>Максимальная точность</h4>
+                        <p>Исключает ошибки и галлюцинации нейросети.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Сложный инструмент</h4>
+                        <p>Работает с документами и файлами.</p>
+                    </div>
+                    <div class="info-card wide">
+                        <img src="path/to/interface-icon.png" alt="Interface" class="icon-img">
+                        <div class="text">
+                            <h4>Точные креативы</h4>
+                            <p>Создает уникальные изображения по запросу.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- FUNCTIONALITY SECTION (Иконки) -->
+    <!-- ========================================= -->
+    <section class="func-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>ИИ-инструменты и функционал</h2>
+                <p>Расширенные возможности под любые задачи</p>
+            </div>
+
+            <div class="func-grid">
+                <!-- Пунктирная линия (декорация) - реализуем через CSS или SVG -->
+                
+                <!-- Item 1 -->
+                <div class="func-item">
+                    <div class="func-icon">
+                        <!-- Сюда вставить иконку (svg или img) -->
+                        <img src="path/to/icon1.svg" alt="Icon">
+                    </div>
+                    <h4>Ассистенты</h4>
+                    <p>Создавай умных помощников, которые решают задачи 24/7.</p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="func-item">
+                    <div class="func-icon">
+                        <img src="path/to/icon2.svg" alt="Icon">
+                    </div>
+                    <h4>Режим HandsFree</h4>
+                    <p>Голосовое управление без рук. Просто скажи, что нужно.</p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="func-item">
+                    <div class="func-icon">
+                        <img src="path/to/icon3.svg" alt="Icon">
+                    </div>
+                    <h4>Работа с изображениями</h4>
+                    <p>Генерация, редактирование и улучшение качества фото.</p>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="func-item">
+                    <div class="func-icon">
+                        <img src="path/to/icon4.svg" alt="Icon">
+                    </div>
+                    <h4>Веб-поиск</h4>
+                    <p>Умный поиск актуальной информации в интернете.</p>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="func-item">
+                    <div class="func-icon">
+                        <img src="path/to/icon5.svg" alt="Icon">
+                    </div>
+                    <h4>Шаблоны</h4>
+                    <p>Библиотека готовых промптов для быстрого старта.</p>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="func-item">
+                    <div class="func-icon">
+                        <img src="path/to/icon6.svg" alt="Icon">
+                    </div>
+                    <h4>Память</h4>
+                    <p>ИИ запоминает контекст диалога для лучших ответов.</p>
+                </div>
+            </div>
+
+            <!-- Нижний CTA блок -->
+            <div class="func-cta">
+                <div class="cta-box">
+                    <input type="text" placeholder="Введите ваш email...">
+                    <button class="btn btn-primary">Попробовать бесплатно</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- PRICING / TARIFFS SECTION -->
+    <!-- ========================================= -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="text-purple">Тарифы</h2>
+                <p>Выбери свой - самое нужное на лучших условиях</p>
+            </div>
+
+            <div class="pricing-grid">
+                
+                <!-- Tariff 1: Mini -->
+                <div class="price-card">
+                    <h3 class="price-title">Мини</h3>
+                    <div class="price-tokens">120 000 слов/токенов</div>
+                    <div class="price-val">290 ₽ <span>/ месяц</span></div>
+                    
+                    <ul class="price-list">
+                        <li>GPT-3.5 Turbo</li>
+                        <li>3 - Изображения</li>
+                        <li>Чат с PDF</li>
+                        <li>Встроенные шаблоны</li>
+                    </ul>
+                    <button class="btn btn-outline-purple">Выбрать</button>
+                </div>
+
+                <!-- Tariff 2: Opti -->
+                <div class="price-card">
+                    <div class="price-badge">-15%</div>
+                    <h3 class="price-title">Опти</h3>
+                    <div class="price-tokens">300 000 слов/токенов</div>
+                    <div class="price-val">590 ₽ <span>/ месяц</span></div>
+                    
+                    <ul class="price-list">
+                        <li>GPT-4 Omni</li>
+                        <li>15 - Изображений</li>
+                        <li>Чат с PDF / URL</li>
+                        <li>Приоритетная поддержка</li>
+                    </ul>
+                    <button class="btn btn-outline-purple">Выбрать</button>
+                </div>
+
+                <!-- Tariff 3: Plus -->
+                <div class="price-card">
+                    <div class="price-badge">-25%</div>
+                    <h3 class="price-title">Плюс</h3>
+                    <div class="price-tokens">900 000 слов/токенов</div>
+                    <div class="price-val">1 690 ₽ <span>/ месяц</span></div>
+                    
+                    <ul class="price-list">
+                        <li>GPT-4 Turbo</li>
+                        <li>40 - Изображений</li>
+                        <li>API доступ</li>
+                        <li>Безлимитный контекст</li>
+                    </ul>
+                    <button class="btn btn-outline-purple">Выбрать</button>
+                </div>
+
+                <!-- Tariff 4: PRO (Выделенный) -->
+                <div class="price-card pro">
+                    <div class="price-badge pro-badge">Цена качество</div>
+                    <h3 class="price-title">PRO</h3>
+                    <div class="price-tokens">от 1 500 000 слов</div>
+                    <div class="price-val">от 2 590 ₽ <span>/ месяц</span></div>
+                    
+                    <ul class="price-list">
+                        <li>Все нейросети</li>
+                        <li>от 100 - Изображений</li>
+                        <li>Личный менеджер</li>
+                        <li>Индивидуальные условия</li>
+                    </ul>
+                    <button class="btn btn-primary full-width">Выбрать</button>
+                </div>
+
+            </div>
+            
+            <p class="pricing-note">*Любой тариф можно изменить в любой момент.</p>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- BENTO GRID SECTION (Безграничные возможности) -->
+    <!-- ========================================= -->
+    <section class="bento-section">
+        <!-- Декоративные элементы на фоне -->
+        <div class="decor-circle circle-1"></div>
+        <div class="decor-circle circle-2"></div>
+        
+        <div class="container">
+            <div class="section-header">
+                <h2>Безграничные возможности <br><span class="text-purple">без VPN</span></h2>
+            </div>
+
+            <div class="bento-grid">
+                
+                <!-- 1. Большая карточка (Генерация изображений) -->
+                <div class="bento-item item-large-img">
+                    <img src="path/to/cyberpunk-robot.jpg" alt="AI Art" class="bg-cover">
+                    <div class="glass-card left-bottom">
+                        <h4>Генерируй изображения</h4>
+                        <p>Создавай уникальные арты и дизайны высокого качества по текстовому запросу.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Карточка с маскотом (Светлая) -->
+                <div class="bento-item item-mascot-promo">
+                    <div class="content">
+                        <h4>Лучший выбор - <br><span class="text-purple">умный ИИ компаньон</span></h4>
+                        <p>Помощник для решения любых задач. Учись, работай и создавай вместе с ним.</p>
+                        <button class="btn btn-primary-soft">Попробовать бесплатно</button>
+                    </div>
+                    <img src="path/to/mascot-sitting.png" alt="Mascot" class="mascot-img">
+                </div>
+
+                <!-- 3. Карточка Видео -->
+                <div class="bento-item item-video">
+                    <img src="path/to/video-preview.jpg" alt="Video AI" class="bg-cover">
+                    <!-- Иконка Play -->
+                    <div class="play-icon">▶</div>
+                    <div class="glass-card right-center">
+                        <h4>Создавай любые видео</h4>
+                        <p>Оживляй фото, создавай ролики. Твой личный режиссер.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Карточка Книги/Текст -->
+                <div class="bento-item item-text">
+                    <img src="path/to/book-art.jpg" alt="Text AI" class="bg-cover">
+                    <div class="glass-card bottom-right">
+                        <h4>Пиши бестселлеры</h4>
+                        <p>Создавай статьи, посты и книги с помощью мощных текстовых моделей.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Нижняя карточка (Аудио) -->
+                <div class="bento-item item-audio">
+                    <div class="audio-visual">
+                        <!-- Можно вставить картинку волны звука -->
+                        <img src="path/to/sound-wave.png" alt="Wave">
+                    </div>
+                    <div class="glass-card simple">
+                        <h4>Работай со звуком как профи</h4>
+                        <p>Озвучивай тексты голосом.</p>
+                    </div>
+                </div>
+
+                <!-- 6. Нижняя карточка (Файлы) -->
+                <div class="bento-item item-files">
+                    <div class="files-visual">
+                        <img src="path/to/laptop-files.png" alt="Files">
+                    </div>
+                    <div class="glass-card simple">
+                        <h4>Работай с файлами</h4>
+                        <p>Анализ документов Word, Excel, PDF.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- SUMMARY INFO SECTION -->
+    <!-- ========================================= -->
+    <section class="summary-section">
+        <div class="container">
+            <div class="summary-grid">
+                
+                <!-- Card Left: 3 Models -->
+                <div class="summary-card">
+                    <h3>Три модели</h3>
+                    <p class="summary-subtitle">под разные задачи</p>
+                    
+                    <div class="model-item">
+                        <h4>Base</h4>
+                        <p>Быстрая, лаконичная, доступная.</p>
+                    </div>
+                    <div class="model-item">
+                        <h4>PRO</h4>
+                        <p>Профессиональная, уверенная и точная.</p>
+                    </div>
+                    <div class="model-item">
+                        <h4>MultiCore</h4>
+                        <p>Ультра-производительность и вариативность.</p>
+                    </div>
+                </div>
+
+                <!-- Card Right: LiftGPT Benefits -->
+                <div class="summary-card">
+                    <h3>LiftGPT —</h3>
+                    <p class="summary-subtitle">это десятки сильных ИИ в одном продукте</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Значительно лучше и удобнее чем Base и Pro</li>
+                        <li>Точнее чем GPT-3.5, Claude, Llama 2 и т.д. на 40%</li>
+                        <li>Пишет длинные качественные тексты под Tone of Voice</li>
+                        <li>Результаты быстрее, чище и без лишних слов</li>
+                        <li>Удобный интерфейс и сохранение памяти</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- FAQ SECTION -->
+    <!-- ========================================= -->
+    <section class="faq-section">
+        <div class="container faq-container">
+            <!-- Left Side -->
+            <div class="faq-left">
+                <h2>Нас часто спрашивают</h2>
+                <p>Остались еще вопросы? Задайте их нам.</p>
+                <button class="btn btn-primary-soft">Задать вопрос</button>
+            </div>
+
+            <!-- Right Side (Accordion) -->
+            <div class="faq-list">
+                
+                <!-- Question 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Как быстро выполняется заказ?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Заказ выполняется моментально после оплаты. Доступы приходят на почту в течение 1-2 минут. Если письмо не пришло — проверьте папку Спам.</p>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Нужен ли VPN для работы?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Нет, наш сервис работает без VPN из любой точки мира. Мы берем все технические сложности на себя.</p>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Можно ли оплатить картой РФ?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, мы принимаем карты любых российских банков, а также оплату через СБП и электронные кошельки.</p>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Есть ли бесплатный пробный период?
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, у нас есть тариф "Старт", который позволяет протестировать базовые возможности системы бесплатно.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================= -->
+    <footer class="footer">
+        <div class="container footer-content">
+            
+            <!-- Col 1: Brand & Legal -->
+            <div class="footer-col brand-col">
+                <div class="logo footer-logo">
+                    <img src="path/to/logo-white.png" alt="Logo" class="logo-img">
+                    <span>Chad AI</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Публичная оферта</a>
+                    <a href="#">Правила сервиса</a>
+                </div>
+                <div class="payment-methods">
+                    <span>Способы оплаты:</span>
+                    <!-- Плейсхолдеры для иконок карт -->
+                    <div class="pay-icons">
+                        <img src="path/to/mir.png" alt="Mir">
+                        <img src="path/to/visa.png" alt="Visa">
+                        <img src="path/to/sbp.png" alt="SBP">
+                    </div>
+                </div>
+                <p class="copyright">© 2024 Все права защищены</p>
+            </div>
+
+            <!-- Col 2: Navigation -->
+            <div class="footer-col nav-col">
+                <h4>Навигация</h4>
+                <a href="#">Главная</a>
+                <a href="#">Услуги</a>
+                <a href="#">Отзывы клиентов</a>
+                <a href="#">Новости</a>
+                <a href="#">Контакты</a>
+            </div>
+
+            <!-- Col 3: Help -->
+            <div class="footer-col help-col">
+                <h4>Нужна помощь?</h4>
+                <button class="btn btn-primary full-width">Написать в поддержку</button>
+                <div class="social-icons">
+                    <a href="#"><img src="path/to/tg.png" alt="TG"></a>
+                    <a href="#"><img src="path/to/vk.png" alt="VK"></a>
+                    <a href="#"><img src="path/to/yt.png" alt="YT"></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Подключаем JS Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

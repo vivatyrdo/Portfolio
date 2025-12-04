@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRO.Logic | Инженерный сервис ПК</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <i class="ph-fill ph-circuitry"></i>
+                <span>PRO.Logic</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <a href="#services">Услуги</a>
+                <a href="#process">Процесс</a>
+                <a href="#prices">Прайс</a>
+                <a href="#lab">Оборудование</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+
+            <div class="header-right">
+                <div class="header-phone">
+                    <span>Круглосуточно</span>
+                    <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+                </div>
+                <button class="btn btn-outline" id="statusBtn">Статус заказа</button>
+                <button class="burger" aria-label="Меню"><i class="ph ph-list"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-wrapper">
+            <div class="hero-content">
+                <h1>Профессиональный ремонт компьютерной техники</h1>
+                <ul class="hero-features">
+                    <li><i class="ph-fill ph-check-circle"></i> Диагностика при ремонте — 0 ₽</li>
+                    <li><i class="ph-fill ph-check-circle"></i> Выезд инженера в течение 1 часа</li>
+                    <li><i class="ph-fill ph-check-circle"></i> Гарантия на работы до 3 лет</li>
+                </ul>
+                <div class="hero-actions">
+                    <a href="#contacts" class="btn btn-primary">Вызвать мастера</a>
+                    <a href="#prices" class="btn btn-text">Посмотреть прайс <i class="ph ph-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="hero-form-card">
+                <h3>Быстрая консультация</h3>
+                <p>Перезвоним в течение 5 минут</p>
+                <form class="lead-form">
+                    <div class="input-group">
+                        <i class="ph ph-user"></i>
+                        <input type="text" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="ph ph-phone"></i>
+                        <input type="tel" placeholder="Номер телефона" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="ph ph-wrench"></i>
+                        <select>
+                            <option value="" disabled selected>Что сломалось?</option>
+                            <option>Компьютер не включается</option>
+                            <option>Ноутбук греется/шумит</option>
+                            <option>Синий экран (BSOD)</option>
+                            <option>Нужна сборка ПК</option>
+                            <option>Другое</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-full">Жду звонка</button>
+                    <small>Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</small>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <span class="stat-num">6</span>
+                <span class="stat-label">Лет работы</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">4k+</span>
+                <span class="stat-label">Отремонтированных устройств</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">98%</span>
+                <span class="stat-label">Успешных ремонтов</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">1 год</span>
+                <span class="stat-label">Средняя гарантия</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши услуги</h2>
+            </div>
+
+            <div class="tabs-wrapper">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="repair">Ремонт ПК и Ноутбуков</button>
+                    <button class="tab-btn" data-tab="assembly">Сборка и Апгрейд</button>
+                    <button class="tab-btn" data-tab="maintenance">Обслуживание</button>
+                </div>
+
+                <div class="tab-content active" id="repair">
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <i class="ph-duotone ph-motherboard"></i>
+                            <h4>Пайка компонентов</h4>
+                            <p>Замена BGA чипов, ремонт цепей питания, восстановление дорожек.</p>
+                            <span class="price">от 2 500 ₽</span>
+                        </div>
+                        <div class="service-card">
+                            <i class="ph-duotone ph-laptop"></i>
+                            <h4>Замена матриц</h4>
+                            <p>Установка оригинальных дисплеев на ноутбуки любых брендов.</p>
+                            <span class="price">от 1 200 ₽</span>
+                        </div>
+                        <div class="service-card">
+                            <i class="ph-duotone ph-drop"></i>
+                            <h4>После залития</h4>
+                            <p>Чистка в ультразвуковой ванне, восстановление окисленных контактов.</p>
+                            <span class="price">от 1 500 ₽</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="assembly">
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <i class="ph-duotone ph-desktop-tower"></i>
+                            <h4>Игровая сборка</h4>
+                            <p>Подбор комплектующих, сборка, кабель-менеджмент, тесты.</p>
+                            <span class="price">от 4 000 ₽</span>
+                        </div>
+                        <div class="service-card">
+                            <i class="ph-duotone ph-fan"></i>
+                            <h4>Кастомное СЖО</h4>
+                            <p>Проектирование и монтаж систем жидкостного охлаждения.</p>
+                            <span class="price">от 8 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="maintenance">
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <i class="ph-duotone ph-thermometer-cold"></i>
+                            <h4>Чистка системы</h4>
+                            <p>Удаление пыли, замена термопасты (Arctic/Thermal Grizzly).</p>
+                            <span class="price">1 500 ₽</span>
+                        </div>
+                        <div class="service-card">
+                            <i class="ph-duotone ph-windows-logo"></i>
+                            <h4>Установка ПО</h4>
+                            <p>Установка Windows, драйверов, антивирусов и офисных программ.</p>
+                            <span class="price">1 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="section bg-dark text-white">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color:#fff;">Как мы работаем</h2>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <h4>Заявка</h4>
+                    <p>Вы оставляете заявку или привозите технику сами.</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <h4>Диагностика</h4>
+                    <p>Аппаратная проверка, выявление точной причины.</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <h4>Согласование</h4>
+                    <p>Называем точную цену и сроки. Без скрытых доплат.</p>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-num">04</div>
+                    <h4>Ремонт</h4>
+                    <p>Устранение неисправности и финальное тестирование.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prices" class="section">
+        <div class="container">
+            <div class="price-layout">
+                <div class="price-header">
+                    <h2>Прайс-лист</h2>
+                    <p>Цены указаны за работу мастера, без учета стоимости запчастей.</p>
+                </div>
+                <div class="price-table-wrapper">
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Наименование услуги</th>
+                                <th>Срок</th>
+                                <th class="text-right">Стоимость</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Диагностика аппаратная</td>
+                                <td>от 30 мин</td>
+                                <td class="text-right bold">Бесплатно*</td>
+                            </tr>
+                            <tr>
+                                <td>Чистка системы охлаждения + термопаста</td>
+                                <td>1 час</td>
+                                <td class="text-right bold">1 500 ₽</td>
+                            </tr>
+                            <tr>
+                                <td>Установка / Переустановка Windows</td>
+                                <td>1-2 часа</td>
+                                <td class="text-right bold">1 200 ₽</td>
+                            </tr>
+                            <tr>
+                                <td>Сборка системного блока (стандарт)</td>
+                                <td>3-5 часов</td>
+                                <td class="text-right bold">3 000 ₽</td>
+                            </tr>
+                            <tr>
+                                <td>Восстановление после попадания влаги</td>
+                                <td>от 1 дня</td>
+                                <td class="text-right bold">от 2 000 ₽</td>
+                            </tr>
+                            <tr>
+                                <td>Замена разъема питания / USB</td>
+                                <td>1 день</td>
+                                <td class="text-right bold">1 800 ₽</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="price-note">* При условии продолжения ремонта в нашем сервисе. Отдельно диагностика — 500 ₽.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header center">
+                <h2>Частые проблемы</h2>
+            </div>
+            <div class="issues-grid">
+                <div class="issue-card">
+                    <div class="issue-icon"><i class="ph-fill ph-monitor"></i></div>
+                    <h5>Нет изображения</h5>
+                    <p>Проблема с видеокартой, матрицей или шлейфом.</p>
+                </div>
+                <div class="issue-card">
+                    <div class="issue-icon"><i class="ph-fill ph-thermometer-hot"></i></div>
+                    <h5>Перегрев</h5>
+                    <p>Высохла термопаста или забиты радиаторы пылью.</p>
+                </div>
+                <div class="issue-card">
+                    <div class="issue-icon"><i class="ph-fill ph-coffee"></i></div>
+                    <h5>Залили жидкостью</h5>
+                    <p>Требуется немедленное обесточивание и чистка.</p>
+                </div>
+                <div class="issue-card">
+                    <div class="issue-icon"><i class="ph-fill ph-hard-drives"></i></div>
+                    <h5>Тормозит / Глючит</h5>
+                    <p>Проблемы с жестким диском или вирусы в системе.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section courier-section">
+        <div class="container courier-wrapper">
+            <div class="courier-content">
+                <h2>Нет времени ехать в сервис?</h2>
+                <p>Наш курьер бесплатно заберет вашу технику, оформит документы и доставит в лабораторию. Обратная доставка — 300 ₽.</p>
+                <button class="btn btn-white">Оформить доставку</button>
+            </div>
+            <div class="courier-image">
+                <i class="ph-duotone ph-moped"></i>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacts" class="footer-modern">
+    <div class="container">
+        <div class="footer-top-grid">
+            
+            <div class="footer-col brand-col">
+                <a href="#" class="footer-logo">
+                    <i class="ph-fill ph-circuitry"></i>
+                    <span>PRO.Logic</span>
+                </a>
+                <p class="footer-desc">
+                    Профессиональный сервисный центр. 
+                    Восстанавливаем технику на компонентном уровне, используя заводские стандарты качества.
+                </p>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Свяжитесь с нами</h4>
+                <div class="contact-block">
+                    <a href="tel:+74950000000" class="footer-phone">+7 (495) 000-00-00</a>
+                    <span class="footer-hours">Ежедневно, 09:00 — 21:00</span>
+                </div>
+                
+                <address class="footer-address">
+                    Москва, ул. Инженеров, д. 42,<br>офис 101 (БЦ "Техно")
+                </address>
+
+                <div class="footer-socials">
+                    <a href="#" aria-label="Telegram"><i class="ph-fill ph-telegram-logo"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="ph-fill ph-whatsapp-logo"></i></a>
+                    <a href="#" aria-label="VK"><i class="ph-fill ph-vk-logo"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <div class="copyright">&copy; 2024 PRO.Logic Service. Все права защищены.</div>
+            
+        </div>
+    </div>
+</footer>
+
+    <div class="modal-overlay" id="statusModal">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h4>Проверка статуса</h4>
+                <button class="close-modal"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Введите номер заказа (из SMS), чтобы узнать стадию ремонта.</p>
+                <input type="text" placeholder="Например: 12345" class="status-input">
+                <button class="btn btn-primary" style="width:100%">Проверить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

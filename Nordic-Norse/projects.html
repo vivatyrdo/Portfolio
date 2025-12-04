@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты | Nordic House</title>
+    
+    <!-- 1. Подключаем шрифты и иконки -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- 2. Подключаем Tailwind CSS через CDN (для быстрой разработки без Node.js) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 3. Настраиваем конфиг Tailwind под наш дизайн (цвета, шрифты) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        nordic: {
+                            dark: '#111827',   /* Темный фон */
+                            gray: '#F3F4F6',   /* Светлый фон */
+                            accent: '#C8A165', /* Золото */
+                            accentHover: '#B08D55',
+                            muted: '#9CA3AF'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Кастомные стили, которые сложно сделать через утилиты */
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 2rem;
+        }
+        @media (min-width: 640px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+        
+        .break-inside-avoid { break-inside: avoid; }
+        
+        /* Плавность скролла */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-white">
+
+    <!-- HEADER (Fixed & Blurred) -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter text-nordic-dark uppercase">
+                Nordic<span class="text-nordic-accent">House</span>.
+            </a>
+            
+            <nav class="hidden md:flex gap-8">
+                <a href="services.html" class="text-sm font-semibold uppercase tracking-wider text-gray-600 hover:text-nordic-accent transition-colors">Услуги</a>
+                <a href="projects.html" class="text-sm font-semibold uppercase tracking-wider text-nordic-accent">Проекты</a>
+                <a href="about.html" class="text-sm font-semibold uppercase tracking-wider text-gray-600 hover:text-nordic-accent transition-colors">О компании</a>
+                <a href="contacts.html" class="text-sm font-semibold uppercase tracking-wider text-gray-600 hover:text-nordic-accent transition-colors">Контакты</a>
+            </nav>
+
+            <a href="contacts.html" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-nordic-dark hover:bg-nordic-accent rounded transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                Обсудить проект
+            </a>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="pt-40 pb-20 bg-nordic-dark text-white text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Архитектура <br><span class="text-nordic-accent">Северного характера</span></h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light">
+                Мы создаем дома, которые становятся частью ландшафта. Экологичность, энергоэффективность и бескомпромиссная эстетика.
+            </p>
+        </div>
+    </section>
+
+    <!-- FILTERS & MASONRY GRID -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <!-- Фильтры (Tailwind style) -->
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <button class="px-6 py-3 rounded-full border border-nordic-dark bg-nordic-dark text-white text-sm font-bold transition-all">Все проекты</button>
+                <button class="px-6 py-3 rounded-full border border-gray-200 text-gray-600 hover:border-nordic-dark hover:text-nordic-dark text-sm font-bold transition-all">Барнхаус</button>
+                <button class="px-6 py-3 rounded-full border border-gray-200 text-gray-600 hover:border-nordic-dark hover:text-nordic-dark text-sm font-bold transition-all">Классика</button>
+                <button class="px-6 py-3 rounded-full border border-gray-200 text-gray-600 hover:border-nordic-dark hover:text-nordic-dark text-sm font-bold transition-all">Шале</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="masonry-grid">
+                
+                <!-- Project 1 -->
+                <div class="group relative mb-8 break-inside-avoid rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=800" class="w-full h-auto object-cover" alt="House">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-nordic-accent text-xs font-bold uppercase tracking-widest mb-2">Барнхаус • 180 м²</span>
+                        <h3 class="text-white text-2xl font-bold">Вилла "Black Wood"</h3>
+                        <p class="text-gray-300 text-sm mt-1">Московская область</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative mb-8 break-inside-avoid rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1600596542815-e32c12e32d34?auto=format&fit=crop&q=80&w=800" class="w-full h-auto object-cover" alt="House">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-nordic-accent text-xs font-bold uppercase tracking-widest mb-2">Классика • 145 м²</span>
+                        <h3 class="text-white text-2xl font-bold">Коттедж "Хельсинки"</h3>
+                        <p class="text-gray-300 text-sm mt-1">КП "Репино"</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative mb-8 break-inside-avoid rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800" class="w-full h-auto object-cover" alt="Interrior">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-nordic-accent text-xs font-bold uppercase tracking-widest mb-2">Интерьер</span>
+                        <h3 class="text-white text-2xl font-bold">Сканди-гостиная</h3>
+                        <p class="text-gray-300 text-sm mt-1">Отделка под ключ</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 (Tall) -->
+                <div class="group relative mb-8 break-inside-avoid rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&q=80&w=800" class="w-full h-auto object-cover" alt="Tall House">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-nordic-accent text-xs font-bold uppercase tracking-widest mb-2">Эко-Лофт • 110 м²</span>
+                        <h3 class="text-white text-2xl font-bold">Проект "Вертикаль"</h3>
+                        <p class="text-gray-300 text-sm mt-1">Видовые характеристики</p>
+                    </div>
+                </div>
+
+                 <!-- Project 5 -->
+                 <div class="group relative mb-8 break-inside-avoid rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" class="w-full h-auto object-cover" alt="House">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-nordic-accent text-xs font-bold uppercase tracking-widest mb-2">Премиум • 320 м²</span>
+                        <h3 class="text-white text-2xl font-bold">Резиденция "Озеро"</h3>
+                        <p class="text-gray-300 text-sm mt-1">Береговая линия</p>
+                    </div>
+                </div>
+
+                 <!-- Project 6 -->
+                 <div class="group relative mb-8 break-inside-avoid rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=800" class="w-full h-auto object-cover" alt="Details">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-nordic-accent text-xs font-bold uppercase tracking-widest mb-2">Детали</span>
+                        <h3 class="text-white text-2xl font-bold">Планкен из лиственницы</h3>
+                        <p class="text-gray-300 text-sm mt-1">Скрытый крепеж</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-16">
+                <button class="border-b border-nordic-dark pb-1 text-nordic-dark font-bold hover:text-nordic-accent hover:border-nordic-accent transition-colors">Показать еще проекты</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW BLOCK 1: FEATURED CASE STUDY (Журнальная верстка) -->
+    <!-- Логика: Показать не просто фото, а глубину проработки. Вызвать уважение к инженерной мысли. -->
+    <section class="py-24 bg-nordic-gray overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                
+                <!-- Left: Text -->
+                <div class="lg:w-1/2">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="h-px w-12 bg-nordic-accent"></span>
+                        <span class="text-nordic-accent font-bold uppercase tracking-widest text-sm">Проект месяца</span>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-nordic-dark mb-8 leading-tight">
+                        Дом на сложном рельефе: <br> 
+                        <span class="text-gray-500">Вызов гравитации</span>
+                    </h2>
+                    
+                    <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
+                        <p>
+                            <strong class="text-nordic-dark">Задача:</strong> Участок с перепадом высот 4 метра и густым лесом. Заказчик хотел сохранить вековые сосны и получить панорамный вид на реку.
+                        </p>
+                        <p>
+                            <strong class="text-nordic-dark">Решение:</strong> Мы использовали свайно-винтовой фундамент с усиленной обвязкой швеллером. Дом был спроектирован каскадом, повторяя естественный уклон горы.
+                        </p>
+                        <p>
+                            <strong class="text-nordic-dark">Результат:</strong> 160 м² жилой площади + 40 м² террасы, парящей над склоном. Ни одно дерево не пострадало при монтаже.
+                        </p>
+                    </div>
+
+                    <a href="#" class="inline-flex items-center gap-2 mt-10 text-nordic-dark font-bold hover:text-nordic-accent transition-colors group">
+                        Смотреть полный кейс 
+                        <i class="ri-arrow-right-line group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Right: Images Collage -->
+                <div class="lg:w-1/2 relative">
+                    <!-- Decor square -->
+                    <div class="absolute -right-10 -bottom-10 w-2/3 h-2/3 bg-white rounded-3xl z-0"></div>
+                    
+                    <img src="https://images.unsplash.com/photo-1593696140829-c38b9c29195e?auto=format&fit=crop&q=80&w=1000" class="relative z-10 rounded-2xl shadow-2xl w-full object-cover h-[500px]" alt="Main Case Image">
+                    
+                    <!-- Floating detail card -->
+                    <div class="absolute -left-10 bottom-10 z-20 bg-nordic-dark p-6 rounded-xl shadow-xl max-w-xs hidden md:block">
+                        <p class="text-nordic-accent font-bold text-4xl mb-1">45°</p>
+                        <p class="text-white text-sm opacity-80">Уклон склона, на котором возведен этот проект</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCK 2: BLUEPRINTS / TECHNICAL INFO (Tailwind version) -->
+    <!-- Логика: Доказательство экспертности. Мы не просто "рисуем", мы инженеры. -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Image side -->
+                <div class="order-2 lg:order-1 relative">
+                    <div class="absolute inset-0 border-2 border-nordic-accent rounded-2xl transform translate-x-4 translate-y-4 z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1000" class="relative z-10 rounded-2xl shadow-soft grayscale hover:grayscale-0 transition-all duration-500" alt="Blueprint">
+                </div>
+
+                <!-- Content side -->
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-nordic-dark mb-6">Что вы получаете на руки?</h2>
+                    <p class="text-gray-500 mb-10">
+                        Красивая картинка — это 5% работы. Остальные 95% — это точные расчеты нагрузок, узлов и спецификации материалов.
+                    </p>
+
+                    <ul class="space-y-8">
+                        <li class="flex items-start gap-5 group">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-nordic-gray flex items-center justify-center text-nordic-accent text-xl group-hover:bg-nordic-accent group-hover:text-white transition-colors duration-300">
+                                <i class="ri-ruler-2-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-nordic-dark">Архитектурные решения (АР)</h4>
+                                <p class="text-sm text-gray-500 mt-1">Поэтажные планы, 4 фасада, разрезы здания, экспликация помещений, план кровли.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-5 group">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-nordic-gray flex items-center justify-center text-nordic-accent text-xl group-hover:bg-nordic-accent group-hover:text-white transition-colors duration-300">
+                                <i class="ri-hammer-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-nordic-dark">Конструктивный раздел (КР)</h4>
+                                <p class="text-sm text-gray-500 mt-1">Схема свайного поля, чертежи всех узлов каркаса, схема перекрытий, спецификация пиломатериалов.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-5 group">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-nordic-gray flex items-center justify-center text-nordic-accent text-xl group-hover:bg-nordic-accent group-hover:text-white transition-colors duration-300">
+                                <i class="ri-lightbulb-flash-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-nordic-dark">Инженерные сети (ИС)</h4>
+                                <p class="text-sm text-gray-500 mt-1">Схемы разводки электрики, водоснабжения, канализации, вентиляции и отопления.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW BLOCK 3: VISIT TOUR (CTA) -->
+    <!-- Логика: Самый сильный шаг конверсии. Увидеть вживую. -->
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto relative rounded-3xl overflow-hidden shadow-2xl">
+            <!-- Background Image with Parallax-like feel -->
+            <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&q=80&w=1600" class="absolute inset-0 w-full h-full object-cover" alt="Construction Site">
+            <div class="absolute inset-0 bg-nordic-dark/80"></div>
+
+            <div class="relative z-10 py-24 px-8 md:px-16 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-10">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Не верьте фото. <br>Верьте своим глазам.</h2>
+                    <p class="text-gray-300 text-lg mb-8">
+                        Приглашаем вас на экскурсию по строящимся объектам. Вы увидите «изнанку» стен, потрогаете утеплитель и оцените качество сборки каркаса до того, как его закроют отделкой.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="contacts.html" class="inline-flex items-center justify-center px-8 py-4 bg-nordic-accent text-white font-bold rounded hover:bg-white hover:text-nordic-dark transition-all duration-300">
+                            Записаться на экскурсию
+                        </a>
+                        <div class="flex items-center gap-3 text-white/80 px-4 py-2">
+                            <i class="ri-map-pin-2-line text-nordic-accent text-xl"></i>
+                            <span class="text-sm">Ближайшая экскурсия: <br><b class="text-white">Суббота, 12:00, КП "Лесной"</b></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Badge -->
+                <div class="hidden md:flex w-40 h-40 rounded-full border-2 border-white/20 items-center justify-center backdrop-blur-sm bg-white/5 animate-pulse">
+                    <div class="text-center">
+                        <span class="block text-3xl font-bold text-nordic-accent">3</span>
+                        <span class="text-xs text-white uppercase tracking-widest">Объекта<br>открыто</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-nordic-dark text-white pt-20 pb-10 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div>
+                <a href="#" class="text-2xl font-bold uppercase tracking-tighter block mb-6">Nordic<span class="text-nordic-accent">House</span>.</a>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Строительная компания полного цикла. Воплощаем мечту о загородной жизни с финской точностью и русским размахом.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6">Меню</h4>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li><a href="services.html" class="hover:text-nordic-accent transition-colors">Услуги</a></li>
+                    <li><a href="projects.html" class="hover:text-nordic-accent transition-colors">Проекты</a></li>
+                    <li><a href="about.html" class="hover:text-nordic-accent transition-colors">О компании</a></li>
+                    <li><a href="contacts.html" class="hover:text-nordic-accent transition-colors">Контакты</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6">Услуги</h4>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-nordic-accent transition-colors">Проектирование</a></li>
+                    <li><a href="#" class="hover:text-nordic-accent transition-colors">Строительство</a></li>
+                    <li><a href="#" class="hover:text-nordic-accent transition-colors">Инженерные сети</a></li>
+                    <li><a href="#" class="hover:text-nordic-accent transition-colors">Ландшафт</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6">Контакты</h4>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="ri-map-pin-line text-nordic-accent"></i>
+                        <span>Москва, Пресненская наб., 12</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="ri-phone-line text-nordic-accent"></i>
+                        <span>+7 (495) 000-00-00</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="ri-mail-line text-nordic-accent"></i>
+                        <span>hello@nordichouse.ru</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>&copy; 2025 Nordic House. Все права защищены.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors">Политика конфиденциальности</a>
+                <a href="#" class="hover:text-white transition-colors">Договор оферты</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

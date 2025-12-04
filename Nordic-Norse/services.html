@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги и Цены | Nordic House</title>
+    
+    <!-- Шрифты и иконки -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        nordic: {
+                            dark: '#111827',
+                            gray: '#F3F4F6',
+                            accent: '#C8A165',
+                            accentHover: '#B08D55',
+                            muted: '#9CA3AF'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Убираем стандартные треугольники у details/summary */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-white">
+
+    <!-- HEADER (Копия из projects) -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter text-nordic-dark uppercase">
+                Nordic<span class="text-nordic-accent">House</span>.
+            </a>
+            
+            <nav class="hidden md:flex gap-8">
+                <a href="services.html" class="text-sm font-semibold uppercase tracking-wider text-nordic-accent">Услуги</a>
+                <a href="projects.html" class="text-sm font-semibold uppercase tracking-wider text-gray-600 hover:text-nordic-accent transition-colors">Проекты</a>
+                <a href="about.html" class="text-sm font-semibold uppercase tracking-wider text-gray-600 hover:text-nordic-accent transition-colors">О компании</a>
+                <a href="contacts.html" class="text-sm font-semibold uppercase tracking-wider text-gray-600 hover:text-nordic-accent transition-colors">Контакты</a>
+            </nav>
+
+            <a href="contacts.html" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-nordic-dark hover:bg-nordic-accent rounded transition-all duration-300 shadow-lg">
+                Обсудить проект
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-40 pb-24 bg-nordic-dark overflow-hidden">
+        <!-- Abstract Background Lines -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 40px 40px;"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-nordic-accent font-bold uppercase tracking-widest text-sm mb-4 block">Экосистема сервиса</span>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    Больше, чем просто <br> укладка кирпичей
+                </h1>
+                <p class="text-lg text-gray-400 max-w-lg mb-8 font-light">
+                    Мы берем на себя все риски и задачи: от геологической разведки до финишной уборки перед вашим заселением.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#packages" class="px-8 py-4 bg-nordic-accent text-white font-bold rounded hover:bg-white hover:text-nordic-dark transition-colors">
+                        Смотреть комплектации
+                    </a>
+                </div>
+            </div>
+            <!-- Декоративный элемент справа -->
+            <div class="hidden lg:block relative">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1000" class="rounded-2xl shadow-2xl opacity-80" alt="Инженер">
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-green-100 p-3 rounded-full text-green-600"><i class="ri-shield-check-line text-xl"></i></div>
+                        <div>
+                            <p class="font-bold text-nordic-dark">Всё застраховано</p>
+                            <p class="text-xs text-gray-500">Ответственность на 10 млн ₽</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN SERVICES GRID (Карточки с деталями) -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-nordic-dark mb-12 text-center">Основные направления</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-nordic-gray rounded-2xl p-8 hover:bg-white hover:shadow-2xl border border-transparent hover:border-nordic-accent/30 transition-all duration-300">
+                    <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-2xl text-nordic-accent mb-6 shadow-sm group-hover:bg-nordic-accent group-hover:text-white transition-colors">
+                        <i class="ri-home-gear-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-nordic-dark">Строительство домов</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">
+                        Возведение капитальных строений по каркасной технологии, фахверк или клееный брус. Полное соблюдение СНиП.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-sm font-bold text-nordic-dark group-hover:text-nordic-accent">Подробнее <i class="ri-arrow-right-line ml-2"></i></a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-nordic-gray rounded-2xl p-8 hover:bg-white hover:shadow-2xl border border-transparent hover:border-nordic-accent/30 transition-all duration-300">
+                    <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-2xl text-nordic-accent mb-6 shadow-sm group-hover:bg-nordic-accent group-hover:text-white transition-colors">
+                        <i class="ri-pencil-ruler-2-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-nordic-dark">Проектирование</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">
+                        Разработка АР, КР и инженерных разделов. Адаптация фундамента под геологию вашего участка.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-sm font-bold text-nordic-dark group-hover:text-nordic-accent">Подробнее <i class="ri-arrow-right-line ml-2"></i></a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-nordic-gray rounded-2xl p-8 hover:bg-white hover:shadow-2xl border border-transparent hover:border-nordic-accent/30 transition-all duration-300">
+                    <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-2xl text-nordic-accent mb-6 shadow-sm group-hover:bg-nordic-accent group-hover:text-white transition-colors">
+                        <i class="ri-layout-masonry-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-nordic-dark">Коммуникации</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">
+                        Монтаж септиков, скважин, скрытой электропроводки и систем «Умный дом» под ключ.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-sm font-bold text-nordic-dark group-hover:text-nordic-accent">Подробнее <i class="ri-arrow-right-line ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING PACKAGES (Комплектации) - NEW BLOCK -->
+    <section id="packages" class="py-24 bg-nordic-dark text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-nordic-accent font-bold tracking-widest uppercase text-sm">Прозрачные сметы</span>
+                <h2 class="text-4xl font-bold mt-2">Выберите комплектацию</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Мы не навязываем лишние услуги. Вы можете заказать только каркас и доделать остальное сами, или доверить нам всё под ключ.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                
+                <!-- Pack 1: Basic -->
+                <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-gray-500 transition-colors">
+                    <h3 class="text-2xl font-bold mb-2">Силовой каркас</h3>
+                    <p class="text-gray-400 text-sm mb-6">Для тех, кто хочет делать отделку самостоятельно</p>
+                    <div class="text-3xl font-bold mb-8">от 35 000 ₽ <span class="text-sm font-normal text-gray-500">/ м²</span></div>
+                    
+                    <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-green-500"></i> Фундамент ЖБ сваи</li>
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-green-500"></i> Домокомплект (доска СС)</li>
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-green-500"></i> Кровля металлочерепица</li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="ri-close-line"></i> <span class="line-through">Утепление</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="ri-close-line"></i> <span class="line-through">Окна и двери</span></li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="ri-close-line"></i> <span class="line-through">Инженерия</span></li>
+                    </ul>
+                    <a href="contacts.html" class="block w-full py-3 text-center border border-white/20 rounded-lg hover:bg-white hover:text-nordic-dark font-bold transition-all">Рассчитать</a>
+                </div>
+
+                <!-- Pack 2: Popular (Active) -->
+                <div class="bg-gray-800 rounded-2xl p-8 border-2 border-nordic-accent relative transform md:-translate-y-4 shadow-2xl">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-nordic-accent text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Выбор клиентов</div>
+                    <h3 class="text-2xl font-bold mb-2">Тёплый контур</h3>
+                    <p class="text-gray-400 text-sm mb-6">Дом полностью готов снаружи и утеплен</p>
+                    <div class="text-3xl font-bold mb-8 text-nordic-accent">от 55 000 ₽ <span class="text-sm font-normal text-gray-500 text-white">/ м²</span></div>
+                    
+                    <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-nordic-accent"></i> Всё из тарифа "Каркас"</li>
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-nordic-accent"></i> Утепление 200/250 мм</li>
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-nordic-accent"></i> Окна Rehau (2-кам)</li>
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-nordic-accent"></i> Входная дверь с терморазрывом</li>
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-nordic-accent"></i> Внешняя отделка (имитация)</li>
+                        <li class="flex items-center gap-3 text-gray-600"><i class="ri-close-line"></i> <span class="line-through">Внутренняя отделка</span></li>
+                    </ul>
+                    <a href="contacts.html" class="block w-full py-3 text-center bg-nordic-accent text-white rounded-lg hover:bg-white hover:text-nordic-dark font-bold transition-all">Рассчитать</a>
+                </div>
+
+                <!-- Pack 3: Turnkey -->
+                <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-gray-500 transition-colors">
+                    <h3 class="text-2xl font-bold mb-2">Под ключ</h3>
+                    <p class="text-gray-400 text-sm mb-6">Заезжай и живи. Полная готовность.</p>
+                    <div class="text-3xl font-bold mb-8">от 85 000 ₽ <span class="text-sm font-normal text-gray-500">/ м²</span></div>
+                    
+                    <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-green-500"></i> Всё из тарифа "Тёплый контур"</li>
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-green-500"></i> Разводка электрики и воды</li>
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-green-500"></i> Отопление (Тёплый пол)</li>
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-green-500"></i> Внутренняя отделка</li>
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-green-500"></i> Установка сантехники</li>
+                        <li class="flex items-center gap-3"><i class="ri-check-line text-green-500"></i> Межкомнатные двери</li>
+                    </ul>
+                    <a href="contacts.html" class="block w-full py-3 text-center border border-white/20 rounded-lg hover:bg-white hover:text-nordic-dark font-bold transition-all">Рассчитать</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL BLOCK (Разрез стены) - NEW BLOCK -->
+    <section class="py-24 bg-nordic-gray overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1628744448839-0c4669539304?auto=format&fit=crop&q=80&w=1000" class="rounded-2xl shadow-2xl" alt="Утеплитель">
+                </div>
+
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-nordic-dark mb-6">Технология "Сканди-Сэндвич"</h2>
+                    <p class="text-gray-600 mb-8">
+                        Мы не экономим на скрытых работах. Правильный «пирог» стены — это гарантия того, что утеплитель не намокнет, а дом не сгниет через 10 лет.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="font-bold text-3xl text-nordic-accent/30">01</div>
+                            <div>
+                                <h4 class="font-bold text-nordic-dark">Перекрестное утепление</h4>
+                                <p class="text-sm text-gray-500">200 мм базальтовой ваты Paroc. Исключает «мостики холода» по стойкам каркаса.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="font-bold text-3xl text-nordic-accent/30">02</div>
+                            <div>
+                                <h4 class="font-bold text-nordic-dark">Мембраны Tyvek</h4>
+                                <p class="text-sm text-gray-500">Используем только оригинальные пленки DuPont. Пароизоляция проклеивается скотчем Delta.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="font-bold text-3xl text-nordic-accent/30">03</div>
+                            <div>
+                                <h4 class="font-bold text-nordic-dark">Сухая строганая доска</h4>
+                                <p class="text-sm text-gray-500">Каркас калибруется на заводе. Влажность не более 14-16%. Никакой плесени и усадки.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS MAP (Путь клиента) -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Как строится работа</h2>
+            
+            <div class="relative border-l-2 border-nordic-gray ml-6 md:ml-0 space-y-12">
+                
+                <!-- Step 1 -->
+                <div class="relative pl-12 md:pl-0">
+                    <!-- Dot -->
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-nordic-accent rounded-full border-4 border-white"></div>
+                    <div class="md:flex items-start justify-between group">
+                        <div class="md:w-5/12 md:text-right md:pr-12 mb-4 md:mb-0">
+                            <h3 class="text-xl font-bold text-nordic-dark">1. Встреча и смета</h3>
+                            <p class="text-gray-500 text-sm mt-2">Вы приезжаете в офис, мы подбираем проект и считаем точную стоимость. Фиксируем цену.</p>
+                        </div>
+                        <div class="md:w-5/12 md:pl-12">
+                            <span class="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full mb-2">Бесплатно</span>
+                            <p class="text-xs text-gray-400">Срок: 1-3 дня</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative pl-12 md:pl-0">
+                     <div class="absolute -left-[9px] top-0 w-5 h-5 bg-nordic-dark rounded-full border-4 border-white"></div>
+                    <div class="md:flex items-start justify-between">
+                         <div class="hidden md:block md:w-5/12 md:text-right md:pr-12">
+                             <p class="text-xs text-gray-400">Срок: 14 дней</p>
+                        </div>
+                        <div class="md:w-5/12 md:pl-12 mb-4 md:mb-0">
+                             <h3 class="text-xl font-bold text-nordic-dark">2. Проектирование</h3>
+                            <p class="text-gray-500 text-sm mt-2">Архитектор готовит АР и КР. Вы утверждаете планировки и внешний вид.</p>
+                        </div>
+                         <!-- Mobile fix order -->
+                        <div class="md:hidden md:w-5/12 md:pl-12">
+                            <p class="text-xs text-gray-400">Срок: 14 дней</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative pl-12 md:pl-0">
+                     <div class="absolute -left-[9px] top-0 w-5 h-5 bg-nordic-dark rounded-full border-4 border-white"></div>
+                    <div class="md:flex items-start justify-between">
+                        <div class="md:w-5/12 md:text-right md:pr-12 mb-4 md:mb-0">
+                            <h3 class="text-xl font-bold text-nordic-dark">3. Производство и монтаж</h3>
+                            <p class="text-gray-500 text-sm mt-2">Изготавливаем домокомплект. Заезжаем на участок, крутим сваи, собираем каркас.</p>
+                        </div>
+                        <div class="md:w-5/12 md:pl-12">
+                             <p class="text-xs text-gray-400">Срок: 30-45 дней</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Step 4 -->
+                 <div class="relative pl-12 md:pl-0">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-nordic-accent rounded-full border-4 border-white shadow-lg shadow-nordic-accent/50"></div>
+                   <div class="md:flex items-start justify-between">
+                        <div class="hidden md:block md:w-5/12 md:text-right md:pr-12">
+                            <p class="text-xs text-gray-400">Срок: 1 день</p>
+                       </div>
+                       <div class="md:w-5/12 md:pl-12 mb-4 md:mb-0">
+                            <h3 class="text-xl font-bold text-nordic-dark">4. Сдача ключей</h3>
+                           <p class="text-gray-500 text-sm mt-2">Подписываем акты, выдаем гарантийный сертификат на 10 лет и инструкцию по эксплуатации.</p>
+                       </div>
+                        <div class="md:hidden md:w-5/12 md:pl-12">
+                           <p class="text-xs text-gray-400">Срок: 1 день</p>
+                       </div>
+                   </div>
+               </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (Аккордеон) - NEW BLOCK -->
+    <section class="py-24 bg-nordic-gray">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Частые вопросы</h2>
+            
+            <div class="space-y-4">
+                <!-- Question 1 -->
+                <details class="group bg-white rounded-xl p-6 cursor-pointer border border-transparent open:border-nordic-accent/20 transition-all">
+                    <summary class="flex justify-between items-center font-bold text-lg text-nordic-dark">
+                        Меняется ли цена в процессе стройки?
+                        <span class="transform group-open:rotate-180 transition-transform duration-200 text-nordic-accent"><i class="ri-arrow-down-s-line text-2xl"></i></span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 leading-relaxed">Нет. Мы фиксируем конечную стоимость в договоре. Если мы ошиблись в расчетах материалов — это наши расходы, а не ваши. Доплата возможна только если вы сами захотите внести изменения в проект (например, добавить окно).</p>
+                </details>
+
+                <!-- Question 2 -->
+                <details class="group bg-white rounded-xl p-6 cursor-pointer border border-transparent open:border-nordic-accent/20 transition-all">
+                    <summary class="flex justify-between items-center font-bold text-lg text-nordic-dark">
+                        Можно ли использовать материнский капитал?
+                        <span class="transform group-open:rotate-180 transition-transform duration-200 text-nordic-accent"><i class="ri-arrow-down-s-line text-2xl"></i></span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 leading-relaxed">Да, мы официально зарегистрированная строительная компания. Мы предоставляем полный пакет документов для Пенсионного фонда и банков (для ипотеки).</p>
+                </details>
+
+                <!-- Question 3 -->
+                <details class="group bg-white rounded-xl p-6 cursor-pointer border border-transparent open:border-nordic-accent/20 transition-all">
+                    <summary class="flex justify-between items-center font-bold text-lg text-nordic-dark">
+                        В какое время года лучше строить?
+                        <span class="transform group-open:rotate-180 transition-transform duration-200 text-nordic-accent"><i class="ri-arrow-down-s-line text-2xl"></i></span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 leading-relaxed">Каркасная технология позволяет строить круглый год. Зимняя стройка даже предпочтительнее: дерево более сухое, нет грязи на участке, а цены на материалы часто ниже сезонных.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-nordic-dark text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div>
+                <a href="index.html" class="text-2xl font-bold uppercase tracking-tighter block mb-6">Nordic<span class="text-nordic-accent">House</span>.</a>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Строительная компания полного цикла.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6">Меню</h4>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li><a href="services.html" class="hover:text-nordic-accent transition-colors">Услуги</a></li>
+                    <li><a href="projects.html" class="hover:text-nordic-accent transition-colors">Проекты</a></li>
+                    <li><a href="about.html" class="hover:text-nordic-accent transition-colors">О компании</a></li>
+                    <li><a href="contacts.html" class="hover:text-nordic-accent transition-colors">Контакты</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6">Контакты</h4>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li>Москва, Пресненская наб., 12</li>
+                    <li>+7 (495) 000-00-00</li>
+                    <li>hello@nordichouse.ru</li>
+                </ul>
+            </div>
+             <!-- Socials -->
+             <div>
+                <h4 class="text-lg font-bold mb-6">Мы в соцсетях</h4>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-nordic-accent transition-colors"><i class="ri-telegram-fill"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-nordic-accent transition-colors"><i class="ri-whatsapp-fill"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-nordic-accent transition-colors"><i class="ri-youtube-fill"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 border-t border-gray-800 pt-8 text-xs text-gray-500 text-center">
+            <p>&copy; 2025 Nordic House. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

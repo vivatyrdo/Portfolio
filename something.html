@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAURYZ FESTIVAL 2025 | SHYMKENT</title>
+    
+    <!-- Подключаем элитные шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,600&family=Montserrat:wght@300;400;500;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CORE SETTINGS --- */
+        :root {
+            --deep-green: #0A2F23; /* Глубокий изумруд */
+            --gold: #C8AA6E;       /* Благородное золото */
+            --gold-light: #E6CFA3;
+            --cream: #F2F0E9;      /* Цвет войлока/бумаги */
+            --red: #A63434;        /* Тюльпаны (акцент) */
+            --black: #050505;
+            
+            --font-main: 'Montserrat', sans-serif;
+            --font-display: 'Cormorant Garamond', serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--deep-green);
+            color: var(--cream);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+        }
+
+        /* Убираем скроллбар для эстетики */
+        ::-webkit-scrollbar { width: 8px; background: var(--deep-green); }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+
+        /* --- UTILS --- */
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .gold-text { color: var(--gold); }
+        .italic { font-style: italic; }
+        
+        /* Типографика */
+        h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 0.9; text-transform: uppercase; }
+        
+        /* --- HEADER --- */
+        nav {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            mix-blend-mode: difference; /* Эффект наложения на фото */
+            color: #fff;
+        }
+        .logo { font-size: 24px; font-weight: 800; letter-spacing: -1px; }
+        .menu-btn { 
+            font-size: 14px; text-transform: uppercase; letter-spacing: 2px; 
+            cursor: pointer; border-bottom: 1px solid transparent; transition: 0.3s;
+        }
+        .menu-btn:hover { border-color: #fff; }
+
+        /* --- HERO SECTION (BIG & BOLD) --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 80px;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0; z-index: -1;
+            /* Реалистичное фото природы юга */
+            background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2832&auto=format&fit=crop') center/cover;
+            filter: brightness(0.6);
+            transform: scale(1.1);
+            animation: slowZoom 20s infinite alternate;
+        }
+        @keyframes slowZoom { from { transform: scale(1.1); } to { transform: scale(1.2); } }
+
+        .hero-title {
+            font-size: clamp(60px, 12vw, 200px);
+            color: var(--gold-light);
+            position: relative;
+            z-index: 10;
+        }
+        .hero-title span {
+            display: block;
+            font-family: var(--font-main);
+            font-weight: 300;
+            font-size: clamp(16px, 2vw, 30px);
+            color: #fff;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            margin-left: 10px;
+        }
+        
+        .hero-info {
+            position: absolute;
+            right: 40px;
+            bottom: 80px;
+            text-align: right;
+            border-left: 1px solid rgba(255,255,255,0.3);
+            padding-left: 30px;
+        }
+        .hero-date { font-size: 40px; font-family: var(--font-display); color: var(--gold); }
+        .hero-loc { font-size: 14px; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; }
+
+        /* --- ORNAMENT DIVIDER --- */
+        .ornament-line {
+            height: 60px;
+            background-color: var(--deep-green);
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.12l-6.57 6.57-2.83-2.83L20 14.46l9.4 9.4-2.83 2.83z' fill='%23C8AA6E' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+            width: 100%;
+            border-top: 1px solid rgba(200, 170, 110, 0.2);
+            border-bottom: 1px solid rgba(200, 170, 110, 0.2);
+        }
+
+        /* --- INTRO SECTION --- */
+        .intro { padding: 120px 0; background: var(--cream); color: var(--deep-green); }
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .intro-text h2 {
+            font-size: clamp(40px, 5vw, 80px);
+            margin-bottom: 40px;
+            line-height: 1;
+        }
+        .intro-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #4a5d55;
+            max-width: 600px;
+        }
+        .intro-img {
+            height: 600px;
+            position: relative;
+        }
+        .intro-img img {
+            border-radius: 200px 200px 0 0; /* Форма арки */
+            filter: sepia(20%);
+        }
+        /* Декоративный круг */
+        .sun-circle {
+            position: absolute;
+            top: -50px; right: -50px;
+            width: 150px; height: 150px;
+            background: var(--gold);
+            border-radius: 50%;
+            z-index: -1;
+            animation: rotate 20s linear infinite;
+        }
+        .sun-circle::after {
+            content: ''; position: absolute; inset: 10px; border: 1px dashed var(--deep-green); border-radius: 50%;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        /* --- LOCATIONS (HORIZONTAL SCROLL) --- */
+        .locations {
+            padding: 120px 0;
+            background: var(--deep-green);
+            color: var(--cream);
+            overflow: hidden;
+        }
+        .loc-header {
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .loc-title { font-size: 60px; }
+        
+        .loc-slider {
+            display: flex;
+            gap: 2px; /* Очень маленький отступ для стиля */
+            margin-left: 40px;
+            overflow-x: auto;
+            padding-bottom: 40px;
+        }
+        .loc-card {
+            min-width: 400px;
+            height: 500px;
+            position: relative;
+            cursor: pointer;
+            transition: 0.5s;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+        .loc-card:hover { min-width: 500px; } /* Эффект аккордеона */
+        
+        .loc-img {
+            width: 100%; height: 100%;
+            filter: grayscale(100%) brightness(0.7);
+            transition: 0.5s;
+        }
+        .loc-card:hover .loc-img { filter: grayscale(0%) brightness(1); }
+        
+        .loc-info {
+            position: absolute;
+            bottom: 0; left: 0;
+            padding: 30px;
+            background: linear-gradient(to top, #000, transparent);
+            width: 100%;
+        }
+        .loc-num { font-family: var(--font-display); font-size: 60px; color: var(--gold); line-height: 0.5; opacity: 0.5; }
+        .loc-name { font-size: 24px; font-weight: 700; margin-top: 10px; text-transform: uppercase; }
+        .loc-desc { font-size: 14px; opacity: 0; transform: translateY(20px); transition: 0.3s; margin-top: 10px; }
+        .loc-card:hover .loc-desc { opacity: 1; transform: translateY(0); }
+
+        /* --- PROGRAM (TIMELINE STYLE) --- */
+        .program {
+            background: var(--cream);
+            padding: 120px 0;
+            color: var(--black);
+        }
+        .prog-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+        }
+        .prog-sticky {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .prog-date {
+            font-size: 100px;
+            font-family: var(--font-display);
+            color: var(--deep-green);
+            line-height: 0.8;
+            margin-bottom: 20px;
+        }
+        .prog-sub { font-size: 18px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); }
+        
+        .prog-list { border-left: 1px solid rgba(0,0,0,0.1); }
+        .prog-item {
+            padding: 40px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            transition: 0.3s;
+            position: relative;
+        }
+        .prog-item:hover { background: #fff; padding-left: 60px; }
+        .prog-item::before {
+            content: ''; position: absolute; left: -5px; top: 50%; width: 9px; height: 9px; background: var(--deep-green); border-radius: 50%;
+        }
+        .p-time { font-family: var(--font-display); font-size: 24px; color: var(--gold); margin-bottom: 10px; display: block; }
+        .p-title { font-size: 30px; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; }
+        .p-desc { color: #666; max-width: 500px; }
+
+        /* --- GASTRONOMY (BIG GRID) --- */
+        .gastro {
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .gastro-text {
+            background: var(--red); /* Цвет тюльпана */
+            color: #fff;
+            padding: 100px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .gastro-text h2 { font-size: 70px; margin-bottom: 30px; }
+        .gastro-list li {
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding: 20px 0;
+            font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .gastro-img {
+            background: url('https://img.freepik.com/premium-photo/beshbarmak-traditional-kazakh-dish-noodles-with-meat-dark-background_142478-1959.jpg') center/cover;
+            min-height: 600px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #050505;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+        }
+        .footer-logo { font-family: var(--font-display); font-size: 15vw; color: var(--deep-green); line-height: 0.8; opacity: 0.5; }
+        .footer-links { margin-top: -5vw; position: relative; z-index: 10; display: flex; justify-content: center; gap: 40px; }
+        .footer-links a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 14px; letter-spacing: 2px; }
+
+        /* --- ANIMATION CLASSES --- */
+        .fade-up { opacity: 0; transform: translateY(50px); transition: 1s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* --- MEDIA QUERIES --- */
+        @media (max-width: 1024px) {
+            .intro-grid { grid-template-columns: 1fr; }
+            .intro-img { height: 400px; order: -1; }
+            .gastro { grid-template-columns: 1fr; }
+            .gastro-img { height: 400px; }
+            .prog-grid { grid-template-columns: 1fr; }
+            .prog-sticky { position: relative; top: 0; margin-bottom: 40px; }
+            .loc-card { min-width: 300px; }
+            .loc-card:hover { min-width: 320px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SHYMKENT 2025</div>
+        <div class="menu-btn">Меню</div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="container" style="width: 100%;">
+            <h1 class="hero-title">
+                <span>ГЛАВНЫЙ ПРАЗДНИК ВЕСНЫ</span>
+                ULY DALA <br> <i class="gold-text">RHYTHM</i>
+            </h1>
+            
+            <div class="hero-info">
+                <div class="hero-date">21—23.03</div>
+                <div class="hero-loc">Kazakhstan, Shymkent</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="ornament-line"></div>
+
+    <!-- INTRO -->
+    <section class="intro">
+        <div class="container intro-grid">
+            <div class="intro-text fade-up">
+                <h2>ТЕПЛО,<br> КОТОРОЕ <span class="gold-text italic">ОБЪЕДИНЯЕТ</span></h2>
+                <p>Шымкент открывает ворота в настоящую восточную сказку. В этом году мы переосмыслили традиции Наурыза. Это не просто праздник — это фестиваль новой казахской культуры.</p>
+                <p>Вас ждут 3 дня, 5 локаций и более 100 часов живой музыки, гастрономии и искусства.</p>
+                <a href="#" style="color: var(--deep-green); border-bottom: 1px solid; text-decoration: none; font-weight: 600;">ЧИТАТЬ МАНИФЕСТ</a>
+            </div>
+            <div class="intro-img fade-up">
+                <div class="sun-circle"></div>
+                <img src="https://images.unsplash.com/photo-1588663806950-7dc6db954ebc?q=80&w=1974&auto=format&fit=crop" alt="Kazakh Culture">
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section class="locations">
+        <div class="container loc-header">
+            <h2 class="loc-title">КАРТА <br><span class="italic gold-text">СОБЫТИЙ</span></h2>
+            <p style="max-width: 300px; text-align: right; opacity: 0.7;">Каждая локация — это уникальный мир со своей программой и атмосферой.</p>
+        </div>
+
+        <div class="loc-slider">
+            <!-- Loc 1 -->
+            <div class="loc-card">
+                <img src="https://avatars.mds.yandex.net/get-altay/236825/2a0000015bf3b632973121d5964f728c3a9f/XXXL" class="loc-img">
+                <div class="loc-info">
+                    <div class="loc-num">01</div>
+                    <div class="loc-name">ShymQala Citadel</div>
+                    <div class="loc-desc">Историческая реконструкция, ремесленники, юрточный городок.</div>
+                </div>
+            </div>
+            <!-- Loc 2 -->
+            <div class="loc-card">
+                <img src="https://img.freepik.com/premium-photo/crowd-people-concert_1000124-3860.jpg" class="loc-img">
+                <div class="loc-info">
+                    <div class="loc-num">02</div>
+                    <div class="loc-name">Central Arbat</div>
+                    <div class="loc-desc">Главная сцена, Street Food фестиваль, арт-инсталляции.</div>
+                </div>
+            </div>
+            <!-- Loc 3 -->
+            <div class="loc-card">
+                <img src="https://img.freepik.com/free-photo/beautiful-field-tulips_23-2150766113.jpg" class="loc-img">
+                <div class="loc-info">
+                    <div class="loc-num">03</div>
+                    <div class="loc-name">Dendropark</div>
+                    <div class="loc-desc">Фестиваль тюльпанов, классическая музыка, пикник-зона.</div>
+                </div>
+            </div>
+            <!-- Loc 4 -->
+            <div class="loc-card">
+                <img src="https://avatars.mds.yandex.net/get-altay/10294179/2a0000018d0d57d54457f925f6e5200b8e76/XXXL" class="loc-img">
+                <div class="loc-info">
+                    <div class="loc-num">04</div>
+                    <div class="loc-name">Rixos Khadisha</div>
+                    <div class="loc-desc">Закрытый Гала-ужин, Fashion Show.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAM -->
+    <section class="program">
+        <div class="container prog-grid">
+            <div class="prog-sticky">
+                <div class="prog-date">21</div>
+                <div class="prog-sub">МАРТА / ПЯТНИЦА</div>
+                <h3 style="margin-top: 30px; font-size: 30px;">ОТКРЫТИЕ</h3>
+            </div>
+            
+            <div class="prog-list">
+                <div class="prog-item fade-up">
+                    <span class="p-time">10:00 — 12:00</span>
+                    <div class="p-title">Шествие "Кош Келдің, Наурыз"</div>
+                    <p class="p-desc">Парад верблюдов, батыров и танцевальных ансамблей от Площади Ордабасы до Цитадели.</p>
+                </div>
+                <div class="prog-item fade-up">
+                    <span class="p-time">13:00 — 16:00</span>
+                    <div class="p-title">Турнир "Казахстан Барысы"</div>
+                    <p class="p-desc">Отборочный этап по национальной борьбе. Главный приз — автомобиль.</p>
+                </div>
+                <div class="prog-item fade-up">
+                    <span class="p-time">18:00 — 22:00</span>
+                    <div class="p-title">Ethno-Jazz Concert</div>
+                    <p class="p-desc">Хедлайнеры: Turan, Ulytau, и специальные гости из Турции.</p>
+                </div>
+                <div class="prog-item fade-up">
+                    <span class="p-time">23:00</span>
+                    <div class="p-title">Ночное Шоу Дронов</div>
+                    <p class="p-desc">500 дронов создадут в небе историю Шелкового Пути.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GASTRO -->
+    <section class="gastro">
+        <div class="gastro-text">
+            <h2>GASTRO <br> <span class="italic" style="color:var(--deep-green)">EXPERIENCE</span></h2>
+            <p style="margin-bottom: 30px; font-size: 18px; opacity: 0.9;">Шымкент — гастрономическая столица. Мы подготовили специальное меню на всех локациях.</p>
+            <ul class="gastro-list">
+                <li>
+                    <span>Плов "Праздничный"</span>
+                    <span style="opacity: 0.6">1.5 тонны</span>
+                </li>
+                <li>
+                    <span>Наурыз Коже</span>
+                    <span style="opacity: 0.6">Бесплатно</span>
+                </li>
+                <li>
+                    <span>Тандыр Самса</span>
+                    <span style="opacity: 0.6">Hot Spot</span>
+                </li>
+                <li>
+                    <span>Чайная церемония</span>
+                    <span style="opacity: 0.6">Lounge Area</span>
+                </li>
+            </ul>
+        </div>
+        <div class="gastro-img"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">NAURYZ</div>
+        <div class="footer-links">
+            <a href="#">Instagram</a>
+            <a href="#">Tickets</a>
+            <a href="#">Contact</a>
+            <a href="#">Press</a>
+        </div>
+        <p style="margin-top: 40px; opacity: 0.3; font-size: 12px;">SHYMKENT CITY ADMINISTRATION © 2025</p>
+    </footer>
+
+    <script>
+        // Простая анимация появления при скролле
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

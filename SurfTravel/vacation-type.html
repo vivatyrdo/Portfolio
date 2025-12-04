@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Types - Surf & Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">Surf & Travel</a>
+            <ul class="nav-links">
+                <li><a href="vacation-type.html">Vacation Types</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="accommodation.html">Accommodations</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button class="btn-primary" id="openModalBtn">Book Now</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/hero-img3.png" alt="Vacation Types" class="hero-bg-img">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Vacation Types</h1>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-item">
+                <input type="text" placeholder="Location (Active Field)">
+            </div>
+            <div class="search-item">
+                <input type="text" placeholder="Dates">
+            </div>
+            <div class="search-item">
+                <input type="text" placeholder="Guests (Default)">
+            </div>
+            <a href="search.html" class="search-btn">Search</a>
+        </div>
+    </section>
+
+    <!-- INTRO CONTENT SECTION -->
+    <section class="content-section">
+        <div class="container">
+            
+            <!-- Intro Block -->
+            <div class="vacation-intro">
+                <div class="intro-icon-wrapper">
+                    <img src="images/vacation-img.png" alt="Surf Lodge Icon">
+                </div>
+
+                <h2 class="section-title">The comfort of our <span>Surf Lodges</span></h2>
+                
+                <p class="intro-text">
+                    These are accommodation-only proposals in various types of lodging, 
+                    from surf houses to independent apartments, from hotels to villages. 
+                    A solution designed for independent surfers looking for comfortable accommodation 
+                    in one of our surf destinations!
+                </p>
+
+                <div class="featured-image-wrapper">
+                    <img src="images/vacation-img1.png" alt="Luxury Surf Lodge Pool">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ACCOMMODATIONS & SUGGESTIONS SLIDERS -->
+    <section class="content-section">
+        <div class="container">
+            
+            <!-- 1. ACCOMMODATIONS SLIDER HEADER -->
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div class="icon-title-wrapper">
+                    <img src="images/house-icon.svg" alt="Icon" style="width: 28px; height: 28px;">
+                    <h2 class="section-title" style="margin: 0;">Accommodations</h2>
+                </div>
+                <p class="section-subtitle">
+                    Choose the type of surf vacation that suits you. <br>
+                    You can leave at any time.
+                </p>
+            </div>
+
+            <!-- 1. ACCOMMODATIONS SWIPER -->
+            <div class="slider-group">
+                <div class="swiper accommodations-swiper">
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="acco-card">
+                                <div class="acco-img">
+                                    <img src="images/vacation-slider1.png" alt="Hotel">
+                                </div>
+                                <div class="acco-content">
+                                    <span class="acco-location">Canary Islands, Gran Canaria</span>
+                                    <h3>Hotel Las Palmas</h3>
+                                    <p>Leave with SurfCamp and discover the best surf destinations. Live in contact with the population...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="acco-card">
+                                <div class="acco-img">
+                                    <img src="images/vacation-slider2.png" alt="Resort">
+                                </div>
+                                <div class="acco-content">
+                                    <span class="acco-location">Canary Islands, Gran Canaria</span>
+                                    <h3>Resort Las Palmas</h3>
+                                    <p>Leave with SurfCamp and discover the best surf destinations. Live in contact with the population...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="acco-card">
+                                <div class="acco-img">
+                                    <img src="images/vacation-slider3.png" alt="Hotel">
+                                </div>
+                                <div class="acco-content">
+                                    <span class="acco-location">Canary Islands, Gran Canaria</span>
+                                    <h3>Resort Las Palmas</h3>
+                                    <p>Leave with SurfCamp and discover the best surf destinations. Live in contact with the population...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="acco-card">
+                                <div class="acco-img">
+                                    <img src="images/vacation-slider1.png" alt="Hotel">
+                                </div>
+                                <div class="acco-content">
+                                    <span class="acco-location">Canary Islands, Gran Canaria</span>
+                                    <h3>Hotel Las Palmas</h3>
+                                    <p>Leave with SurfCamp and discover the best surf destinations. Live in contact with the population...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+
+
+            <!-- 2. YOU MIGHT ALSO LIKE HEADER -->
+            <div style="text-align: center; margin-top: 80px; margin-bottom: 40px;">
+                <h2 class="section-title">You might also like:</h2>
+                <p class="section-subtitle">
+                    Choose the type of surf vacation that suits you. You can leave at any time.
+                </p>
+            </div>
+
+            <!-- 2. SUGGESTIONS SWIPER -->
+            <div class="slider-group">
+                <div class="swiper suggestions-swiper">
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Slide 1 (Reusing package-card styles) -->
+                        <div class="swiper-slide">
+                            <div class="package-card">
+                                <div class="package-img-wrapper">
+                                    <span class="package-tag">Surf Camp</span>
+                                    <img src="images/vacation-slider4.png" alt="Package">
+                                </div>
+                                <div class="package-content">
+                                    <span class="package-location">Africa, Morocco</span>
+                                    <h3 class="package-title">Jeffrey's Bay Surf Camp in Hotel</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="package-card">
+                                <div class="package-img-wrapper">
+                                    <span class="package-tag">Surf Camp</span>
+                                    <img src="images/vacation-slider5.png" alt="Package">
+                                </div>
+                                <div class="package-content">
+                                    <span class="package-location">Africa, Morocco</span>
+                                    <h3 class="package-title">Jeffrey's Bay Surf Camp in Hotel</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="package-card">
+                                <div class="package-img-wrapper">
+                                    <span class="package-tag">Surf Camp</span>
+                                    <img src="images/vacation-slider6.png" alt="Package">
+                                </div>
+                                <div class="package-content">
+                                    <span class="package-location">Africa, Morocco</span>
+                                    <h3 class="package-title">Jeffrey's Bay Surf Camp in Hotel</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="package-card">
+                                <div class="package-img-wrapper">
+                                    <span class="package-tag">Surf Camp</span>
+                                    <img src="images/vacation-slider4.png" alt="Package">
+                                </div>
+                                <div class="package-content">
+                                    <span class="package-location">Africa, Morocco</span>
+                                    <h3 class="package-title">Jeffrey's Bay Surf Camp in Hotel</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="package-card">
+                                <div class="package-img-wrapper">
+                                    <span class="package-tag">Surf Camp</span>
+                                    <img src="images/vacation-slider5.png" alt="Package">
+                                </div>
+                                <div class="package-content">
+                                    <span class="package-location">Africa, Morocco</span>
+                                    <h3 class="package-title">Jeffrey's Bay Surf Camp in Hotel</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <!-- Top Header -->
+            <h2 class="section-title">Choose Your Next <span>Destination</span></h2>
+            <p class="section-subtitle">
+                Which corner of the world do you want to go to? <br>
+                Search among over 200 available destinations.
+            </p>
+
+            <div class="map-container">
+                <img src="images/MAPPA.png" alt="World Map" class="world-map-img">
+            </div>
+
+            <!-- Sub Header with Icon -->
+            <div class="destinations-header">
+                <div class="icon-title-wrapper">
+                    <img src="images/globe.png" alt="Icon" class="dest-icon-small">
+                    <h3>Destinations</h3>
+                </div>
+                <p class="section-subtitle">
+                    All selected destinations for your next Surf vacation and more.
+                </p>
+            </div>
+
+            <!-- Destinations Grid -->
+            <div class="destinations-grid">
+                <!-- Card 1 -->
+                <div class="destination-card">
+                    <img src="images/destination1.png" alt="Dakhla" class="dest-bg">
+                    <div class="dest-overlay">
+                        <div class="dest-info">
+                            <img src="images/map1.png" alt="Map Icon" class="dest-map-icon">
+                            <div>
+                                <h4>Dakhla</h4>
+                                <span>Morocco, Africa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="destination-card">
+                    <img src="images/destionation2.png" alt="Dakhla" class="dest-bg">
+                    <div class="dest-overlay">
+                        <div class="dest-info">
+                            <img src="images/map2.png" alt="Map Icon" class="dest-map-icon">
+                            <div>
+                                <h4>Dakhla</h4>
+                                <span>Morocco, Africa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="destination-card">
+                    <img src="images/destination3.png" alt="Dakhla" class="dest-bg">
+                    <div class="dest-overlay">
+                        <div class="dest-info">
+                            <img src="images/map3.png" alt="Map Icon" class="dest-map-icon">
+                            <div>
+                                <h4>Dakhla</h4>
+                                <span>Morocco, Africa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="destination-card">
+                    <img src="images/destination4.png" alt="Dakhla" class="dest-bg">
+                    <div class="dest-overlay">
+                        <div class="dest-info">
+                            <img src="images/map4.png" alt="Map Icon" class="dest-map-icon">
+                            <div>
+                                <h4>Dakhla</h4>
+                                <span>Morocco, Africa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="destination-card">
+                    <img src="images/destination5.png" alt="Dakhla" class="dest-bg">
+                    <div class="dest-overlay">
+                        <div class="dest-info">
+                            <img src="images/map5.png" alt="Map Icon" class="dest-map-icon">
+                            <div>
+                                <h4>Dakhla</h4>
+                                <span>Morocco, Africa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="destination-card">
+                    <img src="images/destination6.png" alt="Dakhla" class="dest-bg">
+                    <div class="dest-overlay">
+                        <div class="dest-info">
+                            <img src="images/map6.png" alt="Map Icon" class="dest-map-icon">
+                            <div>
+                                <h4>Dakhla</h4>
+                                <span>Morocco, Africa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Button -->
+            <div style="margin-top: 50px;">
+                <a href="#" class="btn-outline">Search by Location</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <img src="images/footer.png" alt="Sea Background" class="newsletter-bg-img">
+        <div class="newsletter-overlay"></div>
+
+        <div class="container newsletter-content">
+            <h2 class="section-title white-text">Subscribe to the <span>Newsletter</span></h2>
+            
+            <form class="newsletter-form">
+                <input type="text" placeholder="Name and Surname">
+                <input type="email" placeholder="Email address">
+                <button type="submit" class="btn-primary">I want to subscribe!</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <!-- Col 1: Brand -->
+                <div class="footer-col">
+                    <a href="#" class="logo footer-logo">Surf & Travel</a>
+                    <span class="footer-sublogo">Surf & Travel Agency</span>
+                    <p class="footer-desc">
+                        All selected destinations for your next Surf vacation and more.
+                    </p>
+                </div>
+
+                <!-- Col 2: Menu -->
+                <div class="footer-col center-col">
+                    <h3 class="footer-title">Menu</h3>
+                    <ul class="footer-links">
+                        <li><img src="images/footer-img1.png" alt="icon"> <a href="#">Surf Vacations</a></li>
+                        <li><img src="images/footer-img2.png" alt="icon"> <a href="#">Destinations</a></li>
+                        <li><img src="images/footer-img3.png" alt="icon"> <a href="#">Accommodations</a></li>
+                        <li><img src="images/footer-img4.png" alt="icon"> <a href="#">About</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contacts -->
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <div class="footer-icons-row">
+                        <a href="#"><img src="images/footer-img5.png" alt="Email"></a>
+                        <a href="#"><img src="images/footer-img6.png" alt="Phone"></a>
+                        <a href="#"><img src="images/footer-img7.png" alt="WhatsApp"></a>
+                    </div>
+
+                    <h3 class="footer-title" style="margin-top: 20px;">Follow us on social</h3>
+                    <div class="footer-icons-row">
+                        <a href="#"><img src="images/footer-img8.png" alt="Facebook"></a>
+                        <a href="#"><img src="images/footer-img9.png" alt="Instagram"></a>
+                        <a href="#"><img src="images/footer-img10.png" alt="YouTube"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Window -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModalBtn">&times;</span>
+            <h2>Book Your Trip</h2>
+            <p>Fill out the form below to start your adventure.</p>
+            <br>
+            <form class="booking-form">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <button type="button" class="btn-primary" id="submitFormBtn">Send Request</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
