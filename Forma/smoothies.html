@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMA - Детокс-программы</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="detox-page-body">
+
+    <!-- Header (Белый) -->
+    <header class="header header--white">
+        <div class="header__inner">
+            <div class="header__left">
+                <a href="index.html" class="logo">FORMA</a>
+            </div>
+            <div class="header__center">
+                <nav class="nav">
+                   <ul class="nav__list">
+                        <!-- Пункт с выпадающим меню (открыт как на макете) -->
+                        <li class="nav__item dropdown-trigger">
+                            <a href="#" class="nav__link">МЕНЮ</a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a href="detox-programs.html">ДЕТОКС-ПРОГРАММЫ</a></li>
+                                    <li><a href="smoothies.html">СМУЗИ</a></li>
+                                    <li><a href="juices.html">СОКИ</a></li>
+                                    <li><a href="smoothies-bowl.html">СМУЗИ БОУЛЫ</a></li>
+                                    <li><a href="detox-tea.html">ДЕТОКС ЧАЙ</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav__item"><a href="#" class="nav__link">АКЦИИ</a></li>
+                        <li class="nav__item"><a href="detox-programs.html" class="nav__link">ДЕТОКС-ПРОГРАММЫ</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">О НАС</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">КОНТАКТЫ</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">ДОСТАВКА И ОПЛАТА</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header__right">
+                <a href="registration.html" class="icon-btn"><img src="images/profile-icon.svg" alt="User"></a>
+                <a href="#" class="icon-btn"><img src="images/love.svg" alt="Heart"></a>
+                <a href="#" class="icon-btn"><img src="images/shopping-cart (1).svg" alt="Cart"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="detox-main">
+        
+        <!-- Breadcrumbs & Search -->
+        <div class="page-top-bar">
+            <div class="container top-bar-inner">
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a> / <a href="#">Магазин детокс напитков</a> / <span class="current-crumb">Смузи</span>
+                </div>
+                
+                <div class="catalog-search">
+                    <input type="text" placeholder="Поиск товаров">
+                    <button><img src="images/loop-icon.svg" alt="Search"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Grid Layout -->
+            <div class="catalog-grid">
+    
+    <!-- Block 1: Info Text (Оставляем дивом, это просто текст) -->
+    <div class="catalog-item info-block">
+        <h1 class="info-title">Смузи c коллагеном</h1>
+        <p class="info-desc">
+           Мы специализируемся на изготовлении и доставке полезных смузи для здоровья в Москве и области. Купите детокс смузи по выгодной цене, заказав их прямо сейчас. Попробуйте смузи для здоровья и похудения и подарите своему организму ощущение легкости и гармонии!
+        </p>
+    </div>
+
+    <!-- Block 2: Product Card (Теперь это ССЫЛКА) -->
+    <a href="smoothies-product.html" class="catalog-item product-card">
+        <!-- Кнопки внутри ссылки (нужен JS, чтобы они не перекидывали, но пока оставим визуально) -->
+        <object class="card-btn-obj"><button class="card-btn-cart">В КОРЗИНУ</button></object>
+        <object class="card-btn-obj"><button class="card-btn-like"><img src="images/love.svg" alt="Heart"></button></object>
+        
+        <div class="card-image">
+            <img src="images/smoothie-img1.png" alt="Detox Set 1 Day">
+        </div>
+        
+        <div class="card-info">
+            <div class="card-price">320₽</div>
+            <h3 class="card-title">Смузи – Авокадо и шпинат</h3>
+        </div>
+    </a>
+
+    <!-- Block 3 -->
+    <a href="smoothies-product.html" class="catalog-item product-card">
+        <object class="card-btn-obj"><button class="card-btn-cart">В КОРЗИНУ</button></object>
+        <object class="card-btn-obj"><button class="card-btn-like"><img src="images/love.svg" alt="Heart"></button></object>
+        
+        <div class="card-image">
+            <img src="images/smoothie-img2.png" alt="Detox Set 2 Days">
+        </div>
+        
+        <div class="card-info">
+            <div class="card-price">320₽</div>
+            <h3 class="card-title">Смузи – Глинтвейн</h3>
+        </div>
+    </a>
+
+    <!-- Block 4 -->
+    <a href="smoothies-product.html" class="catalog-item product-card">
+        <object class="card-btn-obj"><button class="card-btn-cart">В КОРЗИНУ</button></object>
+        <object class="card-btn-obj"><button class="card-btn-like"><img src="images/love.svg" alt="Heart"></button></object>
+        
+        <div class="card-image">
+            <img src="images/smoothie-img3.png" alt="Detox Set Juice 1 Day">
+        </div>
+        
+        <div class="card-info">
+            <div class="card-price">320₽</div>
+            <h3 class="card-title">Смузи – Гранат и клюква</h3>
+        </div>
+    </a>
+
+    <!-- Block 4 -->
+    <a href="smoothies-product.html" class="catalog-item product-card">
+        <object class="card-btn-obj"><button class="card-btn-cart">В КОРЗИНУ</button></object>
+        <object class="card-btn-obj"><button class="card-btn-like"><img src="images/love.svg" alt="Heart"></button></object>
+        
+        <div class="card-image">
+            <img src="images/smoothie-img4.png" alt="Detox Set Juice 1 Day">
+        </div>
+        
+        <div class="card-info">
+            <div class="card-price">320₽</div>
+            <h3 class="card-title">Смузи – Ананас и розовый перец</h3>
+        </div>
+    </a>
+
+    <a href="smoothies-product.html" class="catalog-item product-card">
+        <!-- Кнопки внутри ссылки (нужен JS, чтобы они не перекидывали, но пока оставим визуально) -->
+        <object class="card-btn-obj"><button class="card-btn-cart">В КОРЗИНУ</button></object>
+        <object class="card-btn-obj"><button class="card-btn-like"><img src="images/love.svg" alt="Heart"></button></object>
+        
+        <div class="card-image">
+            <img src="images/smoothie-img1.png" alt="Detox Set 1 Day">
+        </div>
+        
+        <div class="card-info">
+            <div class="card-price">320₽</div>
+            <h3 class="card-title">Смузи – Авокадо и шпинат</h3>
+        </div>
+    </a>
+
+    <a href="smoothies-product.html" class="catalog-item product-card">
+        <object class="card-btn-obj"><button class="card-btn-cart">В КОРЗИНУ</button></object>
+        <object class="card-btn-obj"><button class="card-btn-like"><img src="images/love.svg" alt="Heart"></button></object>
+        
+        <div class="card-image">
+            <img src="images/smoothie-img2.png" alt="Detox Set 2 Days">
+        </div>
+        
+        <div class="card-info">
+            <div class="card-price">320₽</div>
+            <h3 class="card-title">Смузи – Глинтвейн</h3>
+        </div>
+    </a>
+
+    <a href="smoothies-product.html" class="catalog-item product-card">
+        <object class="card-btn-obj"><button class="card-btn-cart">В КОРЗИНУ</button></object>
+        <object class="card-btn-obj"><button class="card-btn-like"><img src="images/love.svg" alt="Heart"></button></object>
+        
+        <div class="card-image">
+            <img src="images/smoothie-img3.png" alt="Detox Set Juice 1 Day">
+        </div>
+        
+        <div class="card-info">
+            <div class="card-price">320₽</div>
+            <h3 class="card-title">Смузи – Гранат и клюква</h3>
+        </div>
+    </a>
+
+    <a href="smoothies-product.html" class="catalog-item product-card">
+        <object class="card-btn-obj"><button class="card-btn-cart">В КОРЗИНУ</button></object>
+        <object class="card-btn-obj"><button class="card-btn-like"><img src="images/love.svg" alt="Heart"></button></object>
+        
+        <div class="card-image">
+            <img src="images/smoothie-img4.png" alt="Detox Set Juice 1 Day">
+        </div>
+        
+        <div class="card-info">
+            <div class="card-price">320₽</div>
+            <h3 class="card-title">Смузи – Ананас и розовый перец</h3>
+        </div>
+    </a>
+
+    <a href="smoothies-product.html" class="catalog-item product-card">
+        <!-- Кнопки внутри ссылки (нужен JS, чтобы они не перекидывали, но пока оставим визуально) -->
+        <object class="card-btn-obj"><button class="card-btn-cart">В КОРЗИНУ</button></object>
+        <object class="card-btn-obj"><button class="card-btn-like"><img src="images/love.svg" alt="Heart"></button></object>
+        
+        <div class="card-image">
+            <img src="images/smoothie-img1.png" alt="Detox Set 1 Day">
+        </div>
+        
+        <div class="card-info">
+            <div class="card-price">320₽</div>
+            <h3 class="card-title">Смузи – Авокадо и шпинат</h3>
+        </div>
+    </a>
+
+</div>
+        </div>
+
+
+
+    </main>
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            
+            <!-- Col 1: Logo & Legal -->
+            <div class="footer__col">
+                <a href="#" class="logo footer__logo">FORMA</a>
+                <p class="footer__desc">
+                    Здоровый детокс организма - натуральные смузи и боулы с доставкой по Москве
+                </p>
+                <div class="footer__legal">
+                    <p><strong>ООО «Симплигрин»</strong><br>ИНН 7743280030</p>
+                    <p class="legal-address">
+                        <strong>Юридический адрес:</strong><br>
+                        115088, город Москва, вн. тер. г. Муниципальный округ Южнопортовый, ул. 1-я Дубровская, д. 13А, стр. 1
+                    </p>
+                </div>
+            </div>
+
+            <!-- Col 2: For Clients -->
+            <div class="footer__col">
+                <h4 class="footer__title">ДЛЯ КЛИЕНТОВ</h4>
+                <ul class="footer__list">
+                    <li><a href="#">Возврат</a></li>
+                    <li><a href="#">Доставка и оплата</a></li>
+                    <li><a href="#">Вопрос — Ответ</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Contacts -->
+            <div class="footer__col">
+                <h4 class="footer__title">КОНТАКТЫ</h4>
+                <div class="footer__contacts">
+                    <div class="contact-row">
+                        <img src="images/email-icon.svg" alt="Email Icon" class="contact-icon">
+                        <a href="mailto:sale@simplygreen.club">sale@simplygreen.club</a>
+                    </div>
+                    <div class="contact-row">
+                        <img src="images/phone-icon.svg" alt="Phone Icon" class="contact-icon">
+                        <a href="tel:+79036667717">+7(903)666-77-17</a>
+                    </div>
+                    <div class="contact-row">
+                        <img src="images/telegram-icon.svg" alt="Telegram Icon" class="contact-icon">
+                        <a href="#">+7(903)666-77-17</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Col 4: Schedule & Payment -->
+            <div class="footer__col">
+                <h4 class="footer__title">ГРАФИК РАБОТЫ:</h4>
+                <p class="footer__schedule">
+                    с 9:00 до 21:00<br>
+                    без выходных
+                </p>
+                
+                <div class="footer__payments">
+                    <img src="images/visa-img.png" alt="Mastercard">
+                    <img src="images/visa-img2.png" alt="Visa">
+                    <img src="images/mir.png" alt="Mir">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

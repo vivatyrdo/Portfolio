@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMA</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__left">
+                <a href="#" class="logo">FORMA</a>
+            </div>
+            
+            <div class="header__center">
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <!-- Пункт с выпадающим меню (открыт как на макете) -->
+                        <li class="nav__item dropdown-trigger">
+                            <a href="#" class="nav__link">МЕНЮ</a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a href="detox-programs.html">ДЕТОКС-ПРОГРАММЫ</a></li>
+                                    <li><a href="smoothies.html">СМУЗИ</a></li>
+                                    <li><a href="juices.html">СОКИ</a></li>
+                                    <li><a href="smoothies-bowl.html">СМУЗИ БОУЛЫ</a></li>
+                                    <li><a href="detox-tea.html">ДЕТОКС ЧАЙ</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav__item"><a href="#" class="nav__link">АКЦИИ</a></li>
+                        <li class="nav__item"><a href="detox-programs.html" class="nav__link">ДЕТОКС-ПРОГРАММЫ</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">О НАС</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">КОНТАКТЫ</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">ДОСТАВКА И ОПЛАТА</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header__right">
+                <a href="registration.html" class="icon-btn"><img src="images/profile-icon.svg" alt="User"></a>
+                <a href="#" class="icon-btn"><img src="images/love.svg" alt="Heart"></a>
+                <a href="#" class="icon-btn"><img src="images/shopping-cart (1).svg" alt="Cart"></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero swiper">
+            <div class="swiper-wrapper">
+                
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="slide-container">
+                        
+                        <!-- 1. Поиск (справа сверху) -->
+                        <div class="search-block">
+                            <input type="text" placeholder="Поиск товаров">
+                            <button class="search-icon"><img src="images/loop-icon.svg" alt="S"></button>
+                        </div>
+
+                        <!-- 2. Текст (Слева снизу) -->
+                        <div class="text-block text-left" data-swiper-parallax="-300">
+                            <h2>СОКИ И СМУЗИ<br>ИЗ НАТУРАЛЬНЫХ<br>ПРОДУКТОВ</h2>
+                        </div>
+
+                        <!-- 3. Текст (Справа сверху) -->
+                        <div class="text-block text-right" data-swiper-parallax="-200">
+                            <h2>МЯГКИЙ ДЕТОКС<br>ОРГАНИЗМА</h2>
+                        </div>
+
+                        <!-- 4. Цифры (Справа снизу) -->
+                        <div class="number-block" data-swiper-parallax="-100">
+                            01 <span class="dash"></span> 07
+                        </div>
+
+                        <!-- 5. КОМПОЗИЦИЯ (Центр) -->
+                        <div class="composition-area" data-swiper-parallax="0">
+                            
+                            <!-- Кнопка ЗАКАЗАТЬ (стоит по центру) -->
+                            <a href="#" class="cta-btn">
+                                <span>ЗАКАЗАТЬ</span>
+                                <span class="arrow-down">↓</span>
+                            </a>
+
+                            <!-- 11 ИЗОБРАЖЕНИЙ (Вставь свои src) -->
+                            <!-- Сейчас они выстроены в ряд. -->
+                            <!-- Когда будешь верстать, меняй им top/left в CSS -->
+                            
+                            <img src="images/forma_bottle_mango_shpinage 1.png" class="comp-img item-1" alt="1">
+                            <img src="images/лист 1.png" class="comp-img item-2" alt="2">
+                            <img src="images/лист 2.png" class="comp-img item-3" alt="3">
+                            <img src="images/лист 3.png" class="comp-img item-4" alt="4">
+                            <img src="images/лист 7.png" class="comp-img item-5" alt="5">
+                            <img src="images/лист 8.png" class="comp-img item-6" alt="6">
+                            <img src="images/лист 9.png" class="comp-img item-7" alt="7">
+                            <img src="images/лист  11.png" class="comp-img item-8" alt="8">
+                            <img src="images/лист 14.png" class="comp-img item-9" alt="9">
+                            <img src="images/манго 1.png" class="comp-img item-10" alt="10">
+                            <img src="images/манго 2.png" class="comp-img item-11" alt="11">
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Slide 2 (Дубль) -->
+                <div class="swiper-slide">
+                    <div class="slide-container">
+                        
+                        <!-- 1. Поиск (справа сверху) -->
+                        <div class="search-block">
+                            <input type="text" placeholder="Поиск товаров">
+                            <button class="search-icon"><img src="" alt="S"></button>
+                        </div>
+
+                        <!-- 2. Текст (Слева снизу) -->
+                        <div class="text-block text-left" data-swiper-parallax="-300">
+                            <h2>СОКИ И СМУЗИ<br>ИЗ НАТУРАЛЬНЫХ<br>ПРОДУКТОВ</h2>
+                        </div>
+
+                        <!-- 3. Текст (Справа сверху) -->
+                        <div class="text-block text-right" data-swiper-parallax="-200">
+                            <h2>МЯГКИЙ ДЕТОКС<br>ОРГАНИЗМА</h2>
+                        </div>
+
+                        <!-- 4. Цифры (Справа снизу) -->
+                        <div class="number-block" data-swiper-parallax="-100">
+                            02 <span class="dash"></span> 07
+                        </div>
+
+                        <!-- 5. КОМПОЗИЦИЯ (Центр) -->
+                        <div class="composition-area" data-swiper-parallax="0">
+                            
+                            <!-- Кнопка ЗАКАЗАТЬ (стоит по центру) -->
+                            <a href="#" class="cta-btn">
+                                <span>ЗАКАЗАТЬ</span>
+                                <span class="arrow-down">↓</span>
+                            </a>
+
+                            <!-- 11 ИЗОБРАЖЕНИЙ (Вставь свои src) -->
+                            <!-- Сейчас они выстроены в ряд. -->
+                            <!-- Когда будешь верстать, меняй им top/left в CSS -->
+                            
+                            <img src="images/forma_bottle_mango_shpinage 1.png" class="comp-img item-1" alt="1">
+                            <img src="images/лист 1.png" class="comp-img item-2" alt="2">
+                            <img src="images/лист 2.png" class="comp-img item-3" alt="3">
+                            <img src="images/лист 3.png" class="comp-img item-4" alt="4">
+                            <img src="images/лист 7.png" class="comp-img item-5" alt="5">
+                            <img src="images/лист 8.png" class="comp-img item-6" alt="6">
+                            <img src="images/лист 9.png" class="comp-img item-7" alt="7">
+                            <img src="images/лист  11.png" class="comp-img item-8" alt="8">
+                            <img src="images/лист 14.png" class="comp-img item-9" alt="9">
+                            <img src="images/манго 1.png" class="comp-img item-10" alt="10">
+                            <img src="images/манго 2.png" class="comp-img item-11" alt="11">
+
+                        </div>
+                </div>
+
+            </div>
+
+            <!-- Навигация (Стрелки) -->
+            <div class="swiper-button-prev custom-arrow"></div>
+            <div class="swiper-button-next custom-arrow"></div>
+
+        </section>
+
+        <!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <h2 class="section-title">УНИКАЛЬНЫЕ УСЛОВИЯ</h2>
+        
+        <div class="features__grid">
+            <!-- Item 1 -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="images/manager-icon.svg" alt="Icon Manager"> <!-- Иконка менеджера -->
+                </div>
+                <p class="feature-text">ПЕРСОНАЛЬНЫЙ<br>ДЕТОКС-МЕНЕДЖЕР</p>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="images/box-icon.svg" alt="Icon Delivery"> <!-- Иконка коробки -->
+                </div>
+                <p class="feature-text">БЕСПЛАТНАЯ ДОСТАВКА<br>ПО МОСКВЕ КАЖДОЕ УТРО*</p>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="images/clock-icon.svg" alt="Icon Time"> <!-- Иконка часов -->
+                </div>
+                <p class="feature-text">ДОСТАВЛЯЕМ НА СЛЕДУЮЩИЙ<br>ДЕНЬ ПОСЛЕ ЗАКАЗА</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section -->
+<section class="categories">
+    <div class="container">
+        <h2 class="section-title">ВИДЫ ДЕТОКС-НАПИТКОВ</h2>
+        
+        <div class="categories__grid">
+            
+            <!-- Card 1: Смузи -->
+            <a href="smoothies.html" class="cat-card">
+                <div class="cat-image-wrapper">
+                    <img src="images/hero-img1.png" alt="Smoothie Bottle">
+                </div>
+                <h3 class="cat-title">СМУЗИ</h3>
+            </a>
+
+            <!-- Card 2: Соки -->
+            <a href="#" class="cat-card">
+                <div class="cat-image-wrapper">
+                    <img src="images/hero-img2.png" alt="Juice Bottle">
+                </div>
+                <h3 class="cat-title">СОКИ</h3>
+            </a>
+
+            <!-- Card 3: Смузи-Боулы -->
+            <a href="#" class="cat-card">
+                <div class="cat-image-wrapper">
+                    <img src="images/hero-img3.png" alt="Smoothie Bowl">
+                </div>
+                <h3 class="cat-title">СМУЗИ-БОУЛЫ</h3>
+            </a>
+
+            <!-- Card 4: Детокс-Программы -->
+            <a href="detox-programs.html" class="cat-card">
+                <div class="cat-image-wrapper">
+                    <img src="images/hero-img4.png" alt="Detox Program Set">
+                </div>
+                <h3 class="cat-title">ДЕТОКС-ПРОГРАММЫ</h3>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- Rules Section -->
+<section class="rules">
+    <div class="container">
+        <h2 class="section-title">ОБЩИЕ ПРАВИЛА</h2>
+        
+        <div class="rules__list">
+            <!-- Item 1 -->
+            <div class="rules__item">
+                <div class="rules__num">1</div>
+                <div class="rules__text">
+                    <strong>Старайтесь пить много воды</strong><br>
+                    И не только во время детокс программы, вода помогает очистить от токсинов организм и сделать кожу упругой
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="rules__item">
+                <div class="rules__num">2</div>
+                <div class="rules__text">
+                    <strong>Занимайтесь спортом</strong><br>
+                    Тем самым вы усилите эффект программы детокса
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="rules__item">
+                <div class="rules__num">3</div>
+                <div class="rules__text">
+                    <strong>Старайтесь мыслить позитивно</strong>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="rules__item">
+                <div class="rules__num">4</div>
+                <div class="rules__text">
+                    В этот период желательно сходить в <strong>баню</strong>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="rules__item">
+                <div class="rules__num">5</div>
+                <div class="rules__text">
+                    Займитесь <strong>йогой</strong>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="rules__item">
+                <div class="rules__num">6</div>
+                <div class="rules__text">
+                    Концентрируйте внимание на том, как реагирует ваше тело
+                </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="rules__item">
+                <div class="rules__num">7</div>
+                <div class="rules__text">
+                    <strong>Высыпайтесь</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Us Section (Split Screen) -->
+<section class="why-us">
+    <div class="why-us__wrapper">
+        
+        <!-- Left Image -->
+        <div class="why-us__image">
+            <img src="images/hero-img5.png" alt="Detox Bottles Set">
+        </div>
+
+        <!-- Right Content -->
+        <div class="why-us__content">
+            <h2 class="why-us__title">ПОЧЕМУ СТОИТ КУПИТЬ ДЕТОКС<br>ПРОГРАММЫ НА СМУЗИ У НАС?</h2>
+            
+            <div class="why-us__list">
+                <p class="why-us__item">
+                    <strong>ОСОЗНАННЫЙ ПОДХОД.</strong> Мы ценим ваше здоровье и предлагаем продукты, которые помогут вам достичь гармонии и баланса в жизни.
+                </p>
+                <p class="why-us__item">
+                    <strong>ВЫСОКОЕ КАЧЕСТВО СЕРВИСА.</strong> Мы оперативно обрабатываем заказы и всегда готовы ответить на ваши вопросы, вы всегда можете на нас рассчитывать.
+                </p>
+                <p class="why-us__item">
+                    <strong>БЫСТРАЯ ДОСТАВКА.</strong> Мы гарантируем быструю доставку, чтобы вы могли наслаждаться свежими детокс-продуктами уже на следующий день после заказа.
+                </p>
+                <p class="why-us__item">
+                    <strong>ОПЫТ.</strong> Наш многолетний опыт в области детокс-напитков обеспечивает высший стандарт качества наших продуктов.
+                </p>
+                <p class="why-us__item">
+                    <strong>ГЛУБОКИЕ ЗНАНИЯ О ЗДОРОВОМ ПИТАНИИ.</strong> Мы уделяем много внимания обучению, чтобы предоставить вам наилучшие решения для вашего благополучия.
+                </p>
+                <p class="why-us__item">
+                    <strong>ЗАБОТА О КЛИЕНТАХ И ЛЮБОВЬ К СВОЕМУ ДЕЛУ.</strong> Наше внимание к вашим потребностям и истинное увлечение детокс-напитками отражаются в каждом нашем продукте.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Reviews Section -->
+<section class="reviews">
+    <div class="container">
+        <h2 class="section-title">ОТЗЫВЫ</h2>
+        
+        <!-- Обертка для слайдера, чтобы стрелки были по бокам -->
+        <div class="reviews__wrapper">
+            
+            <div class="swiper reviews-slider">
+                <div class="swiper-wrapper">
+                    
+                    <!-- Review 1 -->
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <div class="review-img-wrap">
+                                <img src="images/man1.png" alt="User 1"> <!-- Фото в круге -->
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                            <h4 class="review-author">ТАТЬЯНА, <span class="review-city">МОСКВА</span></h4>
+                            <p class="review-text">
+                                " Обожаю ваш смузи и чаи! Вкусно, полезно и всегда свежие ингредиенты. Я стала постоянным клиентом вашего сайта и рекомендую всем своим друзьям! "
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <div class="review-img-wrap">
+                                <img src="images/man2.png" alt="User 2">
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                            <h4 class="review-author">ВЕРОНИКА, <span class="review-city">МОСКВА</span></h4>
+                            <p class="review-text">
+                                " Благодаря вашим сокам и боулам я заметил как улучшилось мое самочувствие и общее состояние. Спасибо за качественные и вкусные продукты! "
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <div class="review-img-wrap">
+                                <img src="images/man3.png" alt="User 3">
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                            <h4 class="review-author">ЕЛЕНА, <span class="review-city">МОСКВА</span></h4>
+                            <p class="review-text">
+                                " Очень удобный и быстрый сервис доставки! Заказала у вас несколько раз и каждый раз осталась довольна. Спасибо за заботу о клиентах! "
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 4 (Дубль для теста свайпа) -->
+                    <div class="swiper-slide">
+                        <div class="review-card">
+                            <div class="review-img-wrap">
+                                <img src="images/man2.png" alt="User 4">
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                            <h4 class="review-author">АННА, <span class="review-city">СПБ</span></h4>
+                            <p class="review-text">
+                                " Прекрасные детокс программы, очень помогли прийти в форму после праздников. "
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Navigation Buttons (Outside slider container) -->
+            <div class="swiper-button-prev review-prev"></div>
+            <div class="swiper-button-next review-next"></div>
+        </div>
+
+    </div>
+</section>
+
+</main> <!-- Закрываем main здесь -->
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            
+            <!-- Col 1: Logo & Legal -->
+            <div class="footer__col">
+                <a href="#" class="logo footer__logo">FORMA</a>
+                <p class="footer__desc">
+                    Здоровый детокс организма - натуральные смузи и боулы с доставкой по Москве
+                </p>
+                <div class="footer__legal">
+                    <p><strong>ООО «Симплигрин»</strong><br>ИНН 7743280030</p>
+                    <p class="legal-address">
+                        <strong>Юридический адрес:</strong><br>
+                        115088, город Москва, вн. тер. г. Муниципальный округ Южнопортовый, ул. 1-я Дубровская, д. 13А, стр. 1
+                    </p>
+                </div>
+            </div>
+
+            <!-- Col 2: For Clients -->
+            <div class="footer__col">
+                <h4 class="footer__title">ДЛЯ КЛИЕНТОВ</h4>
+                <ul class="footer__list">
+                    <li><a href="#">Возврат</a></li>
+                    <li><a href="#">Доставка и оплата</a></li>
+                    <li><a href="#">Вопрос — Ответ</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Contacts -->
+            <div class="footer__col">
+                <h4 class="footer__title">КОНТАКТЫ</h4>
+                <div class="footer__contacts">
+                    <div class="contact-row">
+                        <img src="images/email-icon.svg" alt="Email Icon" class="contact-icon">
+                        <a href="mailto:sale@simplygreen.club">sale@simplygreen.club</a>
+                    </div>
+                    <div class="contact-row">
+                        <img src="images/phone-icon.svg" alt="Phone Icon" class="contact-icon">
+                        <a href="tel:+79036667717">+7(903)666-77-17</a>
+                    </div>
+                    <div class="contact-row">
+                        <img src="images/telegram-icon.svg" alt="Telegram Icon" class="contact-icon">
+                        <a href="#">+7(903)666-77-17</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Col 4: Schedule & Payment -->
+            <div class="footer__col">
+                <h4 class="footer__title">ГРАФИК РАБОТЫ:</h4>
+                <p class="footer__schedule">
+                    с 9:00 до 21:00<br>
+                    без выходных
+                </p>
+                
+                <div class="footer__payments">
+                    <img src="images/visa-img.png" alt="Mastercard">
+                    <img src="images/visa-img2.png" alt="Visa">
+                    <img src="images/mir.png" alt="Mir">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

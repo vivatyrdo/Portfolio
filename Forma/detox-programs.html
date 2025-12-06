@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMA - Детокс-программы</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="detox-page-body">
+
+    <!-- Header (Белый) -->
+    <header class="header header--white">
+        <div class="header__inner">
+            <div class="header__left">
+                <a href="index.html" class="logo">FORMA</a>
+            </div>
+            <div class="header__center">
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <!-- Пункт с выпадающим меню (открыт как на макете) -->
+                        <li class="nav__item dropdown-trigger">
+                            <a href="#" class="nav__link">МЕНЮ</a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a href="detox-programs.html">ДЕТОКС-ПРОГРАММЫ</a></li>
+                                    <li><a href="smoothies.html">СМУЗИ</a></li>
+                                    <li><a href="juices.html">СОКИ</a></li>
+                                    <li><a href="smoothies-bowl.html">СМУЗИ БОУЛЫ</a></li>
+                                    <li><a href="detox-tea.html">ДЕТОКС ЧАЙ</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav__item"><a href="#" class="nav__link">АКЦИИ</a></li>
+                        <li class="nav__item"><a href="detox-programs.html" class="nav__link">ДЕТОКС-ПРОГРАММЫ</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">О НАС</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">КОНТАКТЫ</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">ДОСТАВКА И ОПЛАТА</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header__right">
+                <a href="registration.html" class="icon-btn"><img src="images/profile-icon.svg" alt="User"></a>
+                <a href="#" class="icon-btn"><img src="images/love.svg" alt="Heart"></a>
+                <a href="#" class="icon-btn"><img src="images/shopping-cart (1).svg" alt="Cart"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="detox-main">
+        
+        <!-- Breadcrumbs & Search -->
+        <div class="page-top-bar">
+            <div class="container top-bar-inner">
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a> / <a href="#">Магазин детокс напитков</a> / <span class="current-crumb">Детокс-программы на смузи в Москве</span>
+                </div>
+                
+                <div class="catalog-search">
+                    <input type="text" placeholder="Поиск товаров">
+                    <button><img src="images/loop-icon.svg" alt="Search"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Grid Layout -->
+            <div class="catalog-grid">
+    
+    <!-- Block 1: Info Text (Оставляем дивом, это просто текст) -->
+    <div class="catalog-item info-block">
+        <h1 class="info-title">ДЕТОКС-ПРОГРАММЫ</h1>
+        <p class="info-desc">
+            Устроить детокс на смузи – это идеальный способ оздоровить организм! У нас вы можете заказать детокс-программы, специально подобранные для обогащения организма. Наши напитки на 100% натуральны.
+        </p>
+    </div>
+
+    <!-- Block 2: Product Card (Теперь это ССЫЛКА) -->
+    <a href="product-page.html" class="catalog-item product-card">
+        <!-- Кнопки внутри ссылки (нужен JS, чтобы они не перекидывали, но пока оставим визуально) -->
+        <object class="card-btn-obj"><button class="card-btn-cart">В КОРЗИНУ</button></object>
+        <object class="card-btn-obj"><button class="card-btn-like"><img src="images/love.svg" alt="Heart"></button></object>
+        
+        <div class="card-image">
+            <img src="images/hero-img4.png" alt="Detox Set 1 Day">
+        </div>
+        
+        <div class="card-info">
+            <div class="card-price">2500₽</div>
+            <h3 class="card-title">ДЕТОКС-ПРОГРАММА НА СМУЗИ НА 1 ДЕНЬ</h3>
+        </div>
+    </a>
+
+    <!-- Block 3 -->
+    <a href="product-page.html" class="catalog-item product-card">
+        <object class="card-btn-obj"><button class="card-btn-cart">В КОРЗИНУ</button></object>
+        <object class="card-btn-obj"><button class="card-btn-like"><img src="images/love.svg" alt="Heart"></button></object>
+        
+        <div class="card-image">
+            <img src="images/hero-img4.png" alt="Detox Set 2 Days">
+        </div>
+        
+        <div class="card-info">
+            <div class="card-price">4900₽</div>
+            <h3 class="card-title">ДЕТОКС-ПРОГРАММА НА СОКАХ НА ДВА ДНЯ</h3>
+        </div>
+    </a>
+
+    <!-- Block 4 -->
+    <a href="product-page.html" class="catalog-item product-card">
+        <object class="card-btn-obj"><button class="card-btn-cart">В КОРЗИНУ</button></object>
+        <object class="card-btn-obj"><button class="card-btn-like"><img src="images/love.svg" alt="Heart"></button></object>
+        
+        <div class="card-image">
+            <img src="images/hero-img4.png" alt="Detox Set Juice 1 Day">
+        </div>
+        
+        <div class="card-info">
+            <div class="card-price">2500₽</div>
+            <h3 class="card-title">ДЕТОКС-ПРОГРАММА НА СОКАХ НА ОДИН ДЕНЬ</h3>
+        </div>
+    </a>
+
+</div>
+        </div>
+        <!-- Section: Как работают (Текст) -->
+<section class="info-text-section">
+    <div class="container">
+        <h2 class="section-title">КАК РАБОТАЮТ ДЕТОКС ПРОГРАММЫ</h2>
+        
+        <div class="text-content-centered">
+            <p>
+                <strong>ДЕТОКС-ПРОГРАММЫ</strong> – это инновационный способ очищения и оздоровления организма. Они основаны на использовании специально подобранных детокс-напитков, богатых витаминами и антиоксидантами. Натуральные соки и смузи помогают устранить токсины и шлаки, накопившиеся в организме, улучшают пищеварение и обогащают клетки полезными веществами.
+            </p>
+            <p>
+                Детокс-программы способствуют повышению энергии, укреплению иммунитета и улучшению внешнего вида. Они также могут помочь в снижении веса и улучшении состояния кожи, волос и ногтей. Благодаря детоксу на смузи, ваш организм работает более эффективно, вы чувствуете себя бодрее и здоровее. Это отличное решение для тела, которое помогает достичь гармонии и баланса.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Section: Кому подойдут (Бежевый фон, иконки) -->
+<section class="who-fits-section">
+    <div class="container">
+        <h2 class="section-title">КОМУ ПОДОЙДУТ СМУЗИ-ДЕТОКСЫ?</h2>
+
+        <!-- Подраздел: Подходят -->
+        <div class="fits-divider">
+            <img src="images/detox-icon1.svg" alt="Check Icon" class="divider-icon"> <!-- Иконка галочки -->
+            <span>ПОДХОДЯТ:</span>
+        </div>
+
+        <div class="fits-grid">
+            <!-- Item 1 -->
+            <div class="fits-item">
+                <div class="fits-icon-circle">
+                    <img src="images/detox-icon2.svg" alt="Icon Body"> <!-- Иконка талии -->
+                </div>
+                <p class="fits-text">
+                    ПОДДЕРЖИВАТЬ ЗДОРОВОЕ ПИЩЕВАРЕНИЕ И ОЧИЩАТЬ<br>ОРГАНИЗМ ОТ ТОКСИНОВ И ШЛАКОВ
+                </p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="fits-item">
+                <div class="fits-icon-circle">
+                    <img src="images/detox-icon4.svg" alt="Icon Scale"> <!-- Иконка весов -->
+                </div>
+                <p class="fits-text">
+                    ПОМОЧЬ СНИЗИТЬ ВЕС ИЛИ ПОДДЕРЖИВАТЬ ЕГО НА<br>ОПТИМАЛЬНОМ УРОВНЕ
+                </p>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="fits-item">
+                <div class="fits-icon-circle">
+                    <img src="images/detox-icon3.svg" alt="Icon Energy"> <!-- Иконка молнии -->
+                </div>
+                <p class="fits-text">
+                    УКРЕПИТЬ ИММУНИТЕТ И ПОВЫСИТЬ ЭНЕРГИЮ
+                </p>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="fits-item">
+                <div class="fits-icon-circle">
+                    <img src="images/detox-icon5.svg" alt="Icon Face"> <!-- Иконка лица -->
+                </div>
+                <p class="fits-text">
+                    УЛУЧШИТЬ СОСТОЯНИЕ КОЖИ, ВОЛОС И НОГТЕЙ
+                </p>
+            </div>
+        </div>
+
+        <!-- Подраздел: Консультация -->
+        <div class="fits-divider divider-cross">
+            <img src="images/detox-icon6.svg" alt="Cross Icon" class="divider-icon"> <!-- Иконка крестика -->
+            <span>ТРЕБУЕТ КОНСУЛЬТАЦИИ:</span>
+        </div>
+
+        <div class="fits-warning-item">
+            <div class="fits-icon-circle">
+                <img src="images/detox-icon7.svg" alt="Icon Stomach"> <!-- Иконка желудка -->
+            </div>
+            <p class="fits-text">
+                ОДНАКО, ЕСЛИ У ВАС ЕСТЬ ХРОНИЧЕСКИЕ ПРОБЛЕМЫ С ЖКТ, ТАКИЕ КАК ПОВЫШЕННАЯ КИСЛОТНОСТЬ В ЖЕЛУДКЕ ИЛИ ЯЗВЕННОЕ ЗАБОЛЕВАНИЕ, РЕКОМЕНДУЕТСЯ ПРОКОНСУЛЬТИРОВАТЬСЯ С ВРАЧОМ ПЕРЕД НАЧАЛОМ ДЕТОКС-ПРОГРАММЫ. ТАКИЕ СОСТОЯНИЯ МОГУТ ПОТРЕБОВАТЬ ИНДИВИДУАЛЬНОГО ПОДХОДА
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Section: Как принимать (Список с цифрами) -->
+<section class="how-to-take-section">
+    <div class="container">
+        <h2 class="section-title">КАК ПРАВИЛЬНО ПРИНИМАТЬ СМУЗИ ИЗ<br>ПРОГРАММЫ ДЕТОКСА?</h2>
+        
+        <div class="steps-list">
+            <!-- Step 1 -->
+            <div class="step-item">
+                <div class="step-num">1</div>
+                <p class="step-text">Начните свой день с смузи сразу после пробуждения</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-item">
+                <div class="step-num">2</div>
+                <p class="step-text">Следуйте регулярному графику, выпивая по одному напитку каждые 2-3 часа</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-item">
+                <div class="step-num">3</div>
+                <p class="step-text">Выпивайте 1.5 литра воды в течение дня для обеспечения гидратации организма</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-item">
+                <div class="step-num">4</div>
+                <p class="step-text">При необходимости делайте перерывы между напитками</p>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step-item">
+                <div class="step-num">5</div>
+                <p class="step-text">Прислушивайтесь к своему организму и доверяйте ему!</p>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            
+            <!-- Col 1: Logo & Legal -->
+            <div class="footer__col">
+                <a href="#" class="logo footer__logo">FORMA</a>
+                <p class="footer__desc">
+                    Здоровый детокс организма - натуральные смузи и боулы с доставкой по Москве
+                </p>
+                <div class="footer__legal">
+                    <p><strong>ООО «Симплигрин»</strong><br>ИНН 7743280030</p>
+                    <p class="legal-address">
+                        <strong>Юридический адрес:</strong><br>
+                        115088, город Москва, вн. тер. г. Муниципальный округ Южнопортовый, ул. 1-я Дубровская, д. 13А, стр. 1
+                    </p>
+                </div>
+            </div>
+
+            <!-- Col 2: For Clients -->
+            <div class="footer__col">
+                <h4 class="footer__title">ДЛЯ КЛИЕНТОВ</h4>
+                <ul class="footer__list">
+                    <li><a href="#">Возврат</a></li>
+                    <li><a href="#">Доставка и оплата</a></li>
+                    <li><a href="#">Вопрос — Ответ</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Contacts -->
+            <div class="footer__col">
+                <h4 class="footer__title">КОНТАКТЫ</h4>
+                <div class="footer__contacts">
+                    <div class="contact-row">
+                        <img src="images/email-icon.svg" alt="Email Icon" class="contact-icon">
+                        <a href="mailto:sale@simplygreen.club">sale@simplygreen.club</a>
+                    </div>
+                    <div class="contact-row">
+                        <img src="images/phone-icon.svg" alt="Phone Icon" class="contact-icon">
+                        <a href="tel:+79036667717">+7(903)666-77-17</a>
+                    </div>
+                    <div class="contact-row">
+                        <img src="images/telegram-icon.svg" alt="Telegram Icon" class="contact-icon">
+                        <a href="#">+7(903)666-77-17</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Col 4: Schedule & Payment -->
+            <div class="footer__col">
+                <h4 class="footer__title">ГРАФИК РАБОТЫ:</h4>
+                <p class="footer__schedule">
+                    с 9:00 до 21:00<br>
+                    без выходных
+                </p>
+                
+                <div class="footer__payments">
+                    <img src="images/visa-img.png" alt="Mastercard">
+                    <img src="images/visa-img2.png" alt="Visa">
+                    <img src="images/mir.png" alt="Mir">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

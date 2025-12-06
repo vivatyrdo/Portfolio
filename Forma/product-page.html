@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMA - Детокс программа на 1 день</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="product-page-body">
+
+    <!-- Header (Тот же) -->
+    <header class="header header--white">
+        <div class="header__inner">
+            <div class="header__left"><a href="index.html" class="logo">FORMA</a></div>
+            <div class="header__center">
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <!-- Пункт с выпадающим меню (открыт как на макете) -->
+                        <li class="nav__item dropdown-trigger">
+                            <a href="#" class="nav__link">МЕНЮ</a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a href="detox-programs.html">ДЕТОКС-ПРОГРАММЫ</a></li>
+                                    <li><a href="smoothies.html">СМУЗИ</a></li>
+                                    <li><a href="juices.html">СОКИ</a></li>
+                                    <li><a href="smoothies-bowl.html">СМУЗИ БОУЛЫ</a></li>
+                                    <li><a href="detox-tea.html">ДЕТОКС ЧАЙ</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav__item"><a href="#" class="nav__link">АКЦИИ</a></li>
+                        <li class="nav__item"><a href="detox-programs.html" class="nav__link">ДЕТОКС-ПРОГРАММЫ</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">О НАС</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">КОНТАКТЫ</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">ДОСТАВКА И ОПЛАТА</a></li>
+                    </ul>
+                </nav>
+            </div>
+             <div class="header__right">
+                <a href="registration.html" class="icon-btn"><img src="images/profile-icon.svg" alt="User"></a>
+                <a href="#" class="icon-btn"><img src="images/love.svg" alt="Heart"></a>
+                <a href="#" class="icon-btn"><img src="images/shopping-cart (1).svg" alt="Cart"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-main">
+        
+        <!-- Breadcrumbs & Search -->
+        <div class="page-top-bar">
+            <div class="container top-bar-inner">
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a> / <a href="#">Магазин</a> / <a href="detox-programs.html">Детокс-программы</a> / <span class="current-crumb">Детокс-программа на смузи на 1 день</span>
+                </div>
+                <div class="catalog-search">
+                    <input type="text" placeholder="Поиск товаров">
+                    <button><img src="images/loop-icon.svg" alt="Search"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="product-wrapper">
+                
+                <!-- LEFT: Gallery -->
+                <!-- LEFT: Gallery -->
+<div class="product-gallery">
+    
+    <!-- 1. Верхний большой слайдер -->
+    <div class="swiper product-main-slider">
+        <div class="swiper-wrapper">
+            <!-- Слайд 1 -->
+            <div class="swiper-slide">
+                <img src="images/product-img1.png" alt="Product View 1"> <!-- Вставь путь к большой картинке -->
+            </div>
+            <!-- Слайд 2 -->
+            <div class="swiper-slide">
+                <img src="images/product-img2.png" alt="Product View 2">
+            </div>
+            <!-- Слайд 3 -->
+            <div class="swiper-slide">
+                <img src="images/product-img3.png" alt="Product View 3">
+            </div>
+            <!-- Слайд 4 -->
+            <div class="swiper-slide">
+                <img src="images/product-img4.png" alt="Product View 4">
+            </div>
+        </div>
+        
+        <!-- Стрелки навигации -->
+        <div class="swiper-button-next product-arrow-next"></div>
+        <div class="swiper-button-prev product-arrow-prev"></div>
+    </div>
+
+    <!-- 2. Нижний слайдер с миниатюрами -->
+    <div class="swiper product-thumbs-slider">
+        <div class="swiper-wrapper">
+            <!-- Миниатюры (должны совпадать по порядку с верхними) -->
+            <div class="swiper-slide">
+                <img src="images/product-img1.png" alt="Thumb 1">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/product-img2.png" alt="Thumb 2">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/product-img3.png" alt="Thumb 3">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/product-img4.png" alt="Thumb 4">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+                <!-- RIGHT: Info -->
+                <div class="product-info-col">
+                    <h1 class="p-title">ДЕТОКС-ПРОГРАММА<br>НА СМУЗИ НА 1 ДЕНЬ</h1>
+                    <p class="p-desc">
+                        Наслаждайтесь уникальной 1-дневной детокс-программой,<br>
+                        включающей в себя 8 разнообразных детокс-соков и смузи
+                    </p>
+
+                    <!-- Accordion 1: PROGRAM -->
+                    <div class="accordion-item">
+                        <div class="accordion-header active">
+                            <span>ПРОГРАММА</span>
+                            <span class="acc-icon">﹀</span>
+                        </div>
+                        <div class="accordion-content" style="max-height: 500px;"> <!-- Открыто по умолчанию -->
+                            <div class="program-list">
+                                <div class="p-row">
+                                    <span class="p-qty">2 x</span>
+                                    <span class="p-name">«BE BRIGHT»</span>
+                                    <span class="p-ingred">/ яблоко / киви / фенхель / лимон /</span>
+                                </div>
+                                <div class="p-row">
+                                    <span class="p-qty">1 x</span>
+                                    <span class="p-name">«BE WILD»</span>
+                                    <span class="p-ingred">/ огурец / яблоко / спирулина /</span>
+                                </div>
+                                <div class="p-row">
+                                    <span class="p-qty">1 x</span>
+                                    <span class="p-name">«BE YOUNG»</span>
+                                    <span class="p-ingred">/ свекла / апельсин / морковь /</span>
+                                </div>
+                                <div class="p-row">
+                                    <span class="p-qty">1 x</span>
+                                    <span class="p-name">«BE STRONG»</span>
+                                    <span class="p-ingred">/ шпинат / банан / мята / груша / вода / кокосовое «молоко» / сироп топинамбура /</span>
+                                </div>
+                                <div class="p-row">
+                                    <span class="p-qty">1 x</span>
+                                    <span class="p-name">«BE BEAUTY»</span>
+                                    <span class="p-ingred">/ банан / клубника / ваниль/ вода / кокосовое «молоко» / сироп топинамбура /</span>
+                                </div>
+                                <div class="p-row">
+                                    <span class="p-qty">2 x</span>
+                                    <span class="p-name">«BE HAPPY»</span>
+                                    <span class="p-ingred">/ апельсин / петрушка /</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 2: SHELF LIFE -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>СРОК ГОДНОСТИ</span>
+                            <span class="acc-icon">﹀</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p class="shelf-life-text">96 часов</p>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Action Bar -->
+                    <div class="product-actions">
+                        <div class="price-tag">2500₽</div>
+                        
+                        <button class="add-cart-btn">В КОРЗИНУ</button>
+                        
+                        <!-- Counter -->
+                        <div class="quantity-counter">
+                            <button class="qty-btn minus">–</button>
+                            <span class="qty-val">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            
+            <!-- Col 1: Logo & Legal -->
+            <div class="footer__col">
+                <a href="#" class="logo footer__logo">FORMA</a>
+                <p class="footer__desc">
+                    Здоровый детокс организма - натуральные смузи и боулы с доставкой по Москве
+                </p>
+                <div class="footer__legal">
+                    <p><strong>ООО «Симплигрин»</strong><br>ИНН 7743280030</p>
+                    <p class="legal-address">
+                        <strong>Юридический адрес:</strong><br>
+                        115088, город Москва, вн. тер. г. Муниципальный округ Южнопортовый, ул. 1-я Дубровская, д. 13А, стр. 1
+                    </p>
+                </div>
+            </div>
+
+            <!-- Col 2: For Clients -->
+            <div class="footer__col">
+                <h4 class="footer__title">ДЛЯ КЛИЕНТОВ</h4>
+                <ul class="footer__list">
+                    <li><a href="#">Возврат</a></li>
+                    <li><a href="#">Доставка и оплата</a></li>
+                    <li><a href="#">Вопрос — Ответ</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Contacts -->
+            <div class="footer__col">
+                <h4 class="footer__title">КОНТАКТЫ</h4>
+                <div class="footer__contacts">
+                    <div class="contact-row">
+                        <img src="images/email-icon.svg" alt="Email Icon" class="contact-icon">
+                        <a href="mailto:sale@simplygreen.club">sale@simplygreen.club</a>
+                    </div>
+                    <div class="contact-row">
+                        <img src="images/phone-icon.svg" alt="Phone Icon" class="contact-icon">
+                        <a href="tel:+79036667717">+7(903)666-77-17</a>
+                    </div>
+                    <div class="contact-row">
+                        <img src="images/telegram-icon.svg" alt="Telegram Icon" class="contact-icon">
+                        <a href="#">+7(903)666-77-17</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Col 4: Schedule & Payment -->
+            <div class="footer__col">
+                <h4 class="footer__title">ГРАФИК РАБОТЫ:</h4>
+                <p class="footer__schedule">
+                    с 9:00 до 21:00<br>
+                    без выходных
+                </p>
+                
+                <div class="footer__payments">
+                    <img src="images/visa-img.png" alt="Mastercard">
+                    <img src="images/visa-img2.png" alt="Visa">
+                    <img src="images/mir.png" alt="Mir">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

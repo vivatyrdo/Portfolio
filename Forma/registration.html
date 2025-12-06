@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMA - Регистрация</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+
+    <!-- Header (Белый фон для этой страницы) -->
+    <header class="header header--white">
+        <div class="header__inner">
+            <div class="header__left">
+                <a href="index.html" class="logo">FORMA</a>
+            </div>
+            
+            <div class="header__center">
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <!-- Пункт с выпадающим меню (открыт как на макете) -->
+                        <li class="nav__item dropdown-trigger">
+                            <a href="#" class="nav__link">МЕНЮ</a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a href="detox-programs.html">ДЕТОКС-ПРОГРАММЫ</a></li>
+                                    <li><a href="smoothies.html">СМУЗИ</a></li>
+                                    <li><a href="#">СОКИ</a></li>
+                                    <li><a href="#">СМУЗИ БОУЛЫ</a></li>
+                                    <li><a href="#">ДЕТОКС ЧАЙ</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav__item"><a href="#" class="nav__link">АКЦИИ</a></li>
+                        <li class="nav__item"><a href="detox-programs.html" class="nav__link">ДЕТОКС-ПРОГРАММЫ</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">О НАС</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">КОНТАКТЫ</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">ДОСТАВКА И ОПЛАТА</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header__right">
+                <a href="#" class="icon-btn"><img src="images/profile-icon.svg" alt="User"></a>
+                <a href="#" class="icon-btn"><img src="images/love.svg" alt="Heart"></a>
+                <a href="#" class="icon-btn"><img src="images/shopping-cart (1).svg" alt="Cart"></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Auth Section -->
+    <main class="auth-container">
+        
+        <!-- Breadcrumbs (Хлебные крошки) -->
+        <div class="breadcrumbs">
+            <div class="container">
+                <a href="index.html">Главная</a> / <span class="current-crumb">Регистрация</span>
+            </div>
+        </div>
+
+        <div class="auth-split">
+            
+            <!-- Левая часть: Картинка -->
+            <div class="auth-image">
+                <img src="images/registation-img.png" alt="Girl with Detox Bottle"> <!-- Сюда вставь фото девушки с бутылкой -->
+            </div>
+
+            <!-- Правая часть: Формы -->
+            <div class="auth-content">
+                
+                <!-- ФОРМА РЕГИСТРАЦИИ (Видна по умолчанию) -->
+                <div class="form-wrapper" id="register-form">
+                    <h1 class="auth-title">РЕГИСТРАЦИЯ</h1>
+                    <p class="auth-subtitle">Добро пожаловать в Forma. Заполните поля ниже</p>
+                    
+                    <form action="#" class="main-form">
+                        <div class="input-group">
+                            <label>Имя*</label>
+                            <input type="text" placeholder="Введите ваше имя" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Телефон*</label>
+                            <input type="tel" placeholder="Введите номер телефона" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>E-mail*</label>
+                            <input type="email" placeholder="Введите адрес почты" required>
+                        </div>
+
+                        <p class="legal-text">
+                            Ссылка для установки нового пароля будет отправлена на ваш адрес электронной почты.
+                        </p>
+
+                        <p class="legal-text-small">
+                            Ваши личные данные будут использоваться для упрощения вашего дальнейшего взаимодействия с сайтом, управления доступом к вашему аккаунту и других целей, описанных в документе <a href="#">политика конфиденциальности.</a>
+                        </p>
+
+                        <button type="submit" class="auth-btn">РЕГИСТРАЦИЯ</button>
+                    </form>
+
+                    <div class="auth-switch">
+                        Уже есть аккаунт? <button id="to-login-btn">ВОЙТИ</button>
+                    </div>
+                </div>
+
+                <!-- ФОРМА ВХОДА (Скрыта по умолчанию) -->
+                <div class="form-wrapper hidden" id="login-form">
+                    <h1 class="auth-title">ВХОД</h1>
+                    <p class="auth-subtitle">С возвращением! Введите данные для входа</p>
+                    
+                    <form action="#" class="main-form">
+                        <div class="input-group">
+                            <label>E-mail*</label>
+                            <input type="email" placeholder="Введите ваш email" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Пароль*</label>
+                            <input type="password" placeholder="Введите пароль" required>
+                        </div>
+
+                        <button type="submit" class="auth-btn">ВОЙТИ</button>
+                    </form>
+
+                    <div class="auth-switch">
+                        Нет аккаунта? <button id="to-register-btn">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            
+            <!-- Col 1: Logo & Legal -->
+            <div class="footer__col">
+                <a href="#" class="logo footer__logo">FORMA</a>
+                <p class="footer__desc">
+                    Здоровый детокс организма - натуральные смузи и боулы с доставкой по Москве
+                </p>
+                <div class="footer__legal">
+                    <p><strong>ООО «Симплигрин»</strong><br>ИНН 7743280030</p>
+                    <p class="legal-address">
+                        <strong>Юридический адрес:</strong><br>
+                        115088, город Москва, вн. тер. г. Муниципальный округ Южнопортовый, ул. 1-я Дубровская, д. 13А, стр. 1
+                    </p>
+                </div>
+            </div>
+
+            <!-- Col 2: For Clients -->
+            <div class="footer__col">
+                <h4 class="footer__title">ДЛЯ КЛИЕНТОВ</h4>
+                <ul class="footer__list">
+                    <li><a href="#">Возврат</a></li>
+                    <li><a href="#">Доставка и оплата</a></li>
+                    <li><a href="#">Вопрос — Ответ</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Contacts -->
+            <div class="footer__col">
+                <h4 class="footer__title">КОНТАКТЫ</h4>
+                <div class="footer__contacts">
+                    <div class="contact-row">
+                        <img src="images/email-icon.svg" alt="Email Icon" class="contact-icon">
+                        <a href="mailto:sale@simplygreen.club">sale@simplygreen.club</a>
+                    </div>
+                    <div class="contact-row">
+                        <img src="images/phone-icon.svg" alt="Phone Icon" class="contact-icon">
+                        <a href="tel:+79036667717">+7(903)666-77-17</a>
+                    </div>
+                    <div class="contact-row">
+                        <img src="images/telegram-icon.svg" alt="Telegram Icon" class="contact-icon">
+                        <a href="#">+7(903)666-77-17</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Col 4: Schedule & Payment -->
+            <div class="footer__col">
+                <h4 class="footer__title">ГРАФИК РАБОТЫ:</h4>
+                <p class="footer__schedule">
+                    с 9:00 до 21:00<br>
+                    без выходных
+                </p>
+                
+                <div class="footer__payments">
+                    <img src="images/visa-img.png" alt="Mastercard">
+                    <img src="images/visa-img2.png" alt="Visa">
+                    <img src="images/mir.png" alt="Mir">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+</html>
